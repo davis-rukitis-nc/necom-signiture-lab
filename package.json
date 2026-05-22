@@ -1,0 +1,13 @@
+{
+  "name": "necom-email-signature-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static NECom email signature builder for Cloudflare Pages and Workers.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
