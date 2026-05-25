@@ -1,93 +1,145 @@
+const STORAGE_KEY = "necom-email-signature-lab-v2";
+const MINIMAL_COLOR = "#d8dada";
+
 const BRAND_PRESETS = [
   {
     id: "necom",
     name: "NECom",
+    shortName: "NECom",
     websiteLabel: "www.necom.lv",
     websiteUrl: "https://www.necom.lv",
     accentColor: "#B59A71",
     textColor: "#111111",
-    logoUrl: "https://rimirigamarathon.com/wp-content/uploads/2026/02/necom-1.png",
-    description: {
-      en: "Event production, marketing and sponsorship agency creating experiences that are moving Riga and Latvia since 2006.",
-      lv: "Pasākumu producēšanas, mārketinga un sponsorēšanas aģentūra, kas kopš 2006. gada rada pieredzes, kas kustina Rīgu un Latviju.",
+    minimalColor: MINIMAL_COLOR,
+    cardBg: "#0f0f0f",
+    cardLogoVariant: "minimal",
+    logoVariants: {
+      black: "https://rimirigamarathon.com/wp-content/uploads/2026/02/necom.png",
+      minimal: "https://rimirigamarathon.com/wp-content/uploads/2026/02/necom-1.png",
+    },
+    infoText: {
+      en: "Nords Event Communications (NECom) crafts experiences that move, inspire and elevate Riga and Latvia.",
+      lv: "Nords Event Communications (NECom) rada pieredzes, kas kustina, iedvesmo un ceļ Rīgu un Latviju.",
     },
   },
   {
     id: "rrm",
     name: "Rimi Riga Marathon",
+    shortName: "RRM",
     websiteLabel: "rimirigamarathon.com",
     websiteUrl: "https://rimirigamarathon.com/",
     accentColor: "#cc2128",
     textColor: "#111111",
-    logoUrl: "https://rimirigamarathon.com/wp-content/uploads/2025/02/RRM-logo-black.png",
-    description: {
-      en: "Riga’s biggest running celebration, bringing together runners, supporters and city energy.",
-      lv: "Rīgas lielākie skriešanas svētki, kas apvieno skrējējus, līdzjutējus un pilsētas enerģiju.",
+    minimalColor: MINIMAL_COLOR,
+    cardBg: "#cc2128",
+    cardLogoVariant: "white",
+    logoVariants: {
+      black: "https://rimirigamarathon.com/wp-content/uploads/2025/02/RRM-logo-black.png",
+      minimal: "https://rimirigamarathon.com/wp-content/uploads/2026/05/rrm-logo-2.png",
+      white: "https://rimirigamarathon.com/wp-content/uploads/2026/05/RRM-logo.png",
+    },
+    infoText: {
+      en: "The biggest and most international running event in the Baltics.",
+      lv: "Lielākais un starptautiskākais skriešanas notikums Baltijā.",
     },
   },
   {
     id: "pink-noise",
     name: "Pink Noise Riga",
+    shortName: "PNR",
     websiteLabel: "pinknoiseriga.com",
     websiteUrl: "https://pinknoiseriga.com/",
     accentColor: "#fa4100",
     textColor: "#111111",
-    logoUrl: "https://rimirigamarathon.com/wp-content/uploads/2025/02/Pink-Noise-Riga-black.svg",
-    description: {
-      en: "A bright culture and music experience for people who prefer their inbox with a little more volume.",
-      lv: "Koša kultūras un mūzikas pieredze tiem, kuriem patīk, ja iesūtnē ir mazliet vairāk skaņas.",
+    minimalColor: MINIMAL_COLOR,
+    cardBg: "#fa4100",
+    cardLogoVariant: "black",
+    logoVariants: {
+      black: "https://rimirigamarathon.com/wp-content/uploads/2026/05/pnr-black.png",
+      minimal: "https://rimirigamarathon.com/wp-content/uploads/2026/05/pnr-light.png",
+      orange: "https://rimirigamarathon.com/wp-content/uploads/2026/05/pnr-orange.png",
+    },
+    infoText: {
+      en: "Riga's music festival: world-class jazz, pop-rock, fusion and contemporary improvised music.",
+      lv: "Rīgas mūzikas festivāls: pasaules līmeņa džezs, poproks, fusion un laikmetīgā improvizētā mūzika.",
     },
   },
   {
     id: "rwch",
     name: "Riga Wine & Champagne",
+    shortName: "RWCH",
     websiteLabel: "rigawinechampagne.lv",
     websiteUrl: "https://rigawinechampagne.lv/",
     accentColor: "#e40521",
     textColor: "#111111",
-    logoUrl: "https://rimirigamarathon.com/wp-content/uploads/2025/02/RWCH-Logo-Text-black.png",
-    description: {
-      en: "A wine and champagne gathering for thoughtful glasses, good taste and better conversations.",
-      lv: "Vīna un šampanieša notikums pārdomātām glāzēm, labai gaumei un vēl labākām sarunām.",
+    minimalColor: MINIMAL_COLOR,
+    cardBg: "#e40521",
+    cardLogoVariant: "minimal",
+    logoVariants: {
+      black: "https://rimirigamarathon.com/wp-content/uploads/2026/05/rwch-logo.png",
+      minimal: "https://rimirigamarathon.com/wp-content/uploads/2026/05/rwch-logo-1.png",
+    },
+    infoText: {
+      en: "The Baltics' most exciting Champagne and wine festival.",
+      lv: "Baltijas aizraujošākais šampanieša un vīna festivāls.",
     },
   },
   {
     id: "rwf",
     name: "Riga Whisky & Friends",
+    shortName: "RWF",
     websiteLabel: "rigawhiskyfriends.com",
     websiteUrl: "https://rigawhiskyfriends.com/",
     accentColor: "#023047",
     textColor: "#111111",
-    logoUrl: "https://rimirigamarathon.com/wp-content/uploads/2025/02/rwf-logo.svg",
-    description: {
-      en: "A whisky-forward meeting place for friends, makers and everyone who enjoys a proper dram.",
-      lv: "Viskija satikšanās vieta draugiem, meistariem un visiem, kuri novērtē kārtīgu malku.",
+    minimalColor: MINIMAL_COLOR,
+    cardBg: "#023047",
+    cardLogoVariant: "minimal",
+    logoVariants: {
+      black: "https://rimirigamarathon.com/wp-content/uploads/2026/05/rwf-logo.png",
+      minimal: "https://rimirigamarathon.com/wp-content/uploads/2026/05/rwf-logo-1.png",
+    },
+    infoText: {
+      en: "Premier whisky festival in the Baltics, bringing together whiskies, cocktails, experts, chefs and friends.",
+      lv: "Vadošais viskija festivāls Baltijā, kas apvieno viskijus, kokteiļus, ekspertus, šefpavārus un draugus.",
     },
   },
   {
     id: "bwda",
     name: "Baltic Wine & Drinks Awards",
+    shortName: "BWDA",
     websiteLabel: "balticwinelists.com",
-    websiteUrl: "https://balticwinelists.com/",
+    websiteUrl: "https://www.balticwinelists.com/baltic-wine-drinks-awards/winners",
     accentColor: "#fad0c5",
     textColor: "#111111",
-    logoUrl: "https://rimirigamarathon.com/wp-content/uploads/2025/02/BWDA-logo.svg",
-    description: {
-      en: "Celebrating the people, lists and drinks culture shaping the Baltic hospitality scene.",
-      lv: "Godinām cilvēkus, kartes un dzērienu kultūru, kas veido Baltijas viesmīlības vidi.",
+    minimalColor: MINIMAL_COLOR,
+    cardBg: "#fad0c5",
+    cardLogoVariant: "black",
+    logoVariants: {
+      black: "https://rimirigamarathon.com/wp-content/uploads/2025/02/BWDA-logo.svg",
+    },
+    infoText: {
+      en: "Spotlighting good, great and extraordinary restaurants and wine bars in Latvia, Estonia and Lithuania.",
+      lv: "Izceļ labus, lieliskus un izcilus restorānus un vīna bārus Latvijā, Igaunijā un Lietuvā.",
     },
   },
   {
     id: "custom",
     name: "Custom",
+    shortName: "Custom",
     websiteLabel: "your-site.com",
     websiteUrl: "https://example.com",
     accentColor: "#B59A71",
     textColor: "#111111",
-    logoUrl: "https://rimirigamarathon.com/wp-content/uploads/2025/02/s-necom-logo.svg",
-    description: {
-      en: "Custom signature text.",
-      lv: "Pielāgots paraksta teksts.",
+    minimalColor: MINIMAL_COLOR,
+    cardBg: "#f1f1f1",
+    cardLogoVariant: "custom",
+    logoVariants: {
+      custom: "https://rimirigamarathon.com/wp-content/uploads/2026/02/necom.png",
+    },
+    infoText: {
+      en: "Custom signature info text.",
+      lv: "Pielāgots paraksta informatīvais teksts.",
     },
   },
 ];
@@ -229,113 +281,154 @@ Aigars`,
 
 const I18N = {
   en: {
-    appTitle: "NECom Email Signature Lab",
-    appSubtitle: "Build, preview and copy Gmail-ready signatures.",
-    builderEyebrow: "Builder",
-    builderTitle: "Create the signature",
     reset: "Reset",
-    presetTitle: "Brand preset",
-    presetHelp: "One click changes the logo, website and accent color.",
-    personTitle: "Person details",
+    rowsTitle: "Rows",
+    presetFull: "Full",
+    presetCompact: "Compact",
+    presetMinimal: "Minimal",
+    rowLogo: "Logo",
+    rowContact: "Contact",
+    rowAddress: "Address",
+    rowWebsite: "Website",
+    rowInfo: "Info text",
+    rowBanner: "Banner",
+    personTitle: "Person",
     nameLabel: "Name",
     titleLabel: "Job title",
     phoneLabel: "Phone",
     emailLabel: "Email",
-    showEmailLabel: "Show email address in signature",
-    companyTitle: "Company and links",
+    showEmailLabel: "Show email address",
+    detailsTitle: "Details",
     address1Label: "Address line 1",
     address2Label: "Address line 2",
     websiteLabelLabel: "Website label",
     websiteUrlLabel: "Website URL",
-    descriptionLabel: "Company / event text",
-    styleTitle: "Style and size",
-    versionLegend: "Signature version",
-    fullVersion: "Full",
-    shortVersion: "Short",
-    accentColorLabel: "Accent color",
-    textColorLabel: "Text color",
+    infoTextLabel: "Info text",
+    logoTitle: "Logo",
+    logoVariantLabel: "Logo version",
     logoUrlLabel: "Logo URL",
     logoSizeLabel: "Logo size",
+    minimalColorLabel: "Minimal color",
+    styleTitle: "Style",
+    signatureStyleLabel: "Signature design",
+    styleClassic: "Classic",
+    styleModern: "Modern",
+    accentColorLabel: "Accent color",
+    textColorLabel: "Text color",
     signatureWidthLabel: "Signature width",
-    copyForGmail: "Copy for Gmail",
+    bannerTitle: "Banner",
+    bannerUrlLabel: "Banner image URL",
+    bannerLinkLabel: "Banner link URL",
+    bannerPositionLabel: "Banner position",
+    bannerTop: "Top",
+    bannerAfterHeader: "After name/logo",
+    bannerBeforeInfo: "Before info text",
+    bannerBottom: "Bottom",
+    bannerSpacerLabel: "Banner spacer",
+    copyRendered: "Copy for Gmail",
     copyHtml: "Copy HTML",
-    htmlDetailsSummary: "Generated HTML",
-    previewEyebrow: "Preview",
-    previewTitle: "Gmail-style email",
-    gmailComposeTitle: "New message",
+    copiedRendered: "Copied signature.",
+    copiedHtml: "Copied HTML.",
+    copyFailed: "Copy failed. Select the preview and copy manually.",
     fromLabel: "From",
-    toLabel: "To",
-    subjectLabel: "Subject",
-    guidelinesTitle: "Quick guidelines",
-    guidelineOne: "Use the full version for first contact emails.",
-    guidelineTwo: "Use the short version for replies and long threads.",
-    guidelineThree: "Keep logo size between 40–140 px to avoid broken layouts.",
-    guidelineFour: "Paste into Gmail settings using “Copy for Gmail”.",
-    customLabel: "Custom",
-    copiedGmail: "Signature copied for Gmail.",
-    copiedHtml: "Signature HTML copied.",
-    resetDone: "Defaults restored.",
-    copyFailed: "Copy failed. Select the generated HTML and copy manually.",
+    logoVariantBlack: "Black",
+    logoVariantMinimal: "Minimal",
+    logoVariantWhite: "White",
+    logoVariantOrange: "Orange",
+    logoVariantCustom: "Custom",
   },
   lv: {
-    appTitle: "NECom e-pasta parakstu laboratorija",
-    appSubtitle: "Izveido, pārskati un nokopē Gmail gatavus parakstus.",
-    builderEyebrow: "Veidotājs",
-    builderTitle: "Izveido parakstu",
     reset: "Atiestatīt",
-    presetTitle: "Zīmola sagatave",
-    presetHelp: "Ar vienu klikšķi maini logo, mājaslapu un akcenta krāsu.",
-    personTitle: "Personas informācija",
+    rowsTitle: "Rindas",
+    presetFull: "Pilns",
+    presetCompact: "Kompakts",
+    presetMinimal: "Minimāls",
+    rowLogo: "Logo",
+    rowContact: "Kontakti",
+    rowAddress: "Adrese",
+    rowWebsite: "Mājaslapa",
+    rowInfo: "Info teksts",
+    rowBanner: "Baneris",
+    personTitle: "Persona",
     nameLabel: "Vārds",
     titleLabel: "Amats",
-    phoneLabel: "Tālrunis",
+    phoneLabel: "Telefons",
     emailLabel: "E-pasts",
-    showEmailLabel: "Rādīt e-pasta adresi parakstā",
-    companyTitle: "Uzņēmums un saites",
-    address1Label: "Adrese, 1. rinda",
-    address2Label: "Adrese, 2. rinda",
+    showEmailLabel: "Rādīt e-pasta adresi",
+    detailsTitle: "Detaļas",
+    address1Label: "Adrese 1. rinda",
+    address2Label: "Adrese 2. rinda",
     websiteLabelLabel: "Mājaslapas teksts",
     websiteUrlLabel: "Mājaslapas URL",
-    descriptionLabel: "Uzņēmuma / pasākuma teksts",
-    styleTitle: "Stils un izmērs",
-    versionLegend: "Paraksta versija",
-    fullVersion: "Pilnā",
-    shortVersion: "Īsā",
-    accentColorLabel: "Akcenta krāsa",
-    textColorLabel: "Teksta krāsa",
+    infoTextLabel: "Info teksts",
+    logoTitle: "Logo",
+    logoVariantLabel: "Logo versija",
     logoUrlLabel: "Logo URL",
     logoSizeLabel: "Logo izmērs",
+    minimalColorLabel: "Minimālā krāsa",
+    styleTitle: "Stils",
+    signatureStyleLabel: "Paraksta dizains",
+    styleClassic: "Klasisks",
+    styleModern: "Moderns",
+    accentColorLabel: "Akcenta krāsa",
+    textColorLabel: "Teksta krāsa",
     signatureWidthLabel: "Paraksta platums",
-    copyForGmail: "Kopēt Gmail",
+    bannerTitle: "Baneris",
+    bannerUrlLabel: "Banera attēla URL",
+    bannerLinkLabel: "Banera saites URL",
+    bannerPositionLabel: "Banera pozīcija",
+    bannerTop: "Augšā",
+    bannerAfterHeader: "Pēc vārda/logo",
+    bannerBeforeInfo: "Pirms info teksta",
+    bannerBottom: "Apakšā",
+    bannerSpacerLabel: "Banera atstarpe",
+    copyRendered: "Kopēt Gmail",
     copyHtml: "Kopēt HTML",
-    htmlDetailsSummary: "Ģenerētais HTML",
-    previewEyebrow: "Priekšskatījums",
-    previewTitle: "Gmail tipa e-pasts",
-    gmailComposeTitle: "Jauns ziņojums",
+    copiedRendered: "Paraksts nokopēts.",
+    copiedHtml: "HTML nokopēts.",
+    copyFailed: "Kopēšana neizdevās. Iezīmē priekšskatījumu un kopē manuāli.",
     fromLabel: "No",
-    toLabel: "Kam",
-    subjectLabel: "Temats",
-    guidelinesTitle: "Īsās vadlīnijas",
-    guidelineOne: "Pilno versiju izmanto pirmajiem kontaktiem.",
-    guidelineTwo: "Īso versiju izmanto atbildēm un garām sarakstēm.",
-    guidelineThree: "Logo turi 40–140 px robežās, lai nesabojātu izkārtojumu.",
-    guidelineFour: "Gmail iestatījumos ielīmē ar “Kopēt Gmail”.",
-    customLabel: "Pielāgots",
-    copiedGmail: "Paraksts nokopēts Gmail lietošanai.",
-    copiedHtml: "Paraksta HTML nokopēts.",
-    resetDone: "Noklusējuma vērtības atjaunotas.",
-    copyFailed: "Kopēšana neizdevās. Iezīmē ģenerēto HTML un nokopē manuāli.",
+    logoVariantBlack: "Melns",
+    logoVariantMinimal: "Minimāls",
+    logoVariantWhite: "Balts",
+    logoVariantOrange: "Oranžs",
+    logoVariantCustom: "Pielāgots",
   },
 };
 
-const STORAGE_KEY = "necom-email-signature-lab:v1";
+const ROW_PRESETS = {
+  full: {
+    showLogo: true,
+    showContact: true,
+    showAddress: true,
+    showWebsite: true,
+    showInfo: true,
+    showBanner: false,
+  },
+  compact: {
+    showLogo: true,
+    showContact: true,
+    showAddress: false,
+    showWebsite: true,
+    showInfo: false,
+    showBanner: false,
+  },
+  minimal: {
+    showLogo: true,
+    showContact: false,
+    showAddress: false,
+    showWebsite: true,
+    showInfo: false,
+    showBanner: false,
+  },
+};
 
 const DEFAULT_STATE = {
   language: "en",
-  brandId: "necom",
-  signatureMode: "full",
+  activeBrandId: "necom",
+  currentEmailIndex: 0,
   name: "Dāvis Rūķītis",
-  title: "Digital Operations Manager",
+  jobTitle: "Digital Operations Manager",
   phone: "+371 260 78809",
   email: "davis@necom.lv",
   showEmail: false,
@@ -343,500 +436,91 @@ const DEFAULT_STATE = {
   address2: "LV-1050, Latvia",
   websiteLabel: "www.necom.lv",
   websiteUrl: "https://www.necom.lv",
-  logoUrl: "https://rimirigamarathon.com/wp-content/uploads/2026/02/necom-1.png",
-  accentColor: "#B59A71",
-  textColor: "#111111",
+  infoText: BRAND_PRESETS[0].infoText.en,
+  logoVariant: "black",
+  logoUrl: BRAND_PRESETS[0].logoVariants.black,
   logoSize: 72,
-  signatureWidth: 560,
-  description:
-    "Event production, marketing and sponsorship agency creating experiences that are moving Riga and Latvia since 2006.",
-  currentEmailIndex: 0,
+  signatureWidth: 520,
+  signatureStyle: "classic",
+  accentColor: BRAND_PRESETS[0].accentColor,
+  minimalColor: MINIMAL_COLOR,
+  textColor: "#111111",
+  bannerUrl: "",
+  bannerLink: "",
+  bannerPosition: "bottom",
+  bannerSpacer: 12,
+  showLogo: true,
+  showContact: true,
+  showAddress: true,
+  showWebsite: true,
+  showInfo: true,
+  showBanner: false,
 };
 
-const state = loadState();
+let state = loadState();
+let copyStatusTimer = null;
 
-const elements = {
-  presetGrid: document.querySelector("#presetGrid"),
+const els = {
+  presetGrid: document.getElementById("presetGrid"),
+  resetButton: document.getElementById("resetButton"),
   languageButtons: document.querySelectorAll("[data-language]"),
-  i18nNodes: document.querySelectorAll("[data-i18n]"),
-  resetButton: document.querySelector("#resetButton"),
-  nameInput: document.querySelector("#nameInput"),
-  titleInput: document.querySelector("#titleInput"),
-  phoneInput: document.querySelector("#phoneInput"),
-  emailInput: document.querySelector("#emailInput"),
-  showEmailInput: document.querySelector("#showEmailInput"),
-  address1Input: document.querySelector("#address1Input"),
-  address2Input: document.querySelector("#address2Input"),
-  websiteLabelInput: document.querySelector("#websiteLabelInput"),
-  websiteUrlInput: document.querySelector("#websiteUrlInput"),
-  descriptionInput: document.querySelector("#descriptionInput"),
-  signatureModeInputs: document.querySelectorAll('[name="signatureMode"]'),
-  accentColorInput: document.querySelector("#accentColorInput"),
-  textColorInput: document.querySelector("#textColorInput"),
-  logoUrlInput: document.querySelector("#logoUrlInput"),
-  logoSizeInput: document.querySelector("#logoSizeInput"),
-  signatureWidthInput: document.querySelector("#signatureWidthInput"),
-  logoSizeValue: document.querySelector("#logoSizeValue"),
-  signatureWidthValue: document.querySelector("#signatureWidthValue"),
-  copyRichButton: document.querySelector("#copyRichButton"),
-  copyHtmlButton: document.querySelector("#copyHtmlButton"),
-  htmlOutput: document.querySelector("#htmlOutput"),
-  shuffleEmailButton: document.querySelector("#shuffleEmailButton"),
-  previewFrom: document.querySelector("#previewFrom"),
-  previewSubject: document.querySelector("#previewSubject"),
-  previewEmailText: document.querySelector("#previewEmailText"),
-  signaturePreview: document.querySelector("#signaturePreview"),
-  toast: document.querySelector("#toast"),
+  rowLogoInput: document.getElementById("rowLogoInput"),
+  rowContactInput: document.getElementById("rowContactInput"),
+  rowAddressInput: document.getElementById("rowAddressInput"),
+  rowWebsiteInput: document.getElementById("rowWebsiteInput"),
+  rowInfoInput: document.getElementById("rowInfoInput"),
+  rowBannerInput: document.getElementById("rowBannerInput"),
+  rowPresetButtons: document.querySelectorAll("[data-row-preset]"),
+  nameInput: document.getElementById("nameInput"),
+  titleInput: document.getElementById("titleInput"),
+  phoneInput: document.getElementById("phoneInput"),
+  emailInput: document.getElementById("emailInput"),
+  showEmailInput: document.getElementById("showEmailInput"),
+  address1Input: document.getElementById("address1Input"),
+  address2Input: document.getElementById("address2Input"),
+  websiteLabelInput: document.getElementById("websiteLabelInput"),
+  websiteUrlInput: document.getElementById("websiteUrlInput"),
+  infoTextInput: document.getElementById("infoTextInput"),
+  logoVariantInput: document.getElementById("logoVariantInput"),
+  logoUrlInput: document.getElementById("logoUrlInput"),
+  logoSizeInput: document.getElementById("logoSizeInput"),
+  logoSizeValue: document.getElementById("logoSizeValue"),
+  minimalColorInput: document.getElementById("minimalColorInput"),
+  signatureStyleInput: document.getElementById("signatureStyleInput"),
+  accentColorInput: document.getElementById("accentColorInput"),
+  textColorInput: document.getElementById("textColorInput"),
+  signatureWidthInput: document.getElementById("signatureWidthInput"),
+  signatureWidthValue: document.getElementById("signatureWidthValue"),
+  bannerUrlInput: document.getElementById("bannerUrlInput"),
+  bannerLinkInput: document.getElementById("bannerLinkInput"),
+  bannerPositionInput: document.getElementById("bannerPositionInput"),
+  bannerSpacerInput: document.getElementById("bannerSpacerInput"),
+  bannerSpacerValue: document.getElementById("bannerSpacerValue"),
+  copyRenderedButton: document.getElementById("copyRenderedButton"),
+  copyHtmlButton: document.getElementById("copyHtmlButton"),
+  copyStatus: document.getElementById("copyStatus"),
+  shuffleEmailButton: document.getElementById("shuffleEmailButton"),
+  emailSubject: document.getElementById("emailSubject"),
+  previewFrom: document.getElementById("previewFrom"),
+  previewEmailBody: document.getElementById("previewEmailBody"),
+  signaturePreview: document.getElementById("signaturePreview"),
 };
 
 init();
 
 function init() {
-  renderPresets();
+  renderPresetButtons();
   bindEvents();
-  applyLanguage();
-  syncControls();
-  renderEverything();
-}
-
-function bindEvents() {
-  elements.languageButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      setLanguage(button.dataset.language);
-    });
-  });
-
-  const bindings = [
-    ["nameInput", "name"],
-    ["titleInput", "title"],
-    ["phoneInput", "phone"],
-    ["emailInput", "email"],
-    ["address1Input", "address1"],
-    ["address2Input", "address2"],
-    ["websiteLabelInput", "websiteLabel"],
-    ["websiteUrlInput", "websiteUrl"],
-    ["descriptionInput", "description"],
-    ["logoUrlInput", "logoUrl"],
-    ["accentColorInput", "accentColor"],
-    ["textColorInput", "textColor"],
-  ];
-
-  bindings.forEach(([elementKey, stateKey]) => {
-    elements[elementKey].addEventListener("input", (event) => {
-      state[stateKey] = event.target.value;
-      saveAndRender();
-    });
-  });
-
-  elements.showEmailInput.addEventListener("change", (event) => {
-    state.showEmail = event.target.checked;
-    saveAndRender();
-  });
-
-  elements.signatureModeInputs.forEach((input) => {
-    input.addEventListener("change", () => {
-      state.signatureMode = input.value;
-      saveAndRender();
-    });
-  });
-
-  elements.logoSizeInput.addEventListener("input", (event) => {
-    state.logoSize = clampNumber(event.target.value, 40, 140);
-    saveAndRender();
-  });
-
-  elements.signatureWidthInput.addEventListener("input", (event) => {
-    state.signatureWidth = clampNumber(event.target.value, 280, 640);
-    saveAndRender();
-  });
-
-  elements.shuffleEmailButton.addEventListener("click", () => {
-    shuffleEmail();
-    saveAndRender();
-  });
-
-  elements.copyRichButton.addEventListener("click", copyRichSignature);
-  elements.copyHtmlButton.addEventListener("click", copyHtmlSignature);
-
-  elements.resetButton.addEventListener("click", () => {
-    Object.assign(state, createDefaultStateForLanguage(state.language));
-    localStorage.removeItem(STORAGE_KEY);
-    applyLanguage();
-    syncControls();
-    renderEverything();
-    showToast(t("resetDone"));
-  });
-}
-
-function renderPresets() {
-  elements.presetGrid.innerHTML = BRAND_PRESETS.map((preset) => {
-    const logoMarkup =
-      preset.id === "custom"
-        ? `<span class="preset-card__swatch" style="background:${escapeAttribute(
-            preset.accentColor,
-          )}"></span>`
-        : `<img src="${escapeAttribute(preset.logoUrl)}" alt="" loading="lazy" />`;
-
-    return `<button class="preset-card" type="button" data-preset-id="${escapeAttribute(
-      preset.id,
-    )}">
-      <span class="preset-card__logo">${logoMarkup}</span>
-      <span>
-        <span class="preset-card__name">${escapeHtml(getPresetName(preset))}</span>
-        <span class="preset-card__url">${escapeHtml(preset.websiteLabel)}</span>
-      </span>
-    </button>`;
-  }).join("");
-
-  elements.presetGrid.querySelectorAll("[data-preset-id]").forEach((button) => {
-    button.addEventListener("click", () => applyPreset(button.dataset.presetId));
-  });
-}
-
-function applyPreset(presetId) {
-  const preset = getPresetById(presetId);
-  state.brandId = preset.id;
-  state.websiteLabel = preset.websiteLabel;
-  state.websiteUrl = preset.websiteUrl;
-  state.logoUrl = preset.logoUrl;
-  state.accentColor = preset.accentColor;
-  state.textColor = preset.textColor;
-  state.description = preset.description[state.language];
-  syncControls();
-  saveAndRender();
-}
-
-function setLanguage(language) {
-  const oldPreset = getPresetById(state.brandId);
-  const oldPresetDescriptions = Object.values(oldPreset.description);
-  const canTranslateDescription = oldPresetDescriptions.includes(state.description);
-
-  state.language = language;
-
-  if (canTranslateDescription) {
-    state.description = oldPreset.description[language];
-  }
-
-  const emailList = EMAIL_EXAMPLES[state.language];
-  state.currentEmailIndex = Math.min(state.currentEmailIndex, emailList.length - 1);
-
-  applyLanguage();
-  syncControls();
-  saveAndRender();
-}
-
-function applyLanguage() {
-  document.documentElement.lang = state.language;
-  document.title = t("appTitle");
-
-  elements.languageButtons.forEach((button) => {
-    button.classList.toggle("is-active", button.dataset.language === state.language);
-  });
-
-  elements.i18nNodes.forEach((node) => {
-    const key = node.dataset.i18n;
-    node.textContent = t(key);
-  });
-
-  elements.shuffleEmailButton.title = t("previewTitle");
-  elements.shuffleEmailButton.setAttribute("aria-label", t("previewTitle"));
-  renderPresets();
-}
-
-function syncControls() {
-  elements.nameInput.value = state.name;
-  elements.titleInput.value = state.title;
-  elements.phoneInput.value = state.phone;
-  elements.emailInput.value = state.email;
-  elements.showEmailInput.checked = state.showEmail;
-  elements.address1Input.value = state.address1;
-  elements.address2Input.value = state.address2;
-  elements.websiteLabelInput.value = state.websiteLabel;
-  elements.websiteUrlInput.value = state.websiteUrl;
-  elements.descriptionInput.value = state.description;
-  elements.accentColorInput.value = normalizeHexColor(state.accentColor, "#B59A71");
-  elements.textColorInput.value = normalizeHexColor(state.textColor, "#111111");
-  elements.logoUrlInput.value = state.logoUrl;
-  elements.logoSizeInput.value = String(state.logoSize);
-  elements.signatureWidthInput.value = String(state.signatureWidth);
-  elements.logoSizeValue.textContent = `${state.logoSize} px`;
-  elements.signatureWidthValue.textContent = `${state.signatureWidth} px`;
-
-  elements.signatureModeInputs.forEach((input) => {
-    input.checked = input.value === state.signatureMode;
-  });
-
-  elements.presetGrid.querySelectorAll("[data-preset-id]").forEach((button) => {
-    button.classList.toggle("is-active", button.dataset.presetId === state.brandId);
-  });
-
-  document.documentElement.style.setProperty("--accent", state.accentColor);
-}
-
-function saveAndRender() {
-  saveState();
-  renderEverything();
-}
-
-function renderEverything() {
-  syncControls();
-  renderEmailPreview();
-  renderSignaturePreview();
-  elements.htmlOutput.value = renderSignatureHtml({ preview: false });
-}
-
-function renderEmailPreview() {
-  const email = EMAIL_EXAMPLES[state.language][state.currentEmailIndex];
-  elements.previewFrom.textContent = email.email;
-  elements.previewSubject.textContent = email.subject;
-  elements.previewEmailText.textContent = email.text;
-}
-
-function renderSignaturePreview() {
-  elements.signaturePreview.innerHTML = renderSignatureHtml({ preview: true });
-  elements.signaturePreview.querySelectorAll("[data-edit-field]").forEach((node) => {
-    node.addEventListener("blur", () => {
-      const key = node.dataset.editField;
-      state[key] = node.textContent.trim();
-      syncControls();
-      saveAndRender();
-    });
-
-    node.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" && !event.shiftKey) {
-        event.preventDefault();
-        node.blur();
-      }
-    });
-  });
-}
-
-function renderSignatureHtml({ preview }) {
-  const width = clampNumber(state.signatureWidth, 280, 640);
-  const logoWidth = clampNumber(state.logoSize, 40, 140);
-  const accent = normalizeHexColor(state.accentColor, "#B59A71");
-  const textColor = normalizeHexColor(state.textColor, "#111111");
-  const logoUrl = safeImageUrl(state.logoUrl);
-  const websiteUrl = normalizeWebsiteUrl(state.websiteUrl);
-  const telHref = makePhoneHref(state.phone);
-  const emailHref = `mailto:${encodeURIComponent(state.email.trim())}`;
-  const preset = getPresetById(state.brandId);
-  const mode = state.signatureMode === "short" ? "short" : "full";
-  const brandName = preset.id === "custom" ? t("customLabel") : preset.name;
-
-  const edit = (field) =>
-    preview ? ` contenteditable="true" data-edit-field="${escapeAttribute(field)}" spellcheck="false"` : "";
-
-  const emailPart =
-    state.showEmail && state.email.trim()
-      ? `${mode === "full" ? "<br>" : ""}<span style="color:#5f6368;">E</span>&nbsp;
-        <a href="${escapeAttribute(emailHref)}" style="color:${textColor}; text-decoration:none;">${escapeHtml(
-          state.email,
-        )}</a>${mode === "short" ? `<span style="color:#c0c0c0;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>` : ""}`
-      : "";
-
-  const fullAddress = [state.address1, state.address2]
-    .filter((line) => line.trim())
-    .map((line, index) =>
-      `<span${index === 0 ? edit("address1") : edit("address2")}>${escapeHtml(line)}</span>`,
-    )
-    .join("<br>");
-
-  const contactHtml =
-    mode === "full"
-      ? `${fullAddress ? `${fullAddress}<br>` : ""}
-        <span style="color:#5f6368;">T</span>&nbsp;
-        <a href="${escapeAttribute(telHref)}" style="color:${textColor}; text-decoration:none;"${edit(
-          "phone",
-        )}>${escapeHtml(state.phone)}</a>
-        <span style="color:#c0c0c0;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-        <a href="${escapeAttribute(websiteUrl)}" style="color:${accent}; text-decoration:underline;">${escapeHtml(
-          state.websiteLabel,
-        )}</a>
-        ${emailPart}`
-      : `<span style="color:#5f6368;">T</span>&nbsp;
-        <a href="${escapeAttribute(telHref)}" style="color:${textColor}; text-decoration:none;"${edit(
-          "phone",
-        )}>${escapeHtml(state.phone)}</a>
-        <span style="color:#c0c0c0;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-        ${emailPart}
-        <a href="${escapeAttribute(websiteUrl)}" style="color:${accent}; text-decoration:underline;">${escapeHtml(
-          state.websiteLabel,
-        )}</a>`;
-
-  const descriptionHtml =
-    mode === "full" && state.description.trim()
-      ? `
-            <div style="height:12px; line-height:12px; font-size:12px;">&nbsp;</div>
-            <div style="border-top:1px solid #efefef;"></div>
-            <div style="height:10px; line-height:10px; font-size:10px;">&nbsp;</div>
-
-            <div style="font-size:12px; line-height:16px; color:#444444;">
-              <div style="font-weight:700; color:#222222;">
-                ${escapeHtml(brandName)}
-              </div>
-              <div style="margin-top:2px;"${edit("description")}>
-                ${formatMultiline(state.description)}
-              </div>
-            </div>`
-      : "";
-
-  return `<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="${width}" style="border-collapse:collapse; width:${width}px; max-width:${width}px; mso-table-lspace:0pt; mso-table-rspace:0pt;">
-  <tr>
-    <td style="padding:0;">
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="${width}" style="border-collapse:collapse; width:${width}px; max-width:${width}px; border:1px solid #e6e6e6; border-left:6px solid ${accent};">
-        <tr>
-          <td style="padding:14px 14px 12px 14px; font-family:Arial, Helvetica, sans-serif; color:${textColor};">
-            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;">
-              <tr>
-                <td valign="top" style="padding:0; font-size:16px; line-height:20px;">
-                  <div style="font-weight:700;"${edit("name")}>${escapeHtml(state.name)}</div>
-                  <div style="margin-top:2px; font-size:12px; line-height:16px; color:#222222;"${edit(
-                    "title",
-                  )}>${escapeHtml(state.title)}</div>
-                </td>
-                <td valign="middle" align="right" style="padding:0 0 0 12px; width:${logoWidth}px; white-space:nowrap;">
-                  <img src="${escapeAttribute(logoUrl)}" alt="${escapeAttribute(
-                    brandName,
-                  )}" width="${logoWidth}" style="display:block; width:${logoWidth}px; max-width:${logoWidth}px; height:auto; border:0; outline:none; text-decoration:none;" />
-                </td>
-              </tr>
-            </table>
-
-            <div style="height:10px; line-height:10px; font-size:10px;">&nbsp;</div>
-            <div style="border-top:1px solid #efefef;"></div>
-            <div style="height:10px; line-height:10px; font-size:10px;">&nbsp;</div>
-
-            <div style="font-size:13px; line-height:18px; color:${textColor};">
-              ${contactHtml}
-            </div>
-            ${descriptionHtml}
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>`;
-}
-
-async function copyRichSignature() {
-  const html = renderSignatureHtml({ preview: false });
-  const text = createPlainTextSignature();
-
-  try {
-    if (navigator.clipboard?.write && window.ClipboardItem) {
-      const clipboardItem = new ClipboardItem({
-        "text/html": new Blob([html], { type: "text/html" }),
-        "text/plain": new Blob([text], { type: "text/plain" }),
-      });
-      await navigator.clipboard.write([clipboardItem]);
-    } else {
-      fallbackCopyRenderedHtml(html);
-    }
-
-    showToast(t("copiedGmail"));
-  } catch {
-    try {
-      fallbackCopyRenderedHtml(html);
-      showToast(t("copiedGmail"));
-    } catch {
-      showToast(t("copyFailed"));
-    }
-  }
-}
-
-async function copyHtmlSignature() {
-  const html = renderSignatureHtml({ preview: false });
-
-  try {
-    await navigator.clipboard.writeText(html);
-    showToast(t("copiedHtml"));
-  } catch {
-    const textarea = document.createElement("textarea");
-    textarea.value = html;
-    textarea.setAttribute("readonly", "");
-    textarea.style.position = "fixed";
-    textarea.style.left = "-9999px";
-    document.body.append(textarea);
-    textarea.select();
-
-    try {
-      document.execCommand("copy");
-      showToast(t("copiedHtml"));
-    } catch {
-      showToast(t("copyFailed"));
-    } finally {
-      textarea.remove();
-    }
-  }
-}
-
-function fallbackCopyRenderedHtml(html) {
-  const container = document.createElement("div");
-  container.innerHTML = html;
-  container.contentEditable = "true";
-  container.style.position = "fixed";
-  container.style.left = "-9999px";
-  container.style.top = "0";
-  document.body.append(container);
-
-  const range = document.createRange();
-  range.selectNodeContents(container);
-
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  selection.addRange(range);
-
-  const ok = document.execCommand("copy");
-  selection.removeAllRanges();
-  container.remove();
-
-  if (!ok) {
-    throw new Error("Copy command failed.");
-  }
-}
-
-function createPlainTextSignature() {
-  const lines = [state.name, state.title, "", state.phone];
-
-  if (state.showEmail && state.email.trim()) {
-    lines.push(state.email);
-  }
-
-  lines.push(state.websiteLabel);
-
-  if (state.signatureMode === "full") {
-    lines.push(state.address1, state.address2, "", state.description);
-  }
-
-  return lines.filter(Boolean).join("\n");
-}
-
-function shuffleEmail() {
-  const emailList = EMAIL_EXAMPLES[state.language];
-
-  if (emailList.length < 2) {
-    state.currentEmailIndex = 0;
-    return;
-  }
-
-  let nextIndex = state.currentEmailIndex;
-
-  while (nextIndex === state.currentEmailIndex) {
-    nextIndex = Math.floor(Math.random() * emailList.length);
-  }
-
-  state.currentEmailIndex = nextIndex;
+  syncUiFromState();
+  renderAll();
 }
 
 function loadState() {
-  const base = createDefaultStateForLanguage("en");
-
   try {
-    const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
-    return sanitizeState({ ...base, ...stored });
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+    return saved ? { ...DEFAULT_STATE, ...saved } : { ...DEFAULT_STATE };
   } catch {
-    return base;
+    return { ...DEFAULT_STATE };
   }
 }
 
@@ -844,142 +528,613 @@ function saveState() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
 
-function createDefaultStateForLanguage(language) {
-  const preset = getPresetById("necom");
-  return {
-    ...DEFAULT_STATE,
-    language,
-    brandId: "necom",
-    websiteLabel: preset.websiteLabel,
-    websiteUrl: preset.websiteUrl,
-    logoUrl: preset.logoUrl,
-    accentColor: preset.accentColor,
-    textColor: preset.textColor,
-    description: preset.description[language],
-    currentEmailIndex: 0,
-  };
+function getActiveBrand() {
+  return BRAND_PRESETS.find((brand) => brand.id === state.activeBrandId) || BRAND_PRESETS[0];
 }
 
-function sanitizeState(nextState) {
-  const language = nextState.language === "lv" ? "lv" : "en";
-  const brandId = BRAND_PRESETS.some((preset) => preset.id === nextState.brandId)
-    ? nextState.brandId
-    : "necom";
-
-  return {
-    ...createDefaultStateForLanguage(language),
-    ...nextState,
-    language,
-    brandId,
-    signatureMode: nextState.signatureMode === "short" ? "short" : "full",
-    showEmail: Boolean(nextState.showEmail),
-    logoSize: clampNumber(nextState.logoSize, 40, 140),
-    signatureWidth: clampNumber(nextState.signatureWidth, 280, 640),
-    accentColor: normalizeHexColor(nextState.accentColor, "#B59A71"),
-    textColor: normalizeHexColor(nextState.textColor, "#111111"),
-    currentEmailIndex: clampNumber(
-      nextState.currentEmailIndex,
-      0,
-      EMAIL_EXAMPLES[language].length - 1,
-    ),
-  };
+function translate(key) {
+  return I18N[state.language][key] || I18N.en[key] || key;
 }
 
-function getPresetById(id) {
-  return BRAND_PRESETS.find((preset) => preset.id === id) || BRAND_PRESETS[0];
+function renderPresetButtons() {
+  els.presetGrid.innerHTML = "";
+
+  BRAND_PRESETS.forEach((brand) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `preset-card${brand.id === "custom" ? " preset-card--custom" : ""}`;
+    button.dataset.brandId = brand.id;
+    button.title = brand.name;
+    button.style.setProperty("--preset-bg", brand.cardBg);
+    button.style.setProperty("--preset-accent", brand.accentColor);
+
+    if (brand.id === "custom") {
+      button.textContent = "+";
+      button.setAttribute("aria-label", "Custom");
+    } else {
+      const image = document.createElement("img");
+      const variant = brand.logoVariants[brand.cardLogoVariant] ? brand.cardLogoVariant : Object.keys(brand.logoVariants)[0];
+      image.src = brand.logoVariants[variant];
+      image.alt = brand.name;
+      button.appendChild(image);
+    }
+
+    els.presetGrid.appendChild(button);
+  });
 }
 
-function getPresetName(preset) {
-  return preset.id === "custom" ? t("customLabel") : preset.name;
+function bindEvents() {
+  els.languageButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const nextLanguage = button.dataset.language;
+      if (state.language === nextLanguage) return;
+
+      const previousBrand = getActiveBrand();
+      const previousInfo = previousBrand.infoText[state.language];
+
+      state.language = nextLanguage;
+      if (state.infoText === previousInfo) {
+        state.infoText = previousBrand.infoText[nextLanguage];
+      }
+
+      state.currentEmailIndex = randomEmailIndex(nextLanguage);
+      syncUiFromState();
+      renderAll();
+    });
+  });
+
+  els.presetGrid.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-brand-id]");
+    if (!button) return;
+    applyBrand(button.dataset.brandId);
+  });
+
+  els.rowPresetButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      Object.assign(state, ROW_PRESETS[button.dataset.rowPreset]);
+      syncUiFromState();
+      renderAll();
+    });
+  });
+
+  bindTextInput(els.nameInput, "name");
+  bindTextInput(els.titleInput, "jobTitle");
+  bindTextInput(els.phoneInput, "phone");
+  bindTextInput(els.emailInput, "email");
+  bindTextInput(els.address1Input, "address1");
+  bindTextInput(els.address2Input, "address2");
+  bindTextInput(els.websiteLabelInput, "websiteLabel");
+  bindTextInput(els.websiteUrlInput, "websiteUrl");
+  bindTextInput(els.infoTextInput, "infoText");
+  bindTextInput(els.logoUrlInput, "logoUrl");
+  bindTextInput(els.bannerUrlInput, "bannerUrl");
+  bindTextInput(els.bannerLinkInput, "bannerLink");
+
+  bindCheckbox(els.showEmailInput, "showEmail");
+  bindCheckbox(els.rowLogoInput, "showLogo");
+  bindCheckbox(els.rowContactInput, "showContact");
+  bindCheckbox(els.rowAddressInput, "showAddress");
+  bindCheckbox(els.rowWebsiteInput, "showWebsite");
+  bindCheckbox(els.rowInfoInput, "showInfo");
+  bindCheckbox(els.rowBannerInput, "showBanner");
+
+  bindRange(els.logoSizeInput, "logoSize");
+  bindRange(els.signatureWidthInput, "signatureWidth");
+  bindRange(els.bannerSpacerInput, "bannerSpacer");
+
+  els.logoVariantInput.addEventListener("change", () => {
+    state.logoVariant = els.logoVariantInput.value;
+    const brand = getActiveBrand();
+    const nextLogo = brand.logoVariants[state.logoVariant];
+
+    if (nextLogo) {
+      state.logoUrl = nextLogo;
+    }
+
+    if (state.logoVariant === "minimal") {
+      state.accentColor = state.minimalColor;
+    }
+
+    syncUiFromState();
+    renderAll();
+  });
+
+  els.minimalColorInput.addEventListener("input", () => {
+    state.minimalColor = els.minimalColorInput.value;
+    if (state.logoVariant === "minimal") {
+      state.accentColor = state.minimalColor;
+    }
+    syncUiFromState();
+    renderAll();
+  });
+
+  els.accentColorInput.addEventListener("input", () => {
+    state.accentColor = els.accentColorInput.value;
+    renderAll();
+  });
+
+  els.textColorInput.addEventListener("input", () => {
+    state.textColor = els.textColorInput.value;
+    renderAll();
+  });
+
+  els.signatureStyleInput.addEventListener("change", () => {
+    state.signatureStyle = els.signatureStyleInput.value;
+    renderAll();
+  });
+
+  els.bannerPositionInput.addEventListener("change", () => {
+    state.bannerPosition = els.bannerPositionInput.value;
+    renderAll();
+  });
+
+  els.shuffleEmailButton.addEventListener("click", () => {
+    state.currentEmailIndex = randomEmailIndex(state.language, state.currentEmailIndex);
+    renderAll();
+  });
+
+  els.resetButton.addEventListener("click", () => {
+    state = { ...DEFAULT_STATE };
+    localStorage.removeItem(STORAGE_KEY);
+    syncUiFromState();
+    renderAll();
+  });
+
+  els.copyRenderedButton.addEventListener("click", async () => {
+    const html = renderSignatureHtml({ editable: false });
+    const plain = buildPlainTextSignature();
+
+    try {
+      await copyRichHtml(html, plain);
+      showCopyStatus(translate("copiedRendered"));
+    } catch {
+      showCopyStatus(translate("copyFailed"));
+    }
+  });
+
+  els.copyHtmlButton.addEventListener("click", async () => {
+    const html = renderSignatureHtml({ editable: false });
+
+    try {
+      await navigator.clipboard.writeText(html);
+      showCopyStatus(translate("copiedHtml"));
+    } catch {
+      showCopyStatus(translate("copyFailed"));
+    }
+  });
 }
 
-function t(key) {
-  return I18N[state.language]?.[key] || I18N.en[key] || key;
+function bindTextInput(input, key) {
+  input.addEventListener("input", () => {
+    state[key] = input.value;
+    renderAll();
+  });
 }
 
-function showToast(message) {
-  elements.toast.textContent = message;
-  elements.toast.classList.add("is-visible");
+function bindCheckbox(input, key) {
+  input.addEventListener("change", () => {
+    state[key] = input.checked;
+    renderAll();
+  });
+}
 
-  window.clearTimeout(showToast.timeout);
-  showToast.timeout = window.setTimeout(() => {
-    elements.toast.classList.remove("is-visible");
+function bindRange(input, key) {
+  input.addEventListener("input", () => {
+    state[key] = Number(input.value);
+    renderAll();
+  });
+}
+
+function applyBrand(brandId) {
+  const brand = BRAND_PRESETS.find((item) => item.id === brandId);
+  if (!brand) return;
+
+  const variantKeys = Object.keys(brand.logoVariants);
+  const nextVariant = variantKeys.includes("black") ? "black" : variantKeys[0];
+
+  state.activeBrandId = brand.id;
+  state.logoVariant = nextVariant;
+  state.websiteLabel = brand.websiteLabel;
+  state.websiteUrl = brand.websiteUrl;
+  state.accentColor = nextVariant === "minimal" ? brand.minimalColor : brand.accentColor;
+  state.minimalColor = brand.minimalColor;
+  state.textColor = brand.textColor;
+  state.logoUrl = brand.logoVariants[nextVariant];
+  state.infoText = brand.infoText[state.language];
+
+  syncUiFromState();
+  renderAll();
+}
+
+function syncUiFromState() {
+  document.documentElement.lang = state.language;
+  document.documentElement.style.setProperty("--accent", state.accentColor || "#B59A71");
+  document.documentElement.style.setProperty("--minimal", state.minimalColor || MINIMAL_COLOR);
+
+  document.querySelectorAll("[data-i18n]").forEach((node) => {
+    const key = node.dataset.i18n;
+    const value = translate(key);
+    if (node.tagName === "OPTION") {
+      node.textContent = value;
+      return;
+    }
+    node.textContent = value;
+  });
+
+  els.languageButtons.forEach((button) => {
+    button.classList.toggle("is-active", button.dataset.language === state.language);
+  });
+
+  els.presetGrid.querySelectorAll("[data-brand-id]").forEach((button) => {
+    button.classList.toggle("is-active", button.dataset.brandId === state.activeBrandId);
+  });
+
+  els.nameInput.value = state.name;
+  els.titleInput.value = state.jobTitle;
+  els.phoneInput.value = state.phone;
+  els.emailInput.value = state.email;
+  els.showEmailInput.checked = state.showEmail;
+  els.address1Input.value = state.address1;
+  els.address2Input.value = state.address2;
+  els.websiteLabelInput.value = state.websiteLabel;
+  els.websiteUrlInput.value = state.websiteUrl;
+  els.infoTextInput.value = state.infoText;
+
+  els.rowLogoInput.checked = state.showLogo;
+  els.rowContactInput.checked = state.showContact;
+  els.rowAddressInput.checked = state.showAddress;
+  els.rowWebsiteInput.checked = state.showWebsite;
+  els.rowInfoInput.checked = state.showInfo;
+  els.rowBannerInput.checked = state.showBanner;
+
+  renderLogoVariantOptions();
+  els.logoUrlInput.value = state.logoUrl;
+  els.logoSizeInput.value = state.logoSize;
+  els.logoSizeValue.textContent = `${state.logoSize}px`;
+  els.minimalColorInput.value = state.minimalColor;
+  els.signatureStyleInput.value = state.signatureStyle;
+  els.accentColorInput.value = state.accentColor;
+  els.textColorInput.value = state.textColor;
+  els.signatureWidthInput.value = state.signatureWidth;
+  els.signatureWidthValue.textContent = `${state.signatureWidth}px`;
+
+  els.bannerUrlInput.value = state.bannerUrl;
+  els.bannerLinkInput.value = state.bannerLink;
+  els.bannerPositionInput.value = state.bannerPosition;
+  els.bannerSpacerInput.value = state.bannerSpacer;
+  els.bannerSpacerValue.textContent = `${state.bannerSpacer}px`;
+}
+
+function renderLogoVariantOptions() {
+  const brand = getActiveBrand();
+  const variants = Object.keys(brand.logoVariants);
+
+  els.logoVariantInput.innerHTML = "";
+  variants.forEach((variant) => {
+    const option = document.createElement("option");
+    option.value = variant;
+    option.textContent = translate(`logoVariant${capitalize(variant)}`);
+    els.logoVariantInput.appendChild(option);
+  });
+
+  if (!variants.includes(state.logoVariant)) {
+    state.logoVariant = variants[0];
+    state.logoUrl = brand.logoVariants[state.logoVariant];
+  }
+
+  els.logoVariantInput.value = state.logoVariant;
+}
+
+function renderAll() {
+  renderEmailPreview();
+  els.signaturePreview.innerHTML = renderSignatureHtml({ editable: true });
+  bindEditablePreviewFields();
+  syncRangeLabels();
+  saveState();
+}
+
+function syncRangeLabels() {
+  document.documentElement.style.setProperty("--accent", state.accentColor || "#B59A71");
+  document.documentElement.style.setProperty("--minimal", state.minimalColor || MINIMAL_COLOR);
+  els.logoSizeValue.textContent = `${state.logoSize}px`;
+  els.signatureWidthValue.textContent = `${state.signatureWidth}px`;
+  els.bannerSpacerValue.textContent = `${state.bannerSpacer}px`;
+}
+
+function renderEmailPreview() {
+  const email = getCurrentEmail();
+  els.emailSubject.textContent = email.subject;
+  els.previewFrom.textContent = `${translate("fromLabel")}: ${email.email}`;
+  els.previewEmailBody.textContent = email.text;
+}
+
+function getCurrentEmail() {
+  const emails = EMAIL_EXAMPLES[state.language] || EMAIL_EXAMPLES.en;
+  const index = clamp(state.currentEmailIndex, 0, emails.length - 1);
+  return emails[index] || emails[0];
+}
+
+function randomEmailIndex(language, currentIndex = -1) {
+  const emails = EMAIL_EXAMPLES[language] || EMAIL_EXAMPLES.en;
+  if (emails.length < 2) return 0;
+
+  let nextIndex = currentIndex;
+  while (nextIndex === currentIndex) {
+    nextIndex = Math.floor(Math.random() * emails.length);
+  }
+
+  return nextIndex;
+}
+
+function renderSignatureHtml({ editable }) {
+  const accent = safeColor(state.accentColor, "#B59A71");
+  const textColor = safeColor(state.textColor, "#111111");
+  const width = clamp(Number(state.signatureWidth), 300, 620);
+  const logoSize = clamp(Number(state.logoSize), 40, 160);
+  const borderStyle =
+    state.signatureStyle === "modern"
+      ? `border:1px solid #e6e6e6; border-top:5px solid ${accent};`
+      : `border:1px solid #e6e6e6; border-left:6px solid ${accent};`;
+  const innerPadding = state.signatureStyle === "modern" ? "13px 15px 13px 15px" : "14px 14px 12px 14px";
+
+  const rows = [];
+
+  if (shouldRenderBanner("top")) {
+    rows.push(renderBannerRow(width));
+  }
+
+  rows.push(`
+    <tr>
+      <td style="padding:${innerPadding}; font-family:Arial, Helvetica, sans-serif; color:${textColor};">
+        ${renderHeaderBlock({ logoSize, textColor, editable })}
+      </td>
+    </tr>
+  `);
+
+  if (shouldRenderBanner("afterHeader")) {
+    rows.push(renderBannerSpacerRow());
+    rows.push(renderBannerRow(width));
+  }
+
+  const detailHtml = renderDetailBlock({ accent, textColor, editable });
+
+  if (detailHtml.trim()) {
+    rows.push(`
+      <tr>
+        <td style="padding:0 ${state.signatureStyle === "modern" ? "15px 15px 15px" : "14px 12px 14px"}; font-family:Arial, Helvetica, sans-serif; color:${textColor};">
+          ${detailHtml}
+        </td>
+      </tr>
+    `);
+  }
+
+  if (shouldRenderBanner("beforeInfo")) {
+    rows.push(renderBannerSpacerRow());
+    rows.push(renderBannerRow(width));
+  }
+
+  if (state.showInfo && state.infoText.trim()) {
+    rows.push(`
+      <tr>
+        <td style="padding:${state.signatureStyle === "modern" ? "0 15px 14px 15px" : "0 14px 13px 14px"}; font-family:Arial, Helvetica, sans-serif;">
+          ${renderDivider()}
+          <div style="font-size:12px; line-height:16px; color:#444444;">
+            ${editableText("infoText", state.infoText, editable, true)}
+          </div>
+        </td>
+      </tr>
+    `);
+  }
+
+  if (shouldRenderBanner("bottom")) {
+    rows.push(renderBannerSpacerRow());
+    rows.push(renderBannerRow(width));
+  }
+
+  return `<div dir="ltr" class="gmail_signature" data-smartmail="gmail_signature">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="${width}" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; width:${width}px; max-width:100%;">
+  <tbody>
+    <tr>
+      <td style="padding:0;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="${width}" style="border-collapse:collapse; width:${width}px; max-width:100%; ${borderStyle}">
+          <tbody>
+            ${rows.join("")}
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>`;
+}
+
+function renderHeaderBlock({ logoSize, textColor, editable }) {
+  const showLogo = state.showLogo && state.logoUrl.trim();
+  const logoCell = showLogo
+    ? `<td valign="middle" align="right" style="padding:0 0 0 12px; width:${logoSize + 12}px; white-space:nowrap;">
+        <img src="${escapeAttr(state.logoUrl)}" alt="${escapeAttr(getActiveBrand().name)}" width="${logoSize}" style="display:block; width:${logoSize}px; max-width:${logoSize}px; height:auto; border:0; outline:none; text-decoration:none;" />
+      </td>`
+    : "";
+
+  return `
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse; width:100%;">
+      <tbody>
+        <tr>
+          <td valign="top" style="padding:0; font-size:16px; line-height:20px; color:${textColor};">
+            <div style="font-weight:700;">${editableText("name", state.name, editable)}</div>
+            <div style="margin-top:2px; font-size:12px; line-height:16px; color:#222222;">${editableText("jobTitle", state.jobTitle, editable)}</div>
+          </td>
+          ${logoCell}
+        </tr>
+      </tbody>
+    </table>
+  `;
+}
+
+function renderDetailBlock({ accent, textColor, editable }) {
+  const lines = [];
+
+  if (state.showAddress && (state.address1.trim() || state.address2.trim())) {
+    lines.push(`${editableText("address1", state.address1, editable)}${state.address1.trim() ? "<br>" : ""}${editableText("address2", state.address2, editable)}`);
+  }
+
+  const contactParts = [];
+
+  if (state.showContact && state.phone.trim()) {
+    contactParts.push(`<span style="color:#5f6368;">T</span>&nbsp;<a href="tel:${escapeAttr(state.phone.replace(/\s/g, ""))}" style="color:${textColor}; text-decoration:none;">${editableText("phone", state.phone, editable)}</a>`);
+  }
+
+  if (state.showEmail && state.email.trim()) {
+    contactParts.push(`<span style="color:#5f6368;">E</span>&nbsp;<a href="mailto:${escapeAttr(state.email)}" style="color:${textColor}; text-decoration:none;">${editableText("email", state.email, editable)}</a>`);
+  }
+
+  if (state.showWebsite && state.websiteLabel.trim()) {
+    contactParts.push(`<a href="${escapeAttr(normalizeUrl(state.websiteUrl))}" style="color:${accent}; text-decoration:underline;" target="_blank">${editableText("websiteLabel", state.websiteLabel, editable)}</a>`);
+  }
+
+  if (contactParts.length) {
+    lines.push(contactParts.join(`<span style="color:#c0c0c0;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>`));
+  }
+
+  if (!lines.length) return "";
+
+  return `
+    ${renderDivider()}
+    <div style="font-size:13px; line-height:18px; color:${textColor};">
+      ${lines.join("<br>")}
+    </div>
+  `;
+}
+
+function renderDivider() {
+  return `
+    <div style="height:10px; line-height:10px; font-size:10px;">&nbsp;</div>
+    <div style="border-top:1px solid #efefef;"></div>
+    <div style="height:10px; line-height:10px; font-size:10px;">&nbsp;</div>
+  `;
+}
+
+function shouldRenderBanner(position) {
+  return state.showBanner && state.bannerUrl.trim() && state.bannerPosition === position;
+}
+
+function renderBannerRow(width) {
+  const image = `<img src="${escapeAttr(state.bannerUrl)}" alt="" width="${width}" style="display:block; width:${width}px; max-width:100%; height:auto; border:0; outline:none; text-decoration:none;" />`;
+  const content = state.bannerLink.trim()
+    ? `<a href="${escapeAttr(normalizeUrl(state.bannerLink))}" target="_blank" style="display:block; text-decoration:none;">${image}</a>`
+    : image;
+
+  return `<tr><td style="padding:0; line-height:0; font-size:0;">${content}</td></tr>`;
+}
+
+function renderBannerSpacerRow() {
+  const spacer = clamp(Number(state.bannerSpacer), 0, 32);
+  if (spacer === 0) return "";
+  return `<tr><td style="padding:0; height:${spacer}px; line-height:${spacer}px; font-size:${spacer}px;">&nbsp;</td></tr>`;
+}
+
+function editableText(field, value, editable, multiline = false) {
+  const escaped = multiline ? escapeHtml(value).replace(/\n/g, "<br>") : escapeHtml(value);
+
+  if (!editable) return escaped;
+
+  return `<span contenteditable="true" data-edit-field="${field}" style="display:inline; min-width:1em;">${escaped}</span>`;
+}
+
+function bindEditablePreviewFields() {
+  els.signaturePreview.querySelectorAll("[data-edit-field]").forEach((node) => {
+    node.addEventListener("blur", () => {
+      const field = node.dataset.editField;
+      state[field] = node.innerText.trim();
+      syncUiFromState();
+      renderAll();
+    });
+  });
+}
+
+function buildPlainTextSignature() {
+  const lines = [state.name, state.jobTitle];
+
+  if (state.showAddress) {
+    if (state.address1) lines.push(state.address1);
+    if (state.address2) lines.push(state.address2);
+  }
+
+  if (state.showContact && state.phone) lines.push(`T ${state.phone}`);
+  if (state.showEmail && state.email) lines.push(`E ${state.email}`);
+  if (state.showWebsite && state.websiteLabel) lines.push(state.websiteLabel);
+  if (state.showInfo && state.infoText) lines.push("", state.infoText);
+
+  return lines.filter(Boolean).join("\n");
+}
+
+async function copyRichHtml(html, plainText) {
+  if (navigator.clipboard && window.ClipboardItem) {
+    const item = new ClipboardItem({
+      "text/html": new Blob([html], { type: "text/html" }),
+      "text/plain": new Blob([plainText], { type: "text/plain" }),
+    });
+    await navigator.clipboard.write([item]);
+    return;
+  }
+
+  const container = document.createElement("div");
+  container.contentEditable = "true";
+  container.style.position = "fixed";
+  container.style.left = "-9999px";
+  container.innerHTML = html;
+  document.body.appendChild(container);
+
+  const selection = window.getSelection();
+  const range = document.createRange();
+  range.selectNodeContents(container);
+  selection.removeAllRanges();
+  selection.addRange(range);
+
+  const successful = document.execCommand("copy");
+  selection.removeAllRanges();
+  container.remove();
+
+  if (!successful) {
+    throw new Error("Copy command failed.");
+  }
+}
+
+function showCopyStatus(message) {
+  clearTimeout(copyStatusTimer);
+  els.copyStatus.textContent = message;
+  copyStatusTimer = setTimeout(() => {
+    els.copyStatus.textContent = "";
   }, 2600);
 }
 
 function escapeHtml(value) {
   return String(value ?? "")
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
 }
 
-function escapeAttribute(value) {
-  return escapeHtml(value).replaceAll("`", "&#096;");
+function escapeAttr(value) {
+  return escapeHtml(value).replace(/"/g, "&quot;");
 }
 
-function formatMultiline(value) {
-  return escapeHtml(value).replaceAll(/\r?\n/g, "<br>");
+function normalizeUrl(value) {
+  const trimmed = String(value || "").trim();
+  if (!trimmed) return "#";
+  if (/^(https?:|mailto:|tel:)/i.test(trimmed)) return trimmed;
+  return `https://${trimmed}`;
 }
 
-function normalizeHexColor(value, fallback) {
-  const color = String(value || "").trim();
-
-  if (/^#[0-9a-f]{6}$/i.test(color)) {
-    return color;
-  }
-
-  if (/^#[0-9a-f]{3}$/i.test(color)) {
-    return `#${color
-      .slice(1)
-      .split("")
-      .map((char) => char + char)
-      .join("")}`;
-  }
-
-  return fallback;
+function safeColor(value, fallback) {
+  return /^#[0-9a-f]{6}$/i.test(value) ? value : fallback;
 }
 
-function normalizeWebsiteUrl(value) {
-  const url = String(value || "").trim();
-
-  if (!url) {
-    return "https://www.necom.lv";
-  }
-
-  if (/^https?:\/\//i.test(url)) {
-    return url;
-  }
-
-  return `https://${url.replace(/^\/+/, "")}`;
+function clamp(value, min, max) {
+  const number = Number.isFinite(value) ? value : min;
+  return Math.min(Math.max(number, min), max);
 }
 
-function safeImageUrl(value) {
-  const url = String(value || "").trim();
-
-  if (/^https?:\/\//i.test(url)) {
-    return url;
-  }
-
-  return "https://rimirigamarathon.com/wp-content/uploads/2025/02/s-necom-logo.svg";
-}
-
-function makePhoneHref(value) {
-  const normalized = String(value || "")
-    .replace(/[^\d+]/g, "")
-    .replace(/(?!^)\+/g, "");
-
-  return normalized ? `tel:${normalized}` : "tel:+37126078809";
-}
-
-function clampNumber(value, min, max) {
-  const number = Number(value);
-
-  if (Number.isNaN(number)) {
-    return min;
-  }
-
-  return Math.min(Math.max(Math.round(number), min), max);
+function capitalize(value) {
+  return value ? value[0].toUpperCase() + value.slice(1) : value;
 }

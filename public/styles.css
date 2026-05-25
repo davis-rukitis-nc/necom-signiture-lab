@@ -3,14 +3,15 @@
   --page-bg: #0a0a0a;
   --panel-bg: #ffffff;
   --panel-ink: #111111;
-  --muted: #666666;
-  --soft: #f5f5f5;
-  --line: #e7e7e7;
-  --line-strong: #d8d8d8;
+  --muted: #686868;
+  --soft: #f6f6f6;
+  --line: #e8e8e8;
+  --line-strong: #d6d6d6;
   --accent: #b59a71;
+  --minimal: #d8dada;
   --radius: 1rem;
-  --shadow: 0 24px 70px rgba(0, 0, 0, 0.36);
-  --focus: 0 0 0 3px rgba(181, 154, 113, 0.32);
+  --shadow: 0 26px 80px rgba(0, 0, 0, 0.36);
+  --focus: 0 0 0 3px rgba(181, 154, 113, 0.28);
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
@@ -28,14 +29,15 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at top left, rgba(181, 154, 113, 0.16), transparent 32rem),
-    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.07), transparent 28rem),
+    radial-gradient(circle at top left, rgba(216, 218, 218, 0.08), transparent 32rem),
+    radial-gradient(circle at bottom right, rgba(181, 154, 113, 0.12), transparent 28rem),
     var(--page-bg);
   color: #ffffff;
 }
 
 button,
 input,
+select,
 textarea {
   font: inherit;
 }
@@ -46,7 +48,7 @@ button {
 
 button:disabled {
   cursor: not-allowed;
-  opacity: 0.64;
+  opacity: 0.62;
 }
 
 img {
@@ -71,9 +73,9 @@ img {
 }
 
 .app-shell {
-  width: min(1480px, calc(100% - 2rem));
+  width: min(1500px, calc(100% - 2rem));
   margin: 0 auto;
-  padding: 1rem 0 2rem;
+  padding: 1.1rem 0 2rem;
 }
 
 .topbar {
@@ -81,526 +83,447 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.11);
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.06);
-  padding: 1rem;
-  backdrop-filter: blur(16px);
+  margin-bottom: 1.2rem;
 }
 
 .brand-lockup {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   min-width: 0;
-  gap: 0.95rem;
+  gap: 0.8rem;
+  color: var(--minimal);
+  text-decoration: none;
 }
 
 .brand-lockup__logo {
-  width: 92px;
+  width: clamp(82px, 10vw, 116px);
   height: auto;
   flex: 0 0 auto;
-  border-radius: 0.5rem;
-  background: #ffffff;
-  padding: 0.45rem;
 }
 
-.brand-lockup h1 {
-  margin: 0;
-  font-size: clamp(1.2rem, 2vw, 1.8rem);
+.brand-lockup span {
+  overflow: hidden;
+  font-size: clamp(1.18rem, 2vw, 1.7rem);
+  font-weight: 800;
   letter-spacing: -0.04em;
-}
-
-.brand-lockup p {
-  margin: 0.2rem 0 0;
-  color: rgba(255, 255, 255, 0.68);
-  font-size: 0.95rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .language-switch {
   display: inline-grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.25rem;
+  border: 1px solid rgba(216, 218, 218, 0.26);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0.25rem;
+  padding: 0.2rem;
 }
 
 .language-switch__button {
+  min-width: 2.8rem;
   border: 0;
   border-radius: 999px;
   background: transparent;
-  color: #ffffff;
-  padding: 0.55rem 0.8rem;
-  font-weight: 800;
+  color: var(--minimal);
+  padding: 0.45rem 0.65rem;
+  font-size: 0.82rem;
+  font-weight: 850;
 }
 
 .language-switch__button.is-active {
-  background: #ffffff;
-  color: #111111;
+  background: var(--minimal);
+  color: #0a0a0a;
 }
 
 .workspace {
   display: grid;
-  grid-template-columns: minmax(360px, 0.86fr) minmax(420px, 1.14fr);
+  grid-template-columns: minmax(360px, 0.86fr) minmax(440px, 1.14fr);
   gap: 1rem;
   align-items: start;
 }
 
-.panel {
-  overflow: hidden;
+.panel,
+.preview-panel {
   border-radius: var(--radius);
   background: var(--panel-bg);
   color: var(--panel-ink);
   box-shadow: var(--shadow);
 }
 
-.builder-panel,
-.preview-panel {
+.builder-panel {
   padding: 1rem;
 }
 
 .preview-panel {
   position: sticky;
   top: 1rem;
+  padding: 1rem;
 }
 
-.panel-heading {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1rem;
+.builder-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  align-items: start;
+  margin-bottom: 0.75rem;
 }
 
-.panel-heading h2 {
-  margin: 0.1rem 0 0;
+.preset-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(3.1rem, 1fr));
+  gap: 0.42rem;
+}
+
+.preset-card {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 3rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 0.85rem;
+  background: var(--preset-bg, #f4f4f4);
   color: #111111;
-  font-size: 1.35rem;
-  letter-spacing: -0.03em;
+  padding: 0.42rem;
 }
 
-.eyebrow {
-  margin: 0;
-  color: var(--accent);
-  font-size: 0.75rem;
-  font-weight: 900;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.preset-card::after {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0);
+  content: "";
+  pointer-events: none;
+}
+
+.preset-card:hover,
+.preset-card.is-active {
+  border-color: var(--preset-accent, var(--accent));
+}
+
+.preset-card.is-active::after {
+  box-shadow: inset 0 0 0 2px var(--preset-accent, var(--accent));
+}
+
+.preset-card img {
+  width: 76%;
+  max-height: 1.9rem;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 5px rgba(255, 255, 255, 0.15));
+}
+
+.preset-card--custom {
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
 .control-group {
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 1rem;
+  padding: 0.9rem;
 }
 
 .control-group + .control-group {
-  margin-top: 0.8rem;
+  margin-top: 0.68rem;
 }
 
-.control-group__header {
-  margin-bottom: 0.8rem;
+.control-group h2 {
+  margin: 0 0 0.7rem;
+  color: #111111;
+  font-size: 0.95rem;
+  letter-spacing: -0.02em;
 }
 
-.control-group__header h3 {
-  margin: 0;
-  font-size: 1rem;
+.compact-group {
+  padding-bottom: 0.75rem;
 }
 
-.control-group__header p {
-  margin: 0.25rem 0 0;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.preset-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.6rem;
-}
-
-.preset-card {
-  display: grid;
-  grid-template-columns: 2rem minmax(0, 1fr);
+.section-title-row {
+  display: flex;
   align-items: center;
-  gap: 0.6rem;
-  width: 100%;
-  min-height: 4rem;
-  border: 1px solid var(--line);
-  border-radius: 0.85rem;
+  justify-content: space-between;
+  gap: 0.7rem;
+  margin-bottom: 0.72rem;
+}
+
+.section-title-row h2 {
+  margin: 0;
+}
+
+.preset-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: flex-end;
+}
+
+.tiny-button,
+.ghost-button,
+.secondary-button,
+.primary-button,
+.icon-button {
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
   background: #ffffff;
   color: #111111;
-  padding: 0.65rem;
-  text-align: left;
-}
-
-.preset-card:hover {
-  border-color: var(--accent);
-}
-
-.preset-card.is-active {
-  border-color: var(--accent);
-  box-shadow: var(--focus);
-}
-
-.preset-card__logo {
-  display: grid;
-  place-items: center;
-  width: 2rem;
-  height: 2rem;
-  overflow: hidden;
-  border-radius: 0.6rem;
-  background: var(--soft);
-}
-
-.preset-card__logo img {
-  width: 1.45rem;
-  max-height: 1.45rem;
-  object-fit: contain;
-}
-
-.preset-card__swatch {
-  width: 100%;
-  height: 100%;
-  border-radius: 0.5rem;
-}
-
-.preset-card__name {
-  overflow: hidden;
-  font-size: 0.86rem;
   font-weight: 800;
-  text-overflow: ellipsis;
+}
+
+.tiny-button {
+  padding: 0.38rem 0.58rem;
+  font-size: 0.74rem;
+}
+
+.ghost-button {
+  align-self: stretch;
+  padding: 0 0.85rem;
   white-space: nowrap;
 }
 
-.preset-card__url {
-  display: block;
-  overflow: hidden;
-  margin-top: 0.12rem;
-  color: var(--muted);
-  font-size: 0.76rem;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.row-toggle-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
 }
 
-.form-grid {
+.chip-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--soft);
+  padding: 0.44rem 0.64rem;
+  color: #242424;
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.chip-toggle:has(input:checked) {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, #ffffff);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 34%, transparent);
+}
+
+.chip-toggle input {
+  width: 0.96rem;
+  height: 0.96rem;
+  accent-color: var(--accent);
+}
+
+.form-grid,
+.style-grid,
+.range-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
+  gap: 0.7rem;
 }
 
-.field {
+.style-grid {
+  grid-template-columns: minmax(0, 1.35fr) minmax(7rem, 0.7fr) minmax(7rem, 0.7fr);
+}
+
+.range-grid {
+  align-items: end;
+}
+
+.field,
+.range-field,
+.color-field {
   display: grid;
-  gap: 0.35rem;
+  gap: 0.34rem;
   color: #222222;
-  font-size: 0.86rem;
-  font-weight: 800;
-}
-
-.field--wide {
-  grid-column: 1 / -1;
+  font-size: 0.78rem;
+  font-weight: 760;
 }
 
 .field input,
+.field select,
 .field textarea {
   width: 100%;
   border: 1px solid var(--line-strong);
   border-radius: 0.72rem;
   background: #ffffff;
   color: #111111;
-  padding: 0.72rem 0.78rem;
+  padding: 0.68rem 0.72rem;
   outline: none;
-  font-weight: 500;
 }
 
 .field textarea {
+  min-height: 7.4rem;
   resize: vertical;
 }
 
+.info-field {
+  margin-top: 0.85rem;
+}
+
 .field input:focus,
+.field select:focus,
 .field textarea:focus,
-.range-field input:focus-visible,
-button:focus-visible {
+.range-field input:focus,
+.color-field input:focus {
+  border-color: var(--accent);
   box-shadow: var(--focus);
-  outline: none;
-}
-
-.toggle-row {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  margin-top: 0.75rem;
-  color: #222222;
-  font-size: 0.9rem;
-  font-weight: 700;
-}
-
-.toggle-row input {
-  width: 1.1rem;
-  height: 1.1rem;
-  accent-color: var(--accent);
-}
-
-.segmented {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.35rem;
-  margin: 0 0 0.85rem;
-  border: 0;
-  border-radius: 999px;
-  background: var(--soft);
-  padding: 0.25rem;
-}
-
-.segmented label {
-  display: grid;
-}
-
-.segmented input {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.segmented span {
-  border-radius: 999px;
-  padding: 0.62rem 0.75rem;
-  text-align: center;
-  font-weight: 900;
-}
-
-.segmented input:checked + span {
-  background: #111111;
-  color: #ffffff;
 }
 
 .range-field {
-  display: grid;
-  gap: 0.55rem;
-  margin-top: 0.8rem;
-  color: #222222;
-  font-size: 0.9rem;
-  font-weight: 800;
+  margin-top: 0.72rem;
 }
 
-.range-field > span {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
+.range-field strong {
+  color: var(--muted);
+  font-size: 0.72rem;
 }
 
-.range-field input {
+.range-field input[type="range"] {
   width: 100%;
   accent-color: var(--accent);
 }
 
-.action-bar {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 0.6rem;
-  margin-top: 1rem;
+.color-field input[type="color"] {
+  width: 100%;
+  min-height: 2.75rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 0.72rem;
+  background: #ffffff;
+  padding: 0.28rem;
+}
+
+.toggle-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #222222;
+  font-size: 0.8rem;
+  font-weight: 720;
+}
+
+.tight-toggle {
+  margin-top: 0.75rem;
+}
+
+.toggle-row input {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--accent);
+}
+
+.action-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.82rem;
 }
 
 .primary-button,
-.secondary-button,
-.ghost-button,
-.icon-button {
-  border: 0;
-  border-radius: 0.85rem;
-  padding: 0.78rem 1rem;
-  font-weight: 900;
+.secondary-button {
+  min-height: 2.85rem;
+  padding: 0 1rem;
 }
 
 .primary-button {
-  background: #111111;
+  border-color: var(--accent);
+  background: var(--accent);
   color: #ffffff;
 }
 
 .secondary-button {
-  border: 1px solid var(--line-strong);
   background: #ffffff;
-  color: #111111;
 }
 
-.ghost-button {
-  background: var(--soft);
-  color: #111111;
+.copy-status {
+  min-height: 1.2rem;
+  margin: 0 0 0 auto;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.gmail-card {
+  overflow: hidden;
+  border: 1px solid #dadce0;
+  border-radius: 1rem;
+  background: #ffffff;
+  color: #202124;
+}
+
+.gmail-card__bar {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid #dadce0;
+  background: #f2f6fc;
+  padding: 0.64rem 0.8rem;
+}
+
+.gmail-window-dots {
+  display: flex;
+  gap: 0.28rem;
+}
+
+.gmail-window-dots span {
+  width: 0.52rem;
+  height: 0.52rem;
+  border-radius: 999px;
+  background: #c2c7cf;
+}
+
+.gmail-card__bar p {
+  overflow: hidden;
+  margin: 0;
+  color: #202124;
+  font-size: 0.9rem;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .icon-button {
   display: grid;
   place-items: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  border: 1px solid var(--line-strong);
+  width: 2rem;
+  height: 2rem;
+  border-color: #d9dde3;
   background: #ffffff;
-  color: #111111;
-  font-size: 1.35rem;
-  line-height: 1;
-}
-
-.html-details {
-  margin-top: 0.85rem;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 0.9rem;
-}
-
-.html-details summary {
-  cursor: pointer;
-  font-weight: 900;
-}
-
-.html-details textarea {
-  width: 100%;
-  min-height: 14rem;
-  margin-top: 0.8rem;
-  border: 1px solid var(--line-strong);
-  border-radius: 0.75rem;
-  padding: 0.8rem;
-  color: #111111;
-  font-family:
-    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-  font-size: 0.78rem;
-  resize: vertical;
-}
-
-.gmail-window {
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: #ffffff;
-}
-
-.gmail-window__top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--line);
-  background: #f2f6fc;
-  padding: 0.78rem 1rem;
   color: #202124;
-  font-size: 0.9rem;
-  font-weight: 900;
+  font-size: 1.05rem;
 }
 
-.gmail-window__dots {
-  color: #9aa0a6;
-  letter-spacing: 0.18em;
-}
-
-.gmail-meta {
-  display: grid;
-  gap: 0.35rem;
-  border-bottom: 1px solid var(--line);
-  padding: 0.9rem 1rem;
-  color: #3c4043;
-  font-size: 0.88rem;
-}
-
-.gmail-meta div {
-  display: grid;
-  grid-template-columns: 4.25rem minmax(0, 1fr);
-  gap: 0.6rem;
-}
-
-.gmail-meta span {
+.gmail-card__meta {
+  border-bottom: 1px solid #eceff3;
+  padding: 0.72rem 1rem;
   color: #5f6368;
+  font-size: 0.84rem;
 }
 
-.gmail-meta strong {
-  overflow: hidden;
-  font-weight: 700;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.gmail-body {
-  min-height: 34rem;
+.gmail-card__body {
+  min-height: 11rem;
   padding: 1rem;
-  background: #ffffff;
-}
-
-.email-text {
-  max-width: 680px;
   color: #202124;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.94rem;
   line-height: 1.55;
   white-space: pre-wrap;
 }
 
-.signature-preview {
-  width: 100%;
+.gmail-card__signature {
   overflow-x: auto;
-  margin-top: 1.25rem;
-  padding-bottom: 0.3rem;
+  padding: 0 1rem 1rem;
 }
 
-.signature-preview [contenteditable="true"] {
-  border-radius: 0.25rem;
+.gmail-card__signature [contenteditable="true"] {
   outline: 1px dashed transparent;
   outline-offset: 2px;
 }
 
-.signature-preview [contenteditable="true"]:hover,
-.signature-preview [contenteditable="true"]:focus {
-  background: rgba(181, 154, 113, 0.08);
+.gmail-card__signature [contenteditable="true"]:hover,
+.gmail-card__signature [contenteditable="true"]:focus {
   outline-color: var(--accent);
 }
 
-.guidelines {
-  margin-top: 1rem;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: #ffffff;
-  padding: 1rem;
-}
-
-.guidelines h3 {
-  margin: 0 0 0.7rem;
-  font-size: 1rem;
-}
-
-.guidelines ul {
-  margin: 0;
-  padding-left: 1.2rem;
-  color: #333333;
-  font-size: 0.92rem;
-  line-height: 1.45;
-}
-
-.toast {
-  position: fixed;
-  right: 1rem;
-  bottom: 1rem;
-  z-index: 10;
-  max-width: min(32rem, calc(100vw - 2rem));
-  transform: translateY(160%);
-  border-radius: 999px;
-  background: #ffffff;
-  color: #111111;
-  padding: 0.8rem 1rem;
-  box-shadow: var(--shadow);
-  font-weight: 900;
-  transition: transform 180ms ease;
-}
-
-.toast.is-visible {
-  transform: translateY(0);
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-}
-
-@media (max-width: 1100px) {
+@media (max-width: 1120px) {
   .workspace {
     grid-template-columns: 1fr;
   }
@@ -612,32 +535,66 @@ button:focus-visible {
 
 @media (max-width: 720px) {
   .app-shell {
-    width: min(100% - 1rem, 1480px);
+    width: min(100% - 1rem, 1500px);
+    padding-top: 0.75rem;
   }
 
-  .topbar,
-  .brand-lockup,
-  .panel-heading {
+  .topbar {
+    align-items: flex-start;
+  }
+
+  .brand-lockup {
+    gap: 0.62rem;
+  }
+
+  .brand-lockup span {
+    white-space: normal;
+  }
+
+  .workspace {
+    gap: 0.75rem;
+  }
+
+  .builder-panel,
+  .preview-panel {
+    padding: 0.7rem;
+  }
+
+  .builder-top,
+  .form-grid,
+  .style-grid,
+  .range-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .preset-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .ghost-button {
+    min-height: 2.5rem;
+  }
+
+  .section-title-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .action-row {
     align-items: stretch;
     flex-direction: column;
   }
 
-  .brand-lockup {
-    align-items: flex-start;
+  .copy-status {
+    margin-left: 0;
   }
 
-  .language-switch {
-    width: 100%;
+  .gmail-card__body {
+    min-height: 8rem;
   }
 
-  .form-grid,
-  .preset-grid,
-  .action-bar {
-    grid-template-columns: 1fr;
-  }
-
-  .gmail-meta div {
-    grid-template-columns: 1fr;
-    gap: 0.1rem;
+  .gmail-card__signature {
+    padding-right: 0.7rem;
+    padding-left: 0.7rem;
   }
 }

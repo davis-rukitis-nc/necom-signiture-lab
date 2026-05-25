@@ -8,7 +8,11 @@
       name="description"
       content="A one-page email signature builder for NECom and event-branded signatures."
     />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="icon"
+      href="https://rimirigamarathon.com/wp-content/uploads/2025/11/NECOM-fav.png"
+      type="image/png"
+    />
     <link rel="stylesheet" href="/styles.css" />
     <script src="/app.js" defer></script>
   </head>
@@ -17,17 +21,14 @@
 
     <main class="app-shell">
       <header class="topbar" aria-label="Application header">
-        <div class="brand-lockup">
+        <a class="brand-lockup" href="/" aria-label="NECom Email Signature Lab">
           <img
             class="brand-lockup__logo"
-            src="https://rimirigamarathon.com/wp-content/uploads/2025/02/s-necom-logo.svg"
+            src="https://rimirigamarathon.com/wp-content/uploads/2026/02/necom-1.png"
             alt="NECom"
           />
-          <div>
-            <h1 data-i18n="appTitle">NECom Email Signature Lab</h1>
-            <p data-i18n="appSubtitle">Build, preview and copy Gmail-ready signatures.</p>
-          </div>
-        </div>
+          <span>Email Signature Lab</span>
+        </a>
 
         <div class="language-switch" aria-label="Language">
           <button class="language-switch__button is-active" type="button" data-language="en">
@@ -40,218 +41,210 @@
       </header>
 
       <section class="workspace">
-        <section class="panel builder-panel" id="builder" aria-labelledby="builder-title">
-          <div class="panel-heading">
-            <div>
-              <p class="eyebrow" data-i18n="builderEyebrow">Builder</p>
-              <h2 id="builder-title" data-i18n="builderTitle">Create the signature</h2>
-            </div>
-            <button class="ghost-button" id="resetButton" type="button" data-i18n="reset">
+        <section class="panel builder-panel" id="builder" aria-label="Signature builder">
+          <div class="builder-top">
+            <div class="preset-grid" id="presetGrid" aria-label="Brand preset"></div>
+            <button class="ghost-button reset-button" id="resetButton" type="button" data-i18n="reset">
               Reset
             </button>
           </div>
 
-          <section class="control-group" aria-labelledby="preset-title">
-            <div class="control-group__header">
-              <h3 id="preset-title" data-i18n="presetTitle">Brand preset</h3>
-              <p data-i18n="presetHelp">
-                One click changes the logo, website and accent color.
-              </p>
+          <section class="control-group compact-group" aria-labelledby="rows-title">
+            <div class="section-title-row">
+              <h2 id="rows-title" data-i18n="rowsTitle">Rows</h2>
+              <div class="preset-actions" aria-label="Layout presets">
+                <button type="button" class="tiny-button" data-row-preset="full" data-i18n="presetFull">Full</button>
+                <button type="button" class="tiny-button" data-row-preset="compact" data-i18n="presetCompact">Compact</button>
+                <button type="button" class="tiny-button" data-row-preset="minimal" data-i18n="presetMinimal">Minimal</button>
+              </div>
             </div>
-            <div class="preset-grid" id="presetGrid"></div>
+
+            <div class="row-toggle-grid" id="rowToggleGrid">
+              <label class="chip-toggle">
+                <input id="rowLogoInput" type="checkbox" />
+                <span data-i18n="rowLogo">Logo</span>
+              </label>
+              <label class="chip-toggle">
+                <input id="rowContactInput" type="checkbox" />
+                <span data-i18n="rowContact">Contact</span>
+              </label>
+              <label class="chip-toggle">
+                <input id="rowAddressInput" type="checkbox" />
+                <span data-i18n="rowAddress">Address</span>
+              </label>
+              <label class="chip-toggle">
+                <input id="rowWebsiteInput" type="checkbox" />
+                <span data-i18n="rowWebsite">Website</span>
+              </label>
+              <label class="chip-toggle">
+                <input id="rowInfoInput" type="checkbox" />
+                <span data-i18n="rowInfo">Info text</span>
+              </label>
+              <label class="chip-toggle">
+                <input id="rowBannerInput" type="checkbox" />
+                <span data-i18n="rowBanner">Banner</span>
+              </label>
+            </div>
           </section>
 
           <section class="control-group" aria-labelledby="person-title">
-            <div class="control-group__header">
-              <h3 id="person-title" data-i18n="personTitle">Person details</h3>
-            </div>
-
+            <h2 id="person-title" data-i18n="personTitle">Person</h2>
             <div class="form-grid">
               <label class="field">
                 <span data-i18n="nameLabel">Name</span>
                 <input id="nameInput" autocomplete="name" type="text" />
               </label>
-
               <label class="field">
                 <span data-i18n="titleLabel">Job title</span>
                 <input id="titleInput" autocomplete="organization-title" type="text" />
               </label>
-
               <label class="field">
                 <span data-i18n="phoneLabel">Phone</span>
                 <input id="phoneInput" autocomplete="tel" type="tel" />
               </label>
-
               <label class="field">
                 <span data-i18n="emailLabel">Email</span>
                 <input id="emailInput" autocomplete="email" type="email" />
               </label>
             </div>
-
-            <label class="toggle-row">
+            <label class="toggle-row tight-toggle">
               <input id="showEmailInput" type="checkbox" />
-              <span data-i18n="showEmailLabel">Show email address in signature</span>
+              <span data-i18n="showEmailLabel">Show email address</span>
             </label>
           </section>
 
-          <section class="control-group" aria-labelledby="company-title">
-            <div class="control-group__header">
-              <h3 id="company-title" data-i18n="companyTitle">Company and links</h3>
-            </div>
-
+          <section class="control-group" aria-labelledby="details-title">
+            <h2 id="details-title" data-i18n="detailsTitle">Details</h2>
             <div class="form-grid">
               <label class="field">
                 <span data-i18n="address1Label">Address line 1</span>
                 <input id="address1Input" type="text" />
               </label>
-
               <label class="field">
                 <span data-i18n="address2Label">Address line 2</span>
                 <input id="address2Input" type="text" />
               </label>
-
               <label class="field">
                 <span data-i18n="websiteLabelLabel">Website label</span>
                 <input id="websiteLabelInput" type="text" />
               </label>
-
               <label class="field">
                 <span data-i18n="websiteUrlLabel">Website URL</span>
                 <input id="websiteUrlInput" type="url" />
               </label>
             </div>
-
-            <label class="field">
-              <span data-i18n="descriptionLabel">Company / event text</span>
-              <textarea id="descriptionInput" rows="4"></textarea>
+            <label class="field info-field">
+              <span data-i18n="infoTextLabel">Info text</span>
+              <textarea id="infoTextInput" rows="4"></textarea>
             </label>
           </section>
 
-          <section class="control-group" aria-labelledby="style-title">
-            <div class="control-group__header">
-              <h3 id="style-title" data-i18n="styleTitle">Style and size</h3>
-            </div>
-
-            <fieldset class="segmented" aria-label="Signature version">
-              <legend class="sr-only" data-i18n="versionLegend">Signature version</legend>
-              <label>
-                <input name="signatureMode" type="radio" value="full" checked />
-                <span data-i18n="fullVersion">Full</span>
-              </label>
-              <label>
-                <input name="signatureMode" type="radio" value="short" />
-                <span data-i18n="shortVersion">Short</span>
-              </label>
-            </fieldset>
-
+          <section class="control-group" aria-labelledby="logo-title">
+            <h2 id="logo-title" data-i18n="logoTitle">Logo</h2>
             <div class="form-grid">
               <label class="field">
-                <span data-i18n="accentColorLabel">Accent color</span>
-                <input id="accentColorInput" type="color" />
+                <span data-i18n="logoVariantLabel">Logo version</span>
+                <select id="logoVariantInput"></select>
               </label>
-
               <label class="field">
-                <span data-i18n="textColorLabel">Text color</span>
-                <input id="textColorInput" type="color" />
-              </label>
-
-              <label class="field field--wide">
                 <span data-i18n="logoUrlLabel">Logo URL</span>
                 <input id="logoUrlInput" type="url" />
               </label>
             </div>
+            <div class="range-grid">
+              <label class="range-field">
+                <span><span data-i18n="logoSizeLabel">Logo size</span> <strong id="logoSizeValue"></strong></span>
+                <input id="logoSizeInput" min="40" max="160" step="2" type="range" />
+              </label>
+              <label class="color-field">
+                <span data-i18n="minimalColorLabel">Minimal color</span>
+                <input id="minimalColorInput" type="color" />
+              </label>
+            </div>
+          </section>
 
+          <section class="control-group" aria-labelledby="style-title">
+            <h2 id="style-title" data-i18n="styleTitle">Style</h2>
+            <div class="style-grid">
+              <label class="field">
+                <span data-i18n="signatureStyleLabel">Signature design</span>
+                <select id="signatureStyleInput">
+                  <option value="classic" data-i18n="styleClassic">Classic</option>
+                  <option value="modern" data-i18n="styleModern">Modern</option>
+                </select>
+              </label>
+              <label class="color-field">
+                <span data-i18n="accentColorLabel">Accent color</span>
+                <input id="accentColorInput" type="color" />
+              </label>
+              <label class="color-field">
+                <span data-i18n="textColorLabel">Text color</span>
+                <input id="textColorInput" type="color" />
+              </label>
+            </div>
             <label class="range-field">
-              <span>
-                <span data-i18n="logoSizeLabel">Logo size</span>
-                <strong id="logoSizeValue">72 px</strong>
-              </span>
-              <input id="logoSizeInput" type="range" min="40" max="140" step="1" />
-            </label>
-
-            <label class="range-field">
-              <span>
-                <span data-i18n="signatureWidthLabel">Signature width</span>
-                <strong id="signatureWidthValue">560 px</strong>
-              </span>
-              <input id="signatureWidthInput" type="range" min="280" max="640" step="1" />
+              <span><span data-i18n="signatureWidthLabel">Signature width</span> <strong id="signatureWidthValue"></strong></span>
+              <input id="signatureWidthInput" min="300" max="620" step="10" type="range" />
             </label>
           </section>
 
-          <section class="action-bar" aria-label="Signature actions">
-            <button class="primary-button" id="copyRichButton" type="button">
-              <span aria-hidden="true">⧉</span>
-              <span data-i18n="copyForGmail">Copy for Gmail</span>
-            </button>
-            <button class="secondary-button" id="copyHtmlButton" type="button">
-              <span aria-hidden="true">&lt;/&gt;</span>
-              <span data-i18n="copyHtml">Copy HTML</span>
-            </button>
+          <section class="control-group" aria-labelledby="banner-title">
+            <h2 id="banner-title" data-i18n="bannerTitle">Banner</h2>
+            <div class="form-grid">
+              <label class="field">
+                <span data-i18n="bannerUrlLabel">Banner image URL</span>
+                <input id="bannerUrlInput" type="url" placeholder="https://..." />
+              </label>
+              <label class="field">
+                <span data-i18n="bannerLinkLabel">Banner link URL</span>
+                <input id="bannerLinkInput" type="url" placeholder="https://..." />
+              </label>
+              <label class="field">
+                <span data-i18n="bannerPositionLabel">Banner position</span>
+                <select id="bannerPositionInput">
+                  <option value="top" data-i18n="bannerTop">Top</option>
+                  <option value="afterHeader" data-i18n="bannerAfterHeader">After name/logo</option>
+                  <option value="beforeInfo" data-i18n="bannerBeforeInfo">Before info text</option>
+                  <option value="bottom" data-i18n="bannerBottom">Bottom</option>
+                </select>
+              </label>
+              <label class="range-field">
+                <span><span data-i18n="bannerSpacerLabel">Banner spacer</span> <strong id="bannerSpacerValue"></strong></span>
+                <input id="bannerSpacerInput" min="0" max="32" step="2" type="range" />
+              </label>
+            </div>
           </section>
 
-          <details class="html-details">
-            <summary data-i18n="htmlDetailsSummary">Generated HTML</summary>
-            <textarea id="htmlOutput" readonly spellcheck="false"></textarea>
-          </details>
+          <div class="action-row">
+            <button class="primary-button" id="copyRenderedButton" type="button" data-i18n="copyRendered">
+              Copy for Gmail
+            </button>
+            <button class="secondary-button" id="copyHtmlButton" type="button" data-i18n="copyHtml">
+              Copy HTML
+            </button>
+            <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
+          </div>
         </section>
 
-        <section class="panel preview-panel" aria-labelledby="preview-title">
-          <div class="panel-heading">
-            <div>
-              <p class="eyebrow" data-i18n="previewEyebrow">Preview</p>
-              <h2 id="preview-title" data-i18n="previewTitle">Gmail-style email</h2>
-            </div>
-            <button
-              class="icon-button"
-              id="shuffleEmailButton"
-              type="button"
-              aria-label="Shuffle preview email"
-              title="Shuffle preview email"
-            >
-              ↻
-            </button>
-          </div>
-
-          <div class="gmail-window" aria-live="polite">
-            <div class="gmail-window__top">
-              <span data-i18n="gmailComposeTitle">New message</span>
-              <span class="gmail-window__dots" aria-hidden="true">● ● ●</span>
-            </div>
-
-            <div class="gmail-meta">
-              <div>
-                <span data-i18n="fromLabel">From</span>
-                <strong id="previewFrom">aigars@necom.lv</strong>
+        <section class="preview-panel" aria-label="Email preview">
+          <article class="gmail-card">
+            <header class="gmail-card__bar">
+              <div class="gmail-window-dots" aria-hidden="true">
+                <span></span><span></span><span></span>
               </div>
-              <div>
-                <span data-i18n="toLabel">To</span>
-                <strong>team@necom.lv</strong>
-              </div>
-              <div>
-                <span data-i18n="subjectLabel">Subject</span>
-                <strong id="previewSubject">Breakfast with Bordeaux?</strong>
-              </div>
+              <p id="emailSubject">New message</p>
+              <button class="icon-button" id="shuffleEmailButton" type="button" aria-label="Shuffle preview email" title="Shuffle preview email">
+                <span aria-hidden="true">↻</span>
+              </button>
+            </header>
+            <div class="gmail-card__meta">
+              <span id="previewFrom"></span>
             </div>
-
-            <article class="gmail-body">
-              <div id="previewEmailText" class="email-text"></div>
-              <div id="signaturePreview" class="signature-preview"></div>
-            </article>
-          </div>
-
-          <aside class="guidelines" aria-labelledby="guidelines-title">
-            <h3 id="guidelines-title" data-i18n="guidelinesTitle">Quick guidelines</h3>
-            <ul>
-              <li data-i18n="guidelineOne">Use the full version for first contact emails.</li>
-              <li data-i18n="guidelineTwo">Use the short version for replies and long threads.</li>
-              <li data-i18n="guidelineThree">Keep logo size between 40–140 px to avoid broken layouts.</li>
-              <li data-i18n="guidelineFour">Paste into Gmail settings using “Copy for Gmail”.</li>
-            </ul>
-          </aside>
+            <div class="gmail-card__body" id="previewEmailBody"></div>
+            <div class="gmail-card__signature" id="signaturePreview"></div>
+          </article>
         </section>
       </section>
-
-      <div class="toast" id="toast" role="status" aria-live="polite"></div>
     </main>
   </body>
 </html>

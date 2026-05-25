@@ -1,8 +1,8 @@
 # NECom Email Signature Lab
 
-A one-page static web app for building NECom and event-branded Gmail-ready email signatures.
+A one-page static web app for creating NECom and event-branded Gmail-ready email signatures.
 
-## What is included
+## Structure
 
 ```text
 public/
@@ -10,6 +10,7 @@ public/
   styles.css
   app.js
   favicon.svg
+  _headers
 wrangler.toml
 package.json
 README.md
@@ -17,16 +18,30 @@ README.md
 
 ## Features
 
-- NECom + event brand presets
+- Clean NECom header with the light NECom logo
+- Remote PNG favicon from NECOM-fav.png
+- English default with Latvian language switch
+- NECom and event brand presets
+- Custom brand option with a simple plus preset
+- Logo variants: black, minimal, white, orange where available
 - Custom logo URL
 - Adjustable logo size
 - Adjustable signature width
-- Full and short signature modes
-- English / Latvian language switch
+- Modular signature rows:
+  - Logo
+  - Contact
+  - Address
+  - Website
+  - Info text
+  - Banner
+- Full / Compact / Minimal row presets
+- Classic / Modern signature design switch
+- Optional full-width banner image
+- Banner position and spacer controls
 - Gmail-style preview with shuffled example emails
 - Copy rendered signature for Gmail
 - Copy raw generated HTML
-- Inline editing inside the preview signature
+- Inline editing inside the signature preview
 - Local autosave in the browser
 
 ## Run locally
@@ -78,6 +93,20 @@ Deploy:
 npm run deploy
 ```
 
-## Notes
+## Email signature safety notes
 
-The copied signature HTML intentionally uses email-safe table markup and inline CSS. The app UI uses modern CSS, but the generated signature does not rely on external CSS or JavaScript.
+The generated signature HTML intentionally uses:
+
+- table-based layout
+- inline CSS
+- no external CSS
+- no JavaScript
+- controlled image widths
+- `height:auto` on images
+- fixed signature width with `max-width:100%`
+
+The app UI can use modern CSS, but the copied signature avoids depending on modern layout features.
+
+## Logo note
+
+Most supplied event logos are PNGs, which are safer for email clients than SVG. Baltic Wine & Drinks Awards currently keeps the original SVG logo because no updated PNG was supplied.
