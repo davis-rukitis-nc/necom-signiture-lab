@@ -6,7 +6,7 @@
     <title>NECom Email Signature Lab</title>
     <meta
       name="description"
-      content="A one-page email signature builder for NECom and event-branded signatures."
+      content="A one-page email signature builder for NECom and event-branded Gmail-ready signatures."
     />
     <link
       rel="icon"
@@ -31,220 +31,303 @@
         </a>
 
         <div class="language-switch" aria-label="Language">
-          <button class="language-switch__button is-active" type="button" data-language="en">
-            EN
-          </button>
-          <button class="language-switch__button" type="button" data-language="lv">
-            LV
-          </button>
+          <button class="language-switch__button is-active" type="button" data-language="en">EN</button>
+          <button class="language-switch__button" type="button" data-language="lv">LV</button>
         </div>
       </header>
 
       <section class="workspace">
-        <section class="panel builder-panel" id="builder" aria-label="Signature builder">
-          <div class="builder-top">
+        <section class="builder-panel" id="builder" aria-label="Signature builder">
+          <div class="builder-toolbar">
             <div class="preset-grid" id="presetGrid" aria-label="Brand preset"></div>
-            <button class="ghost-button reset-button" id="resetButton" type="button" data-i18n="reset">
-              Reset
+            <button class="icon-reset" id="resetButton" type="button" data-i18n-aria="reset" aria-label="Reset">
+              ↺
             </button>
           </div>
 
-          <section class="control-group compact-group" aria-labelledby="rows-title">
-            <div class="section-title-row">
-              <h2 id="rows-title" data-i18n="rowsTitle">Rows</h2>
-              <div class="preset-actions" aria-label="Layout presets">
-                <button type="button" class="tiny-button" data-row-preset="full" data-i18n="presetFull">Full</button>
-                <button type="button" class="tiny-button" data-row-preset="compact" data-i18n="presetCompact">Compact</button>
-                <button type="button" class="tiny-button" data-row-preset="minimal" data-i18n="presetMinimal">Minimal</button>
+          <nav class="editor-tabs" aria-label="Editor sections">
+            <button class="editor-tab is-active" type="button" data-tab-target="content" data-i18n="tabContent">Content</button>
+            <button class="editor-tab" type="button" data-tab-target="style" data-i18n="tabStyle">Style</button>
+            <button class="editor-tab" type="button" data-tab-target="media" data-i18n="tabMedia">Media</button>
+            <button class="editor-tab" type="button" data-tab-target="layout" data-i18n="tabLayout">Layout</button>
+          </nav>
+
+          <div class="editor-tab-panel is-active" data-tab-panel="content">
+            <section class="editor-card">
+              <div class="card-heading">
+                <span data-i18n="personTitle">Person</span>
               </div>
-            </div>
 
-            <div class="row-toggle-grid" id="rowToggleGrid">
-              <label class="chip-toggle">
-                <input id="rowLogoInput" type="checkbox" />
-                <span data-i18n="rowLogo">Logo</span>
-              </label>
-              <label class="chip-toggle">
-                <input id="rowContactInput" type="checkbox" />
-                <span data-i18n="rowContact">Contact</span>
-              </label>
-              <label class="chip-toggle">
-                <input id="rowAddressInput" type="checkbox" />
-                <span data-i18n="rowAddress">Address</span>
-              </label>
-              <label class="chip-toggle">
-                <input id="rowWebsiteInput" type="checkbox" />
-                <span data-i18n="rowWebsite">Website</span>
-              </label>
-              <label class="chip-toggle">
-                <input id="rowInfoInput" type="checkbox" />
-                <span data-i18n="rowInfo">Info text</span>
-              </label>
-              <label class="chip-toggle">
-                <input id="rowBannerInput" type="checkbox" />
-                <span data-i18n="rowBanner">Banner</span>
-              </label>
-            </div>
-          </section>
+              <div class="form-grid">
+                <label class="field">
+                  <span data-i18n="nameLabel">Name</span>
+                  <input id="nameInput" autocomplete="name" type="text" />
+                </label>
+                <label class="field">
+                  <span data-i18n="titleLabel">Job title</span>
+                  <input id="titleInput" autocomplete="organization-title" type="text" />
+                </label>
+                <label class="field">
+                  <span data-i18n="phoneLabel">Phone</span>
+                  <input id="phoneInput" autocomplete="tel" type="tel" />
+                </label>
+                <label class="field">
+                  <span data-i18n="emailLabel">Email</span>
+                  <input id="emailInput" autocomplete="email" type="email" />
+                </label>
+              </div>
 
-          <section class="control-group" aria-labelledby="person-title">
-            <h2 id="person-title" data-i18n="personTitle">Person</h2>
-            <div class="form-grid">
-              <label class="field">
-                <span data-i18n="nameLabel">Name</span>
-                <input id="nameInput" autocomplete="name" type="text" />
+              <label class="toggle-line">
+                <input id="showEmailInput" type="checkbox" />
+                <span data-i18n="showEmailLabel">Show email address</span>
               </label>
-              <label class="field">
-                <span data-i18n="titleLabel">Job title</span>
-                <input id="titleInput" autocomplete="organization-title" type="text" />
-              </label>
-              <label class="field">
-                <span data-i18n="phoneLabel">Phone</span>
-                <input id="phoneInput" autocomplete="tel" type="tel" />
-              </label>
-              <label class="field">
-                <span data-i18n="emailLabel">Email</span>
-                <input id="emailInput" autocomplete="email" type="email" />
-              </label>
-            </div>
-            <label class="toggle-row tight-toggle">
-              <input id="showEmailInput" type="checkbox" />
-              <span data-i18n="showEmailLabel">Show email address</span>
-            </label>
-          </section>
+            </section>
 
-          <section class="control-group" aria-labelledby="details-title">
-            <h2 id="details-title" data-i18n="detailsTitle">Details</h2>
-            <div class="form-grid">
-              <label class="field">
-                <span data-i18n="address1Label">Address line 1</span>
-                <input id="address1Input" type="text" />
-              </label>
-              <label class="field">
-                <span data-i18n="address2Label">Address line 2</span>
-                <input id="address2Input" type="text" />
-              </label>
-              <label class="field">
-                <span data-i18n="websiteLabelLabel">Website label</span>
-                <input id="websiteLabelInput" type="text" />
-              </label>
-              <label class="field">
-                <span data-i18n="websiteUrlLabel">Website URL</span>
-                <input id="websiteUrlInput" type="url" />
-              </label>
-            </div>
-            <label class="field info-field">
-              <span data-i18n="infoTextLabel">Info text</span>
-              <textarea id="infoTextInput" rows="4"></textarea>
-            </label>
-          </section>
+            <section class="editor-card">
+              <div class="card-heading">
+                <span data-i18n="detailsTitle">Details</span>
+              </div>
 
-          <section class="control-group" aria-labelledby="logo-title">
-            <h2 id="logo-title" data-i18n="logoTitle">Logo</h2>
-            <div class="form-grid">
-              <label class="field">
-                <span data-i18n="logoVariantLabel">Logo version</span>
-                <select id="logoVariantInput"></select>
-              </label>
-              <label class="field">
-                <span data-i18n="logoUrlLabel">Logo URL</span>
-                <input id="logoUrlInput" type="url" />
-              </label>
-            </div>
-            <div class="range-grid">
-              <label class="range-field">
-                <span><span data-i18n="logoSizeLabel">Logo size</span> <strong id="logoSizeValue"></strong></span>
-                <input id="logoSizeInput" min="40" max="160" step="2" type="range" />
-              </label>
-              <label class="color-field">
-                <span data-i18n="minimalColorLabel">Minimal color</span>
-                <input id="minimalColorInput" type="color" />
-              </label>
-            </div>
-          </section>
+              <div class="form-grid">
+                <label class="field">
+                  <span data-i18n="address1Label">Address line 1</span>
+                  <input id="address1Input" type="text" />
+                </label>
+                <label class="field">
+                  <span data-i18n="address2Label">Address line 2</span>
+                  <input id="address2Input" type="text" />
+                </label>
+                <label class="field">
+                  <span data-i18n="websiteLabelLabel">Website label</span>
+                  <input id="websiteLabelInput" type="text" />
+                </label>
+                <label class="field">
+                  <span data-i18n="websiteUrlLabel">Website URL</span>
+                  <input id="websiteUrlInput" type="url" />
+                </label>
+              </div>
 
-          <section class="control-group" aria-labelledby="style-title">
-            <h2 id="style-title" data-i18n="styleTitle">Style</h2>
-            <div class="style-grid">
-              <label class="field">
-                <span data-i18n="signatureStyleLabel">Signature design</span>
-                <select id="signatureStyleInput">
-                  <option value="classic" data-i18n="styleClassic">Classic</option>
-                  <option value="modern" data-i18n="styleModern">Modern</option>
-                </select>
-              </label>
-              <label class="color-field">
-                <span data-i18n="accentColorLabel">Accent color</span>
-                <input id="accentColorInput" type="color" />
-              </label>
-              <label class="color-field">
-                <span data-i18n="textColorLabel">Text color</span>
-                <input id="textColorInput" type="color" />
-              </label>
-            </div>
-            <label class="range-field">
-              <span><span data-i18n="signatureWidthLabel">Signature width</span> <strong id="signatureWidthValue"></strong></span>
-              <input id="signatureWidthInput" min="300" max="620" step="10" type="range" />
-            </label>
-          </section>
+              <div class="custom-select info-variant-select" data-select="infoVariant">
+                <span class="select-label" data-i18n="infoVariantLabel">Info length</span>
+                <button class="select-button" id="infoVariantButton" type="button" aria-haspopup="listbox" aria-expanded="false"></button>
+                <div class="select-menu" id="infoVariantMenu" role="listbox"></div>
+              </div>
 
-          <section class="control-group" aria-labelledby="banner-title">
-            <h2 id="banner-title" data-i18n="bannerTitle">Banner</h2>
-            <div class="form-grid">
-              <label class="field">
-                <span data-i18n="bannerUrlLabel">Banner image URL</span>
-                <input id="bannerUrlInput" type="url" placeholder="https://..." />
+              <label class="field info-field">
+                <span data-i18n="infoTextLabel">Info text</span>
+                <textarea id="infoTextInput" rows="5"></textarea>
               </label>
-              <label class="field">
-                <span data-i18n="bannerLinkLabel">Banner link URL</span>
-                <input id="bannerLinkInput" type="url" placeholder="https://..." />
-              </label>
-              <label class="field">
-                <span data-i18n="bannerPositionLabel">Banner position</span>
-                <select id="bannerPositionInput">
-                  <option value="top" data-i18n="bannerTop">Top</option>
-                  <option value="afterHeader" data-i18n="bannerAfterHeader">After name/logo</option>
-                  <option value="beforeInfo" data-i18n="bannerBeforeInfo">Before info text</option>
-                  <option value="bottom" data-i18n="bannerBottom">Bottom</option>
-                </select>
-              </label>
-              <label class="range-field">
-                <span><span data-i18n="bannerSpacerLabel">Banner spacer</span> <strong id="bannerSpacerValue"></strong></span>
-                <input id="bannerSpacerInput" min="0" max="32" step="2" type="range" />
-              </label>
-            </div>
-          </section>
+            </section>
+          </div>
 
-          <div class="action-row">
+          <div class="editor-tab-panel" data-tab-panel="style">
+            <section class="editor-card">
+              <div class="card-heading">
+                <span data-i18n="designTitle">Design</span>
+              </div>
+
+              <div class="stack">
+                <div class="custom-select" data-select="signatureStyle">
+                  <span class="select-label" data-i18n="signatureStyleLabel">Signature design</span>
+                  <button class="select-button" id="signatureStyleButton" type="button" aria-haspopup="listbox" aria-expanded="false"></button>
+                  <div class="select-menu" id="signatureStyleMenu" role="listbox"></div>
+                </div>
+
+                <div class="range-field">
+                  <div class="range-label">
+                    <span data-i18n="signatureWidthLabel">Signature width</span>
+                    <strong id="signatureWidthValue"></strong>
+                  </div>
+                  <input id="signatureWidthInput" min="300" max="620" step="10" type="range" />
+                </div>
+              </div>
+            </section>
+
+            <section class="editor-card">
+              <div class="card-heading">
+                <span data-i18n="colorsTitle">Colors</span>
+              </div>
+
+              <div class="palette-stack">
+                <div class="palette-control" data-color-control="accent">
+                  <div class="palette-head">
+                    <span data-i18n="accentColorLabel">Accent color</span>
+                    <code id="accentColorValue"></code>
+                  </div>
+                  <div class="palette-grid" id="accentPalette"></div>
+                </div>
+
+                <div class="palette-control" data-color-control="text">
+                  <div class="palette-head">
+                    <span data-i18n="textColorLabel">Text color</span>
+                    <code id="textColorValue"></code>
+                  </div>
+                  <div class="palette-grid" id="textPalette"></div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div class="editor-tab-panel" data-tab-panel="media">
+            <section class="editor-card">
+              <div class="card-heading">
+                <span data-i18n="logoTitle">Logo</span>
+              </div>
+
+              <div class="stack">
+                <div class="custom-select" data-select="logoVariant">
+                  <span class="select-label" data-i18n="logoVariantLabel">Logo version</span>
+                  <button class="select-button" id="logoVariantButton" type="button" aria-haspopup="listbox" aria-expanded="false"></button>
+                  <div class="select-menu" id="logoVariantMenu" role="listbox"></div>
+                </div>
+
+                <label class="field">
+                  <span data-i18n="logoUrlLabel">Logo URL</span>
+                  <input id="logoUrlInput" type="url" />
+                </label>
+
+                <div class="range-field">
+                  <div class="range-label">
+                    <span data-i18n="logoSizeLabel">Logo size</span>
+                    <strong id="logoSizeValue"></strong>
+                  </div>
+                  <input id="logoSizeInput" min="40" max="160" step="2" type="range" />
+                </div>
+              </div>
+            </section>
+
+            <section class="editor-card">
+              <div class="card-heading">
+                <span data-i18n="bannerTitle">Banner</span>
+                <label class="micro-toggle">
+                  <input id="rowBannerInput" type="checkbox" />
+                  <span data-i18n="enabledLabel">Enabled</span>
+                </label>
+              </div>
+
+              <div class="stack">
+                <label class="field">
+                  <span data-i18n="bannerUrlLabel">Banner image URL</span>
+                  <input id="bannerUrlInput" type="url" placeholder="https://..." />
+                </label>
+                <label class="field">
+                  <span data-i18n="bannerLinkLabel">Banner link URL</span>
+                  <input id="bannerLinkInput" type="url" placeholder="https://..." />
+                </label>
+
+                <div class="custom-select" data-select="bannerPosition">
+                  <span class="select-label" data-i18n="bannerPositionLabel">Banner position</span>
+                  <button class="select-button" id="bannerPositionButton" type="button" aria-haspopup="listbox" aria-expanded="false"></button>
+                  <div class="select-menu" id="bannerPositionMenu" role="listbox"></div>
+                </div>
+
+                <div class="range-field">
+                  <div class="range-label">
+                    <span data-i18n="bannerSpacerLabel">Banner spacer</span>
+                    <strong id="bannerSpacerValue"></strong>
+                  </div>
+                  <input id="bannerSpacerInput" min="0" max="32" step="2" type="range" />
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div class="editor-tab-panel" data-tab-panel="layout">
+            <section class="editor-card">
+              <div class="card-heading">
+                <span data-i18n="rowsTitle">Rows</span>
+              </div>
+
+              <div class="row-preset-strip" aria-label="Layout presets">
+                <button type="button" class="mini-pill" data-row-preset="full" data-i18n="presetFull">Full</button>
+                <button type="button" class="mini-pill" data-row-preset="compact" data-i18n="presetCompact">Compact</button>
+                <button type="button" class="mini-pill" data-row-preset="minimal" data-i18n="presetMinimal">Minimal</button>
+              </div>
+
+              <div class="row-toggle-list">
+                <label class="row-switch">
+                  <span data-i18n="rowLogo">Logo</span>
+                  <input id="rowLogoInput" type="checkbox" />
+                </label>
+                <label class="row-switch">
+                  <span data-i18n="rowContact">Contact</span>
+                  <input id="rowContactInput" type="checkbox" />
+                </label>
+                <label class="row-switch">
+                  <span data-i18n="rowAddress">Address</span>
+                  <input id="rowAddressInput" type="checkbox" />
+                </label>
+                <label class="row-switch">
+                  <span data-i18n="rowWebsite">Website</span>
+                  <input id="rowWebsiteInput" type="checkbox" />
+                </label>
+                <label class="row-switch">
+                  <span data-i18n="rowInfo">Info text</span>
+                  <input id="rowInfoInput" type="checkbox" />
+                </label>
+              </div>
+            </section>
+          </div>
+
+          <section class="copy-tray" aria-label="Copy actions">
             <button class="primary-button" id="copyRenderedButton" type="button" data-i18n="copyRendered">
               Copy for Gmail
             </button>
             <button class="secondary-button" id="copyHtmlButton" type="button" data-i18n="copyHtml">
               Copy HTML
             </button>
-            <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
-          </div>
+            <span class="copy-status" id="copyStatus" role="status" aria-live="polite"></span>
+          </section>
         </section>
 
-        <section class="preview-panel" aria-label="Email preview">
-          <article class="gmail-card">
-            <header class="gmail-card__bar">
-              <div class="gmail-window-dots" aria-hidden="true">
-                <span></span><span></span><span></span>
+        <section class="preview-panel" aria-label="Live preview">
+          <div class="gmail-shell" id="gmailShell">
+            <div class="gmail-top">
+              <div class="gmail-subject" id="emailSubject"></div>
+              <div class="gmail-actions">
+                <div class="viewport-toggle" aria-label="Preview viewport">
+                  <button class="viewport-button is-active" type="button" data-preview-viewport="desktop" data-i18n="desktopView">Desktop</button>
+                  <button class="viewport-button" type="button" data-preview-viewport="mobile" data-i18n="mobileView">Mobile</button>
+                </div>
+                <button class="shuffle-button" id="shuffleEmailButton" type="button" data-i18n-aria="shuffleEmail" aria-label="Shuffle preview email">
+                  ↻
+                </button>
               </div>
-              <p id="emailSubject">New message</p>
-              <button class="icon-button" id="shuffleEmailButton" type="button" aria-label="Shuffle preview email" title="Shuffle preview email">
-                <span aria-hidden="true">↻</span>
-              </button>
-            </header>
-            <div class="gmail-card__meta">
-              <span id="previewFrom"></span>
             </div>
-            <div class="gmail-card__body" id="previewEmailBody"></div>
-            <div class="gmail-card__signature" id="signaturePreview"></div>
-          </article>
+
+            <div class="gmail-meta">
+              <span class="gmail-avatar">N</span>
+              <div>
+                <strong>NECom</strong>
+                <span id="previewFrom"></span>
+              </div>
+            </div>
+
+            <div class="email-viewport" id="emailViewport">
+              <div class="email-body" id="previewEmailBody"></div>
+              <div class="signature-mount" id="signaturePreview" aria-label="Generated signature preview"></div>
+            </div>
+          </div>
         </section>
       </section>
+
+      <div class="color-popover" id="colorPopover" hidden>
+        <div class="color-popover__top">
+          <strong data-i18n="customColorTitle">Custom color</strong>
+          <button type="button" id="closeColorPopover" aria-label="Close">×</button>
+        </div>
+        <div class="custom-color-preview" id="customColorPreview"></div>
+        <label class="field">
+          <span data-i18n="hexLabel">Hex</span>
+          <input id="customHexInput" maxlength="7" spellcheck="false" />
+        </label>
+        <div class="rgb-sliders">
+          <label><span>R</span><input id="customRedInput" min="0" max="255" type="range" /></label>
+          <label><span>G</span><input id="customGreenInput" min="0" max="255" type="range" /></label>
+          <label><span>B</span><input id="customBlueInput" min="0" max="255" type="range" /></label>
+        </div>
+        <button class="primary-button" id="applyCustomColorButton" type="button" data-i18n="applyColor">Apply color</button>
+      </div>
     </main>
   </body>
 </html>

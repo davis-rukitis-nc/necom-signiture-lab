@@ -1,4 +1,4 @@
-const STORAGE_KEY = "necom-email-signature-lab-v2";
+const STORAGE_KEY = "necom-email-signature-lab-v3";
 const MINIMAL_COLOR = "#d8dada";
 
 const BRAND_PRESETS = [
@@ -10,16 +10,21 @@ const BRAND_PRESETS = [
     websiteUrl: "https://www.necom.lv",
     accentColor: "#B59A71",
     textColor: "#111111",
-    minimalColor: MINIMAL_COLOR,
-    cardBg: "#0f0f0f",
+    cardBg: "#111111",
     cardLogoVariant: "minimal",
     logoVariants: {
       black: "https://rimirigamarathon.com/wp-content/uploads/2026/02/necom.png",
       minimal: "https://rimirigamarathon.com/wp-content/uploads/2026/02/necom-1.png",
     },
     infoText: {
-      en: "Nords Event Communications (NECom) crafts experiences that move, inspire and elevate Riga and Latvia.",
-      lv: "Nords Event Communications (NECom) rada pieredzes, kas kustina, iedvesmo un ceļ Rīgu un Latviju.",
+      en: {
+        short: "Events that move, inspire, elevate Riga and Latvia.",
+        full: "NECom is an event production, marketing and sponsorship agency creating experiences that are moving Riga and Latvia - literally and figuratively!",
+      },
+      lv: {
+        short: "Notikumi, kas (ie)kustina Rīgu!",
+        full: "Nords Event Communications (NECom) rada pieredzes, kas kustina, iedvesmo un ceļ Rīgu un Latviju.",
+      },
     },
   },
   {
@@ -30,7 +35,6 @@ const BRAND_PRESETS = [
     websiteUrl: "https://rimirigamarathon.com/",
     accentColor: "#cc2128",
     textColor: "#111111",
-    minimalColor: MINIMAL_COLOR,
     cardBg: "#cc2128",
     cardLogoVariant: "white",
     logoVariants: {
@@ -39,8 +43,14 @@ const BRAND_PRESETS = [
       white: "https://rimirigamarathon.com/wp-content/uploads/2026/05/RRM-logo.png",
     },
     infoText: {
-      en: "The biggest and most international running event in the Baltics.",
-      lv: "Lielākais un starptautiskākais skriešanas notikums Baltijā.",
+      en: {
+        short: "Rimi Riga Marathon moves Riga and the Baltics.",
+        full: "Rimi Riga Marathon is the biggest and most international running event in the Baltics, bringing runners and supporters together in Riga.",
+      },
+      lv: {
+        short: "Rimi Rīgas maratons kustina Rīgu un Baltiju.",
+        full: "Rimi Rīgas maratons ir lielākais un starptautiskākais skriešanas notikums Baltijā, kas Rīgā pulcē skrējējus un līdzjutējus.",
+      },
     },
   },
   {
@@ -51,7 +61,6 @@ const BRAND_PRESETS = [
     websiteUrl: "https://pinknoiseriga.com/",
     accentColor: "#fa4100",
     textColor: "#111111",
-    minimalColor: MINIMAL_COLOR,
     cardBg: "#fa4100",
     cardLogoVariant: "black",
     logoVariants: {
@@ -60,8 +69,14 @@ const BRAND_PRESETS = [
       orange: "https://rimirigamarathon.com/wp-content/uploads/2026/05/pnr-orange.png",
     },
     infoText: {
-      en: "Riga's music festival: world-class jazz, pop-rock, fusion and contemporary improvised music.",
-      lv: "Rīgas mūzikas festivāls: pasaules līmeņa džezs, poproks, fusion un laikmetīgā improvizētā mūzika.",
+      en: {
+        short: "Pink Noise Riga helps Riga shine bright in Europe’s music scene.",
+        full: "Pink Noise Riga music festival offers a cocktail of world-class jazz, pop-rock, fusion, and contemporary improvised music. Festival’s main idea is to help Riga stand out & shine bright in Europe’s music scene.",
+      },
+      lv: {
+        short: "Pink Noise Riga ar glanci pieskandina Rīgu.",
+        full: "Pink Noise Riga jeb galvaspilsētas mūzikas festivāls, kas piedāvā pasaules klases džeza, poproka, fusion un laikmetīgās improvizētās mūzikas kokteili. Festivāla galvenā ideja ir ar glanci pieskandināt Rīgu, palīdzot Latvijas galvaspilsētai uzmirdzēt Eiropā!",
+      },
     },
   },
   {
@@ -72,7 +87,6 @@ const BRAND_PRESETS = [
     websiteUrl: "https://rigawinechampagne.lv/",
     accentColor: "#e40521",
     textColor: "#111111",
-    minimalColor: MINIMAL_COLOR,
     cardBg: "#e40521",
     cardLogoVariant: "minimal",
     logoVariants: {
@@ -80,8 +94,14 @@ const BRAND_PRESETS = [
       minimal: "https://rimirigamarathon.com/wp-content/uploads/2026/05/rwch-logo-1.png",
     },
     infoText: {
-      en: "The Baltics' most exciting Champagne and wine festival.",
-      lv: "Baltijas aizraujošākais šampanieša un vīna festivāls.",
+      en: {
+        short: "The most luxurious champagne, wine, and gastronomy celebration in the Baltics.",
+        full: 'The most luxurious champagne, wine, and gastronomy celebration in the Baltics, which includes the popular "Bubble Parade" in the spring, "Top 100 Wines + Chefs" in the autumn, as well as tastings, dinners, and unique masterclasses led by acclaimed winemakers and sommeliers!',
+      },
+      lv: {
+        short: "Baltijas greznākie šampanieša, vīna un gardēdības svētki.",
+        full: "Baltijas greznākie šampanieša, vīna un gardēdības svētki, kas ietver gan populāro “Burbuļu parādi” pavasarī, gan “Top 100 Wines + Chefs” rudenī, gan degustācijas, vakariņas un unikālas meistarklases atzītu vīndaru un vīnziņu vadībā!",
+      },
     },
   },
   {
@@ -92,7 +112,6 @@ const BRAND_PRESETS = [
     websiteUrl: "https://rigawhiskyfriends.com/",
     accentColor: "#023047",
     textColor: "#111111",
-    minimalColor: MINIMAL_COLOR,
     cardBg: "#023047",
     cardLogoVariant: "minimal",
     logoVariants: {
@@ -100,8 +119,14 @@ const BRAND_PRESETS = [
       minimal: "https://rimirigamarathon.com/wp-content/uploads/2026/05/rwf-logo-1.png",
     },
     infoText: {
-      en: "Premier whisky festival in the Baltics, bringing together whiskies, cocktails, experts, chefs and friends.",
-      lv: "Vadošais viskija festivāls Baltijā, kas apvieno viskijus, kokteiļus, ekspertus, šefpavārus un draugus.",
+      en: {
+        short: "The annual whisky culture festival returns on 12 September.",
+        full: "The annual and gourmet beloved whisky culture festival “Riga Whisky & Friends” will return on 12 September, culminating for the third year in the historic Rīgas cirks.",
+      },
+      lv: {
+        short: "Ikgadējais viskija kultūras festivāls atgriezīsies 12. septembrī.",
+        full: "Ikgadējais viskija kultūras festivāls “Riga Whisky & Friends”, atgriezīsies 12. septembrī – trešo gadu pēc kārtas ar kulmināciju vēsturiskajā Rīgas cirkā.",
+      },
     },
   },
   {
@@ -112,15 +137,20 @@ const BRAND_PRESETS = [
     websiteUrl: "https://www.balticwinelists.com/baltic-wine-drinks-awards/winners",
     accentColor: "#fad0c5",
     textColor: "#111111",
-    minimalColor: MINIMAL_COLOR,
     cardBg: "#fad0c5",
     cardLogoVariant: "black",
     logoVariants: {
       black: "https://rimirigamarathon.com/wp-content/uploads/2025/02/BWDA-logo.svg",
     },
     infoText: {
-      en: "Spotlighting good, great and extraordinary restaurants and wine bars in Latvia, Estonia and Lithuania.",
-      lv: "Izceļ labus, lieliskus un izcilus restorānus un vīna bārus Latvijā, Igaunijā un Lietuvā.",
+      en: {
+        short: "Highlighting the best wine lists across Latvia, Lithuania, and Estonia.",
+        full: "Baltic Wine & Drinks Awards highlight the best and most wine-lover-friendly wine restaurants and bars–in other words, the best wine lists in Latvia, Lithuania, and Estonia.",
+      },
+      lv: {
+        short: "Izceļ labākās vīna kartes Latvijā, Lietuvā, Igaunijā.",
+        full: "Baltic Wine & Drinks Awards sadarbībā ar Liebherr izceļ labākos un vīnmīļiem draudzīgākos vīna restorānus un bārus jeb labākās vīna kartes Latvijā, Lietuvā, Igaunijā.",
+      },
     },
   },
   {
@@ -131,17 +161,45 @@ const BRAND_PRESETS = [
     websiteUrl: "https://example.com",
     accentColor: "#B59A71",
     textColor: "#111111",
-    minimalColor: MINIMAL_COLOR,
     cardBg: "#f1f1f1",
     cardLogoVariant: "custom",
     logoVariants: {
       custom: "https://rimirigamarathon.com/wp-content/uploads/2026/02/necom.png",
     },
     infoText: {
-      en: "Custom signature info text.",
-      lv: "Pielāgots paraksta informatīvais teksts.",
+      en: {
+        short: "Custom signature info text.",
+        full: "Custom signature info text.",
+      },
+      lv: {
+        short: "Pielāgots paraksta informatīvais teksts.",
+        full: "Pielāgots paraksta informatīvais teksts.",
+      },
     },
   },
+];
+
+const BRAND_COLORS = [
+  { label: "NECom", value: "#B59A71" },
+  { label: "RRM", value: "#cc2128" },
+  { label: "PNR", value: "#fa4100" },
+  { label: "PNR blue", value: "#73b6ff" },
+  { label: "RWCH", value: "#e40521" },
+  { label: "RWCH light", value: "#f5f5f5" },
+  { label: "RWF", value: "#023047" },
+  { label: "RWF orange", value: "#ff792c" },
+  { label: "BWDA", value: "#fad0c5" },
+  { label: "BWDA dark", value: "#231F20" },
+  { label: "Minimal", value: MINIMAL_COLOR },
+];
+
+const TEXT_COLORS = [
+  { label: "Black", value: "#111111" },
+  { label: "Dark grey", value: "#222222" },
+  { label: "Gmail grey", value: "#5f6368" },
+  { label: "BWDA dark", value: "#231F20" },
+  { label: "RWF navy", value: "#023047" },
+  { label: "Minimal", value: MINIMAL_COLOR },
 ];
 
 const EMAIL_EXAMPLES = {
@@ -222,7 +280,8 @@ Tāpēc ierosinu dienu sākt kulturāli. Ne obligāti ar bordo, lai gan ideju no
 
 Mazs solis cilvēcei. Liels solis inbox civilizācijai.
 
-Priekā,`,
+Priekā,
+Aigars`,
     },
     {
       email: "aigars@necom.lv",
@@ -232,7 +291,8 @@ Priekā,`,
 
 Nākamreiz paņemam mazāk slaidu, vairāk domu un, ideālā pasaulē, arī kaut ko ēdamu. Tukšā dūšā stratēģija nerodas. Rodas tikai aizkaitinājums.
 
-Dzīve ir skaista,`,
+Dzīve ir skaista,
+Aigars`,
     },
     {
       email: "aigars@necom.lv",
@@ -243,7 +303,8 @@ atgādinu, ka pusdienas nav vājuma pazīme. Tā ir civilizācijas forma.
 Cilvēks, kurš starp 12:00 un 15:00 nav ēdis, nevar pieņemt stratēģiskus lēmumus. Viņš var tikai pārvietot kalendāra ielūgumus un skatīties uz kolēģiem ar burgundieša cienīgu skumju pilnu skatienu.
 
 Ejiet ēst. Pasaule pagaidīs.
-`,
+
+Aigars`,
     },
     {
       email: "aigars@necom.lv",
@@ -255,7 +316,8 @@ Bet pirms saucam to par krīzi, lūdzu, pārbaudām trīs lietas: vai ir siers, 
 
 Turpinām ar cieņu, mieru un nelielu devu teatrālas pašpārliecības.
 
-Priekā,`,
+Priekā,
+Aigars`,
     },
     {
       email: "maveriks@necom.lv",
@@ -275,10 +337,43 @@ Priekā,`,
   ],
 };
 
-const I18N = {
+const TRANSLATIONS = {
   en: {
     reset: "Reset",
+    tabContent: "Content",
+    tabStyle: "Style",
+    tabMedia: "Media",
+    tabLayout: "Layout",
+    personTitle: "Person",
+    detailsTitle: "Details",
+    designTitle: "Design",
+    colorsTitle: "Colors",
+    logoTitle: "Logo",
+    bannerTitle: "Banner",
     rowsTitle: "Rows",
+    nameLabel: "Name",
+    titleLabel: "Job title",
+    phoneLabel: "Phone",
+    emailLabel: "Email",
+    showEmailLabel: "Show email address",
+    address1Label: "Address line 1",
+    address2Label: "Address line 2",
+    websiteLabelLabel: "Website label",
+    websiteUrlLabel: "Website URL",
+    infoTextLabel: "Info text",
+    infoVariantLabel: "Info length",
+    logoVariantLabel: "Logo version",
+    logoUrlLabel: "Logo URL",
+    logoSizeLabel: "Logo size",
+    signatureStyleLabel: "Signature design",
+    signatureWidthLabel: "Signature width",
+    accentColorLabel: "Accent color",
+    textColorLabel: "Text color",
+    bannerUrlLabel: "Banner image URL",
+    bannerLinkLabel: "Banner link URL",
+    bannerPositionLabel: "Banner position",
+    bannerSpacerLabel: "Banner spacer",
+    enabledLabel: "Enabled",
     presetFull: "Full",
     presetCompact: "Compact",
     presetMinimal: "Minimal",
@@ -287,144 +382,110 @@ const I18N = {
     rowAddress: "Address",
     rowWebsite: "Website",
     rowInfo: "Info text",
-    rowBanner: "Banner",
-    personTitle: "Person",
-    nameLabel: "Name",
-    titleLabel: "Job title",
-    phoneLabel: "Phone",
-    emailLabel: "Email",
-    showEmailLabel: "Show email address",
-    detailsTitle: "Details",
-    address1Label: "Address line 1",
-    address2Label: "Address line 2",
-    websiteLabelLabel: "Website label",
-    websiteUrlLabel: "Website URL",
-    infoTextLabel: "Info text",
-    logoTitle: "Logo",
-    logoVariantLabel: "Logo version",
-    logoUrlLabel: "Logo URL",
-    logoSizeLabel: "Logo size",
-    minimalColorLabel: "Minimal color",
-    styleTitle: "Style",
-    signatureStyleLabel: "Signature design",
-    styleClassic: "Classic",
-    styleModern: "Modern",
-    accentColorLabel: "Accent color",
-    textColorLabel: "Text color",
-    signatureWidthLabel: "Signature width",
-    bannerTitle: "Banner",
-    bannerUrlLabel: "Banner image URL",
-    bannerLinkLabel: "Banner link URL",
-    bannerPositionLabel: "Banner position",
-    bannerTop: "Top",
-    bannerAfterHeader: "After name/logo",
-    bannerBeforeInfo: "Before info text",
-    bannerBottom: "Bottom",
-    bannerSpacerLabel: "Banner spacer",
     copyRendered: "Copy for Gmail",
     copyHtml: "Copy HTML",
-    copiedRendered: "Copied signature.",
-    copiedHtml: "Copied HTML.",
+    desktopView: "Desktop",
+    mobileView: "Mobile",
+    shuffleEmail: "Shuffle preview email",
+    customColorTitle: "Custom color",
+    hexLabel: "Hex",
+    applyColor: "Apply color",
+    copiedRendered: "Signature copied for Gmail.",
+    copiedHtml: "Signature HTML copied.",
+    copiedFallback: "Copied as plain HTML. Your browser blocked rich clipboard access.",
     copyFailed: "Copy failed. Select the preview and copy manually.",
-    fromLabel: "From",
-    logoVariantBlack: "Black",
-    logoVariantMinimal: "Minimal",
-    logoVariantWhite: "White",
-    logoVariantOrange: "Orange",
-    logoVariantCustom: "Custom",
+    styleClassic: "Classic",
+    styleModern: "Modern",
+    bannerTop: "Top",
+    bannerAfterHeader: "After header",
+    bannerAfterContact: "After contact",
+    bannerBottom: "Bottom",
+    infoShort: "Short",
+    infoFull: "Full",
+    logoBlack: "Black",
+    logoMinimal: "Minimal",
+    logoWhite: "White",
+    logoOrange: "Orange",
+    logoCustom: "Custom",
   },
   lv: {
     reset: "Atiestatīt",
+    tabContent: "Saturs",
+    tabStyle: "Stils",
+    tabMedia: "Attēli",
+    tabLayout: "Rindas",
+    personTitle: "Persona",
+    detailsTitle: "Detaļas",
+    designTitle: "Dizains",
+    colorsTitle: "Krāsas",
+    logoTitle: "Logo",
+    bannerTitle: "Baneris",
     rowsTitle: "Rindas",
+    nameLabel: "Vārds",
+    titleLabel: "Amats",
+    phoneLabel: "Telefons",
+    emailLabel: "E-pasts",
+    showEmailLabel: "Rādīt e-pasta adresi",
+    address1Label: "Adrese 1",
+    address2Label: "Adrese 2",
+    websiteLabelLabel: "Mājaslapas teksts",
+    websiteUrlLabel: "Mājaslapas saite",
+    infoTextLabel: "Info teksts",
+    infoVariantLabel: "Info garums",
+    logoVariantLabel: "Logo versija",
+    logoUrlLabel: "Logo URL",
+    logoSizeLabel: "Logo izmērs",
+    signatureStyleLabel: "Paraksta dizains",
+    signatureWidthLabel: "Paraksta platums",
+    accentColorLabel: "Akcenta krāsa",
+    textColorLabel: "Teksta krāsa",
+    bannerUrlLabel: "Banera attēla URL",
+    bannerLinkLabel: "Banera saite",
+    bannerPositionLabel: "Banera pozīcija",
+    bannerSpacerLabel: "Banera atstarpe",
+    enabledLabel: "Ieslēgts",
     presetFull: "Pilns",
-    presetCompact: "Kompakts",
+    presetCompact: "Īss",
     presetMinimal: "Minimāls",
     rowLogo: "Logo",
     rowContact: "Kontakti",
     rowAddress: "Adrese",
     rowWebsite: "Mājaslapa",
     rowInfo: "Info teksts",
-    rowBanner: "Baneris",
-    personTitle: "Persona",
-    nameLabel: "Vārds",
-    titleLabel: "Amats",
-    phoneLabel: "Telefons",
-    emailLabel: "E-pasts",
-    showEmailLabel: "Rādīt e-pasta adresi",
-    detailsTitle: "Detaļas",
-    address1Label: "Adrese 1. rinda",
-    address2Label: "Adrese 2. rinda",
-    websiteLabelLabel: "Mājaslapas teksts",
-    websiteUrlLabel: "Mājaslapas URL",
-    infoTextLabel: "Info teksts",
-    logoTitle: "Logo",
-    logoVariantLabel: "Logo versija",
-    logoUrlLabel: "Logo URL",
-    logoSizeLabel: "Logo izmērs",
-    minimalColorLabel: "Minimālā krāsa",
-    styleTitle: "Stils",
-    signatureStyleLabel: "Paraksta dizains",
-    styleClassic: "Klasisks",
-    styleModern: "Moderns",
-    accentColorLabel: "Akcenta krāsa",
-    textColorLabel: "Teksta krāsa",
-    signatureWidthLabel: "Paraksta platums",
-    bannerTitle: "Baneris",
-    bannerUrlLabel: "Banera attēla URL",
-    bannerLinkLabel: "Banera saites URL",
-    bannerPositionLabel: "Banera pozīcija",
-    bannerTop: "Augšā",
-    bannerAfterHeader: "Pēc vārda/logo",
-    bannerBeforeInfo: "Pirms info teksta",
-    bannerBottom: "Apakšā",
-    bannerSpacerLabel: "Banera atstarpe",
     copyRendered: "Kopēt Gmail",
     copyHtml: "Kopēt HTML",
-    copiedRendered: "Paraksts nokopēts.",
-    copiedHtml: "HTML nokopēts.",
+    desktopView: "Dators",
+    mobileView: "Mobilais",
+    shuffleEmail: "Mainīt piemēra e-pastu",
+    customColorTitle: "Pielāgota krāsa",
+    hexLabel: "Hex",
+    applyColor: "Lietot krāsu",
+    copiedRendered: "Paraksts nokopēts Gmail lietošanai.",
+    copiedHtml: "Paraksta HTML nokopēts.",
+    copiedFallback: "Nokopēts kā HTML teksts. Pārlūks bloķēja rich clipboard piekļuvi.",
     copyFailed: "Kopēšana neizdevās. Iezīmē priekšskatījumu un kopē manuāli.",
-    fromLabel: "No",
-    logoVariantBlack: "Melns",
-    logoVariantMinimal: "Minimāls",
-    logoVariantWhite: "Balts",
-    logoVariantOrange: "Oranžs",
-    logoVariantCustom: "Pielāgots",
-  },
-};
-
-const ROW_PRESETS = {
-  full: {
-    showLogo: true,
-    showContact: true,
-    showAddress: true,
-    showWebsite: true,
-    showInfo: true,
-    showBanner: false,
-  },
-  compact: {
-    showLogo: true,
-    showContact: true,
-    showAddress: false,
-    showWebsite: true,
-    showInfo: false,
-    showBanner: false,
-  },
-  minimal: {
-    showLogo: true,
-    showContact: false,
-    showAddress: false,
-    showWebsite: true,
-    showInfo: false,
-    showBanner: false,
+    styleClassic: "Klasisks",
+    styleModern: "Moderns",
+    bannerTop: "Augšā",
+    bannerAfterHeader: "Pēc galvenes",
+    bannerAfterContact: "Pēc kontaktiem",
+    bannerBottom: "Apakšā",
+    infoShort: "Īss",
+    infoFull: "Pilns",
+    logoBlack: "Melns",
+    logoMinimal: "Minimāls",
+    logoWhite: "Balts",
+    logoOrange: "Oranžs",
+    logoCustom: "Pielāgots",
   },
 };
 
 const DEFAULT_STATE = {
   language: "en",
-  activeBrandId: "necom",
-  currentEmailIndex: 0,
+  previewViewport: "desktop",
+  brandId: "necom",
   name: "Dāvis Rūķītis",
-  jobTitle: "Digital Operations Manager",
+  title: "Digital Operations Manager",
   phone: "+371 260 78809",
   email: "davis@necom.lv",
   showEmail: false,
@@ -432,91 +493,145 @@ const DEFAULT_STATE = {
   address2: "LV-1050, Latvia",
   websiteLabel: "www.necom.lv",
   websiteUrl: "https://www.necom.lv",
-  infoText: BRAND_PRESETS[0].infoText.en,
-  logoVariant: "black",
-  logoUrl: BRAND_PRESETS[0].logoVariants.black,
+  infoVariant: "full",
+  infoText: BRAND_PRESETS[0].infoText.en.full,
+  logoVariant: "minimal",
+  logoUrl: BRAND_PRESETS[0].logoVariants.minimal,
   logoSize: 72,
-  signatureWidth: 520,
   signatureStyle: "classic",
   accentColor: BRAND_PRESETS[0].accentColor,
-  minimalColor: MINIMAL_COLOR,
   textColor: "#111111",
+  signatureWidth: 560,
   bannerUrl: "",
   bannerLink: "",
   bannerPosition: "bottom",
   bannerSpacer: 12,
-  showLogo: true,
-  showContact: true,
-  showAddress: true,
-  showWebsite: true,
-  showInfo: true,
-  showBanner: false,
+  rows: {
+    logo: true,
+    contact: true,
+    address: true,
+    website: true,
+    info: true,
+    banner: false,
+  },
+  activeEmailIndex: 0,
 };
 
+const SELECT_DEFS = {
+  signatureStyle: [
+    { value: "classic", labelKey: "styleClassic" },
+    { value: "modern", labelKey: "styleModern" },
+  ],
+  bannerPosition: [
+    { value: "top", labelKey: "bannerTop" },
+    { value: "afterHeader", labelKey: "bannerAfterHeader" },
+    { value: "afterContact", labelKey: "bannerAfterContact" },
+    { value: "bottom", labelKey: "bannerBottom" },
+  ],
+  infoVariant: [
+    { value: "short", labelKey: "infoShort" },
+    { value: "full", labelKey: "infoFull" },
+  ],
+};
+
+const elements = {};
 let state = loadState();
-let copyStatusTimer = null;
+let activeCustomColorTarget = "accent";
 
-const els = {
-  presetGrid: document.getElementById("presetGrid"),
-  resetButton: document.getElementById("resetButton"),
-  languageButtons: document.querySelectorAll("[data-language]"),
-  rowLogoInput: document.getElementById("rowLogoInput"),
-  rowContactInput: document.getElementById("rowContactInput"),
-  rowAddressInput: document.getElementById("rowAddressInput"),
-  rowWebsiteInput: document.getElementById("rowWebsiteInput"),
-  rowInfoInput: document.getElementById("rowInfoInput"),
-  rowBannerInput: document.getElementById("rowBannerInput"),
-  rowPresetButtons: document.querySelectorAll("[data-row-preset]"),
-  nameInput: document.getElementById("nameInput"),
-  titleInput: document.getElementById("titleInput"),
-  phoneInput: document.getElementById("phoneInput"),
-  emailInput: document.getElementById("emailInput"),
-  showEmailInput: document.getElementById("showEmailInput"),
-  address1Input: document.getElementById("address1Input"),
-  address2Input: document.getElementById("address2Input"),
-  websiteLabelInput: document.getElementById("websiteLabelInput"),
-  websiteUrlInput: document.getElementById("websiteUrlInput"),
-  infoTextInput: document.getElementById("infoTextInput"),
-  logoVariantInput: document.getElementById("logoVariantInput"),
-  logoUrlInput: document.getElementById("logoUrlInput"),
-  logoSizeInput: document.getElementById("logoSizeInput"),
-  logoSizeValue: document.getElementById("logoSizeValue"),
-  minimalColorInput: document.getElementById("minimalColorInput"),
-  signatureStyleInput: document.getElementById("signatureStyleInput"),
-  accentColorInput: document.getElementById("accentColorInput"),
-  textColorInput: document.getElementById("textColorInput"),
-  signatureWidthInput: document.getElementById("signatureWidthInput"),
-  signatureWidthValue: document.getElementById("signatureWidthValue"),
-  bannerUrlInput: document.getElementById("bannerUrlInput"),
-  bannerLinkInput: document.getElementById("bannerLinkInput"),
-  bannerPositionInput: document.getElementById("bannerPositionInput"),
-  bannerSpacerInput: document.getElementById("bannerSpacerInput"),
-  bannerSpacerValue: document.getElementById("bannerSpacerValue"),
-  copyRenderedButton: document.getElementById("copyRenderedButton"),
-  copyHtmlButton: document.getElementById("copyHtmlButton"),
-  copyStatus: document.getElementById("copyStatus"),
-  shuffleEmailButton: document.getElementById("shuffleEmailButton"),
-  emailSubject: document.getElementById("emailSubject"),
-  previewFrom: document.getElementById("previewFrom"),
-  previewEmailBody: document.getElementById("previewEmailBody"),
-  signaturePreview: document.getElementById("signaturePreview"),
-};
-
-init();
-
-function init() {
+document.addEventListener("DOMContentLoaded", () => {
+  bindElements();
   renderPresetButtons();
+  renderPalettes();
   bindEvents();
-  syncUiFromState();
+  applyStateToControls();
   renderAll();
+});
+
+function bindElements() {
+  const ids = [
+    "presetGrid",
+    "resetButton",
+    "nameInput",
+    "titleInput",
+    "phoneInput",
+    "emailInput",
+    "showEmailInput",
+    "address1Input",
+    "address2Input",
+    "websiteLabelInput",
+    "websiteUrlInput",
+    "infoVariantButton",
+    "infoVariantMenu",
+    "infoTextInput",
+    "logoVariantButton",
+    "logoVariantMenu",
+    "logoUrlInput",
+    "logoSizeValue",
+    "logoSizeInput",
+    "signatureStyleButton",
+    "signatureStyleMenu",
+    "accentPalette",
+    "accentColorValue",
+    "textPalette",
+    "textColorValue",
+    "signatureWidthValue",
+    "signatureWidthInput",
+    "bannerUrlInput",
+    "bannerLinkInput",
+    "bannerPositionButton",
+    "bannerPositionMenu",
+    "bannerSpacerValue",
+    "bannerSpacerInput",
+    "rowLogoInput",
+    "rowContactInput",
+    "rowAddressInput",
+    "rowWebsiteInput",
+    "rowInfoInput",
+    "rowBannerInput",
+    "copyRenderedButton",
+    "copyHtmlButton",
+    "copyStatus",
+    "emailSubject",
+    "shuffleEmailButton",
+    "previewFrom",
+    "previewEmailBody",
+    "signaturePreview",
+    "emailViewport",
+    "colorPopover",
+    "customColorPreview",
+    "customHexInput",
+    "customRedInput",
+    "customGreenInput",
+    "customBlueInput",
+    "applyCustomColorButton",
+    "closeColorPopover",
+  ];
+
+  ids.forEach((id) => {
+    elements[id] = document.getElementById(id);
+  });
 }
 
 function loadState() {
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
-    return saved ? { ...DEFAULT_STATE, ...saved } : { ...DEFAULT_STATE };
+    if (!saved || typeof saved !== "object") {
+      return structuredClone(DEFAULT_STATE);
+    }
+
+    const merged = {
+      ...structuredClone(DEFAULT_STATE),
+      ...saved,
+      rows: { ...DEFAULT_STATE.rows, ...(saved.rows || {}) },
+    };
+
+    if (!BRAND_PRESETS.some((brand) => brand.id === merged.brandId)) {
+      merged.brandId = "necom";
+    }
+
+    return merged;
   } catch {
-    return { ...DEFAULT_STATE };
+    return structuredClone(DEFAULT_STATE);
   }
 }
 
@@ -524,558 +639,695 @@ function saveState() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
 
-function getActiveBrand() {
-  return BRAND_PRESETS.find((brand) => brand.id === state.activeBrandId) || BRAND_PRESETS[0];
+function t(key) {
+  return TRANSLATIONS[state.language][key] || TRANSLATIONS.en[key] || key;
 }
 
-function translate(key) {
-  return I18N[state.language][key] || I18N.en[key] || key;
+function currentBrand() {
+  return BRAND_PRESETS.find((brand) => brand.id === state.brandId) || BRAND_PRESETS[0];
+}
+
+function getBrandLogo(brand) {
+  return brand.logoVariants[brand.cardLogoVariant] || Object.values(brand.logoVariants)[0];
 }
 
 function renderPresetButtons() {
-  els.presetGrid.innerHTML = "";
+  elements.presetGrid.innerHTML = "";
 
   BRAND_PRESETS.forEach((brand) => {
     const button = document.createElement("button");
     button.type = "button";
-    button.className = `preset-card${brand.id === "custom" ? " preset-card--custom" : ""}`;
+    button.className = `preset-card ${brand.id === "custom" ? "preset-card--custom" : ""}`;
     button.dataset.brandId = brand.id;
-    button.title = brand.name;
     button.style.setProperty("--preset-bg", brand.cardBg);
     button.style.setProperty("--preset-accent", brand.accentColor);
+    button.setAttribute("aria-label", brand.name);
 
     if (brand.id === "custom") {
       button.textContent = "+";
-      button.setAttribute("aria-label", "Custom");
     } else {
-      const image = document.createElement("img");
-      const variant = brand.logoVariants[brand.cardLogoVariant] ? brand.cardLogoVariant : Object.keys(brand.logoVariants)[0];
-      image.src = brand.logoVariants[variant];
-      image.alt = brand.name;
-      button.appendChild(image);
+      const img = document.createElement("img");
+      img.src = getBrandLogo(brand);
+      img.alt = brand.name;
+      button.appendChild(img);
     }
 
-    els.presetGrid.appendChild(button);
+    elements.presetGrid.appendChild(button);
   });
 }
 
+function renderPalettes() {
+  renderPalette("accent", elements.accentPalette, BRAND_COLORS);
+  renderPalette("text", elements.textPalette, TEXT_COLORS);
+}
+
+function renderPalette(target, container, colors) {
+  container.innerHTML = "";
+
+  colors.forEach((item) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `color-swatch ${isLightColor(item.value) ? "is-light" : ""}`;
+    button.style.setProperty("--swatch", item.value);
+    button.dataset.colorTarget = target;
+    button.dataset.colorValue = item.value;
+    button.title = `${item.label} ${item.value}`;
+    button.setAttribute("aria-label", `${item.label} ${item.value}`);
+    container.appendChild(button);
+  });
+
+  const custom = document.createElement("button");
+  custom.type = "button";
+  custom.className = "color-swatch color-swatch--custom";
+  custom.dataset.colorTarget = target;
+  custom.dataset.customColor = "true";
+  custom.textContent = "+";
+  custom.setAttribute("aria-label", "Custom color");
+  container.appendChild(custom);
+}
+
 function bindEvents() {
-  els.languageButtons.forEach((button) => {
+  document.querySelectorAll("[data-language]").forEach((button) => {
     button.addEventListener("click", () => {
       const nextLanguage = button.dataset.language;
       if (state.language === nextLanguage) return;
-
-      const previousBrand = getActiveBrand();
-      const previousInfo = previousBrand.infoText[state.language];
-
       state.language = nextLanguage;
-      if (state.infoText === previousInfo) {
-        state.infoText = previousBrand.infoText[nextLanguage];
-      }
-
-      state.currentEmailIndex = randomEmailIndex(nextLanguage);
-      syncUiFromState();
-      renderAll();
+      state.activeEmailIndex = 0;
+      state.infoText = getCurrentBrandInfoText(state.infoVariant);
+      saveAndRender();
     });
   });
 
-  els.presetGrid.addEventListener("click", (event) => {
+  document.querySelectorAll(".editor-tab").forEach((button) => {
+    button.addEventListener("click", () => activateTab(button.dataset.tabTarget));
+  });
+
+  elements.presetGrid.addEventListener("click", (event) => {
     const button = event.target.closest("[data-brand-id]");
     if (!button) return;
     applyBrand(button.dataset.brandId);
   });
 
-  els.rowPresetButtons.forEach((button) => {
+  elements.resetButton.addEventListener("click", () => {
+    state = structuredClone(DEFAULT_STATE);
+    saveAndRender();
+  });
+
+  bindInput(elements.nameInput, "name");
+  bindInput(elements.titleInput, "title");
+  bindInput(elements.phoneInput, "phone");
+  bindInput(elements.emailInput, "email");
+  bindInput(elements.address1Input, "address1");
+  bindInput(elements.address2Input, "address2");
+  bindInput(elements.websiteLabelInput, "websiteLabel");
+  bindInput(elements.websiteUrlInput, "websiteUrl");
+  bindInput(elements.infoTextInput, "infoText");
+  bindInput(elements.logoUrlInput, "logoUrl");
+  bindInput(elements.bannerUrlInput, "bannerUrl");
+  bindInput(elements.bannerLinkInput, "bannerLink");
+
+  elements.showEmailInput.addEventListener("change", () => {
+    state.showEmail = elements.showEmailInput.checked;
+    saveAndRender();
+  });
+
+  elements.rowLogoInput.addEventListener("change", () => updateRow("logo", elements.rowLogoInput.checked));
+  elements.rowContactInput.addEventListener("change", () => updateRow("contact", elements.rowContactInput.checked));
+  elements.rowAddressInput.addEventListener("change", () => updateRow("address", elements.rowAddressInput.checked));
+  elements.rowWebsiteInput.addEventListener("change", () => updateRow("website", elements.rowWebsiteInput.checked));
+  elements.rowInfoInput.addEventListener("change", () => updateRow("info", elements.rowInfoInput.checked));
+  elements.rowBannerInput.addEventListener("change", () => updateRow("banner", elements.rowBannerInput.checked));
+
+  elements.logoSizeInput.addEventListener("input", () => {
+    state.logoSize = Number(elements.logoSizeInput.value);
+    saveAndRender();
+  });
+
+  elements.signatureWidthInput.addEventListener("input", () => {
+    state.signatureWidth = Number(elements.signatureWidthInput.value);
+    saveAndRender();
+  });
+
+  elements.bannerSpacerInput.addEventListener("input", () => {
+    state.bannerSpacer = Number(elements.bannerSpacerInput.value);
+    saveAndRender();
+  });
+
+  document.querySelectorAll("[data-row-preset]").forEach((button) => {
+    button.addEventListener("click", () => applyRowPreset(button.dataset.rowPreset));
+  });
+
+  document.querySelectorAll("[data-preview-viewport]").forEach((button) => {
     button.addEventListener("click", () => {
-      Object.assign(state, ROW_PRESETS[button.dataset.rowPreset]);
-      syncUiFromState();
-      renderAll();
+      state.previewViewport = button.dataset.previewViewport;
+      saveAndRender();
     });
   });
 
-  bindTextInput(els.nameInput, "name");
-  bindTextInput(els.titleInput, "jobTitle");
-  bindTextInput(els.phoneInput, "phone");
-  bindTextInput(els.emailInput, "email");
-  bindTextInput(els.address1Input, "address1");
-  bindTextInput(els.address2Input, "address2");
-  bindTextInput(els.websiteLabelInput, "websiteLabel");
-  bindTextInput(els.websiteUrlInput, "websiteUrl");
-  bindTextInput(els.infoTextInput, "infoText");
-  bindTextInput(els.logoUrlInput, "logoUrl");
-  bindTextInput(els.bannerUrlInput, "bannerUrl");
-  bindTextInput(els.bannerLinkInput, "bannerLink");
+  elements.shuffleEmailButton.addEventListener("click", shuffleEmail);
+  elements.copyRenderedButton.addEventListener("click", copyRenderedSignature);
+  elements.copyHtmlButton.addEventListener("click", copyHtmlSignature);
 
-  bindCheckbox(els.showEmailInput, "showEmail");
-  bindCheckbox(els.rowLogoInput, "showLogo");
-  bindCheckbox(els.rowContactInput, "showContact");
-  bindCheckbox(els.rowAddressInput, "showAddress");
-  bindCheckbox(els.rowWebsiteInput, "showWebsite");
-  bindCheckbox(els.rowInfoInput, "showInfo");
-  bindCheckbox(els.rowBannerInput, "showBanner");
-
-  bindRange(els.logoSizeInput, "logoSize");
-  bindRange(els.signatureWidthInput, "signatureWidth");
-  bindRange(els.bannerSpacerInput, "bannerSpacer");
-
-  els.logoVariantInput.addEventListener("change", () => {
-    state.logoVariant = els.logoVariantInput.value;
-    const brand = getActiveBrand();
-    const nextLogo = brand.logoVariants[state.logoVariant];
-
-    if (nextLogo) {
-      state.logoUrl = nextLogo;
-    }
-
-    if (state.logoVariant === "minimal") {
-      state.accentColor = state.minimalColor;
-    }
-
-    syncUiFromState();
-    renderAll();
-  });
-
-  els.minimalColorInput.addEventListener("input", () => {
-    state.minimalColor = els.minimalColorInput.value;
-    if (state.logoVariant === "minimal") {
-      state.accentColor = state.minimalColor;
-    }
-    syncUiFromState();
-    renderAll();
-  });
-
-  els.accentColorInput.addEventListener("input", () => {
-    state.accentColor = els.accentColorInput.value;
-    renderAll();
-  });
-
-  els.textColorInput.addEventListener("input", () => {
-    state.textColor = els.textColorInput.value;
-    renderAll();
-  });
-
-  els.signatureStyleInput.addEventListener("change", () => {
-    state.signatureStyle = els.signatureStyleInput.value;
-    renderAll();
-  });
-
-  els.bannerPositionInput.addEventListener("change", () => {
-    state.bannerPosition = els.bannerPositionInput.value;
-    renderAll();
-  });
-
-  els.shuffleEmailButton.addEventListener("click", () => {
-    state.currentEmailIndex = randomEmailIndex(state.language, state.currentEmailIndex);
-    renderAll();
-  });
-
-  els.resetButton.addEventListener("click", () => {
-    state = { ...DEFAULT_STATE };
-    localStorage.removeItem(STORAGE_KEY);
-    syncUiFromState();
-    renderAll();
-  });
-
-  els.copyRenderedButton.addEventListener("click", async () => {
-    const html = renderSignatureHtml({ editable: false });
-    const plain = buildPlainTextSignature();
-
-    try {
-      await copyRichHtml(html, plain);
-      showCopyStatus(translate("copiedRendered"));
-    } catch {
-      showCopyStatus(translate("copyFailed"));
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".custom-select")) {
+      closeAllSelects();
     }
   });
 
-  els.copyHtmlButton.addEventListener("click", async () => {
-    const html = renderSignatureHtml({ editable: false });
+  elements.accentPalette.addEventListener("click", handlePaletteClick);
+  elements.textPalette.addEventListener("click", handlePaletteClick);
 
-    try {
-      await navigator.clipboard.writeText(html);
-      showCopyStatus(translate("copiedHtml"));
-    } catch {
-      showCopyStatus(translate("copyFailed"));
-    }
+  elements.closeColorPopover.addEventListener("click", hideColorPopover);
+  elements.applyCustomColorButton.addEventListener("click", applyCustomColor);
+  elements.customHexInput.addEventListener("input", handleHexInput);
+  [elements.customRedInput, elements.customGreenInput, elements.customBlueInput].forEach((input) => {
+    input.addEventListener("input", handleRgbInput);
   });
+
+  elements.signaturePreview.addEventListener("blur", handleInlineEdit, true);
 }
 
-function bindTextInput(input, key) {
+function bindInput(input, key) {
   input.addEventListener("input", () => {
     state[key] = input.value;
-    renderAll();
+    saveAndRender();
   });
 }
 
-function bindCheckbox(input, key) {
-  input.addEventListener("change", () => {
-    state[key] = input.checked;
-    renderAll();
+function activateTab(tab) {
+  document.querySelectorAll(".editor-tab").forEach((button) => {
+    button.classList.toggle("is-active", button.dataset.tabTarget === tab);
+  });
+  document.querySelectorAll(".editor-tab-panel").forEach((panel) => {
+    panel.classList.toggle("is-active", panel.dataset.tabPanel === tab);
   });
 }
 
-function bindRange(input, key) {
-  input.addEventListener("input", () => {
-    state[key] = Number(input.value);
-    renderAll();
-  });
+function updateRow(row, value) {
+  state.rows[row] = value;
+  saveAndRender();
 }
 
 function applyBrand(brandId) {
   const brand = BRAND_PRESETS.find((item) => item.id === brandId);
   if (!brand) return;
 
-  const variantKeys = Object.keys(brand.logoVariants);
-  const nextVariant = variantKeys.includes("black") ? "black" : variantKeys[0];
-
-  state.activeBrandId = brand.id;
-  state.logoVariant = nextVariant;
+  state.brandId = brand.id;
   state.websiteLabel = brand.websiteLabel;
   state.websiteUrl = brand.websiteUrl;
-  state.accentColor = nextVariant === "minimal" ? brand.minimalColor : brand.accentColor;
-  state.minimalColor = brand.minimalColor;
+  state.accentColor = brand.accentColor;
   state.textColor = brand.textColor;
-  state.logoUrl = brand.logoVariants[nextVariant];
-  state.infoText = brand.infoText[state.language];
+  state.logoVariant = brand.cardLogoVariant;
+  state.logoUrl = brand.logoVariants[brand.cardLogoVariant] || Object.values(brand.logoVariants)[0];
+  state.infoText = getBrandInfoText(brand, state.language, state.infoVariant);
 
-  syncUiFromState();
+  saveAndRender();
+}
+
+function applyRowPreset(preset) {
+  if (preset === "full") {
+    state.rows = {
+      logo: true,
+      contact: true,
+      address: true,
+      website: true,
+      info: true,
+      banner: Boolean(state.bannerUrl),
+    };
+    state.infoVariant = "full";
+    state.infoText = getCurrentBrandInfoText("full");
+  }
+
+  if (preset === "compact") {
+    state.rows = {
+      logo: true,
+      contact: true,
+      address: false,
+      website: true,
+      info: true,
+      banner: false,
+    };
+    state.infoVariant = "short";
+    state.infoText = getCurrentBrandInfoText("short");
+  }
+
+  if (preset === "minimal") {
+    state.rows = {
+      logo: true,
+      contact: true,
+      address: false,
+      website: true,
+      info: false,
+      banner: false,
+    };
+    state.infoVariant = "short";
+  }
+
+  saveAndRender();
+}
+
+function saveAndRender() {
+  saveState();
+  applyStateToControls();
   renderAll();
 }
 
-function syncUiFromState() {
+function applyStateToControls() {
   document.documentElement.lang = state.language;
-  document.documentElement.style.setProperty("--accent", state.accentColor || "#B59A71");
-  document.documentElement.style.setProperty("--minimal", state.minimalColor || MINIMAL_COLOR);
 
-  document.querySelectorAll("[data-i18n]").forEach((node) => {
-    const key = node.dataset.i18n;
-    const value = translate(key);
-    if (node.tagName === "OPTION") {
-      node.textContent = value;
-      return;
-    }
-    node.textContent = value;
-  });
-
-  els.languageButtons.forEach((button) => {
+  document.querySelectorAll("[data-language]").forEach((button) => {
     button.classList.toggle("is-active", button.dataset.language === state.language);
   });
 
-  els.presetGrid.querySelectorAll("[data-brand-id]").forEach((button) => {
-    button.classList.toggle("is-active", button.dataset.brandId === state.activeBrandId);
+  document.querySelectorAll("[data-brand-id]").forEach((button) => {
+    button.classList.toggle("is-active", button.dataset.brandId === state.brandId);
   });
 
-  els.nameInput.value = state.name;
-  els.titleInput.value = state.jobTitle;
-  els.phoneInput.value = state.phone;
-  els.emailInput.value = state.email;
-  els.showEmailInput.checked = state.showEmail;
-  els.address1Input.value = state.address1;
-  els.address2Input.value = state.address2;
-  els.websiteLabelInput.value = state.websiteLabel;
-  els.websiteUrlInput.value = state.websiteUrl;
-  els.infoTextInput.value = state.infoText;
+  elements.nameInput.value = state.name;
+  elements.titleInput.value = state.title;
+  elements.phoneInput.value = state.phone;
+  elements.emailInput.value = state.email;
+  elements.showEmailInput.checked = state.showEmail;
+  elements.address1Input.value = state.address1;
+  elements.address2Input.value = state.address2;
+  elements.websiteLabelInput.value = state.websiteLabel;
+  elements.websiteUrlInput.value = state.websiteUrl;
+  elements.infoTextInput.value = state.infoText;
+  elements.logoUrlInput.value = state.logoUrl;
+  elements.logoSizeInput.value = state.logoSize;
+  elements.signatureWidthInput.value = state.signatureWidth;
+  elements.bannerUrlInput.value = state.bannerUrl;
+  elements.bannerLinkInput.value = state.bannerLink;
+  elements.bannerSpacerInput.value = state.bannerSpacer;
+  elements.rowLogoInput.checked = state.rows.logo;
+  elements.rowContactInput.checked = state.rows.contact;
+  elements.rowAddressInput.checked = state.rows.address;
+  elements.rowWebsiteInput.checked = state.rows.website;
+  elements.rowInfoInput.checked = state.rows.info;
+  elements.rowBannerInput.checked = state.rows.banner;
+  elements.logoSizeValue.textContent = `${state.logoSize}px`;
+  elements.signatureWidthValue.textContent = `${state.signatureWidth}px`;
+  elements.bannerSpacerValue.textContent = `${state.bannerSpacer}px`;
+  elements.accentColorValue.textContent = normalizeHex(state.accentColor);
+  elements.textColorValue.textContent = normalizeHex(state.textColor);
 
-  els.rowLogoInput.checked = state.showLogo;
-  els.rowContactInput.checked = state.showContact;
-  els.rowAddressInput.checked = state.showAddress;
-  els.rowWebsiteInput.checked = state.showWebsite;
-  els.rowInfoInput.checked = state.showInfo;
-  els.rowBannerInput.checked = state.showBanner;
+  document.querySelectorAll("[data-preview-viewport]").forEach((button) => {
+    button.classList.toggle("is-active", button.dataset.previewViewport === state.previewViewport);
+  });
 
-  renderLogoVariantOptions();
-  els.logoUrlInput.value = state.logoUrl;
-  els.logoSizeInput.value = state.logoSize;
-  els.logoSizeValue.textContent = `${state.logoSize}px`;
-  els.minimalColorInput.value = state.minimalColor;
-  els.signatureStyleInput.value = state.signatureStyle;
-  els.accentColorInput.value = state.accentColor;
-  els.textColorInput.value = state.textColor;
-  els.signatureWidthInput.value = state.signatureWidth;
-  els.signatureWidthValue.textContent = `${state.signatureWidth}px`;
+  elements.emailViewport.classList.toggle("is-mobile", state.previewViewport === "mobile");
 
-  els.bannerUrlInput.value = state.bannerUrl;
-  els.bannerLinkInput.value = state.bannerLink;
-  els.bannerPositionInput.value = state.bannerPosition;
-  els.bannerSpacerInput.value = state.bannerSpacer;
-  els.bannerSpacerValue.textContent = `${state.bannerSpacer}px`;
+  translateStaticText();
+  renderSelects();
+  updatePaletteActiveStates();
 }
 
-function renderLogoVariantOptions() {
-  const brand = getActiveBrand();
-  const variants = Object.keys(brand.logoVariants);
-
-  els.logoVariantInput.innerHTML = "";
-  variants.forEach((variant) => {
-    const option = document.createElement("option");
-    option.value = variant;
-    option.textContent = translate(`logoVariant${capitalize(variant)}`);
-    els.logoVariantInput.appendChild(option);
+function translateStaticText() {
+  document.querySelectorAll("[data-i18n]").forEach((node) => {
+    node.textContent = t(node.dataset.i18n);
   });
 
-  if (!variants.includes(state.logoVariant)) {
-    state.logoVariant = variants[0];
-    state.logoUrl = brand.logoVariants[state.logoVariant];
+  document.querySelectorAll("[data-i18n-aria]").forEach((node) => {
+    node.setAttribute("aria-label", t(node.dataset.i18nAria));
+  });
+}
+
+function renderSelects() {
+  renderSelect("signatureStyle", SELECT_DEFS.signatureStyle, state.signatureStyle, (value) => {
+    state.signatureStyle = value;
+    saveAndRender();
+  });
+
+  renderSelect("bannerPosition", SELECT_DEFS.bannerPosition, state.bannerPosition, (value) => {
+    state.bannerPosition = value;
+    saveAndRender();
+  });
+
+  renderSelect("infoVariant", SELECT_DEFS.infoVariant, state.infoVariant, (value) => {
+    state.infoVariant = value;
+    state.infoText = getCurrentBrandInfoText(value);
+    saveAndRender();
+  });
+
+  const logoOptions = Object.keys(currentBrand().logoVariants).map((key) => ({
+    value: key,
+    labelKey: `logo${capitalize(key)}`,
+  }));
+
+  renderSelect("logoVariant", logoOptions, state.logoVariant, (value) => {
+    const brand = currentBrand();
+    state.logoVariant = value;
+    state.logoUrl = brand.logoVariants[value] || state.logoUrl;
+    saveAndRender();
+  });
+}
+
+function renderSelect(name, options, value, onSelect) {
+  const button = elements[`${name}Button`];
+  const menu = elements[`${name}Menu`];
+  if (!button || !menu) return;
+
+  const selected = options.find((option) => option.value === value) || options[0];
+  button.textContent = t(selected.labelKey) || selected.value;
+  button.onclick = (event) => {
+    event.stopPropagation();
+    const parent = button.closest(".custom-select");
+    const isOpen = parent.classList.contains("is-open");
+    closeAllSelects();
+    parent.classList.toggle("is-open", !isOpen);
+    button.setAttribute("aria-expanded", String(!isOpen));
+  };
+
+  menu.innerHTML = "";
+  options.forEach((option) => {
+    const item = document.createElement("button");
+    item.type = "button";
+    item.className = `select-option ${option.value === value ? "is-active" : ""}`;
+    item.dataset.value = option.value;
+    item.role = "option";
+    item.textContent = t(option.labelKey) || option.value;
+    item.setAttribute("aria-selected", String(option.value === value));
+    item.addEventListener("click", () => {
+      closeAllSelects();
+      onSelect(option.value);
+    });
+    menu.appendChild(item);
+  });
+}
+
+function closeAllSelects() {
+  document.querySelectorAll(".custom-select").forEach((select) => {
+    select.classList.remove("is-open");
+    const button = select.querySelector(".select-button");
+    if (button) button.setAttribute("aria-expanded", "false");
+  });
+}
+
+function updatePaletteActiveStates() {
+  document.querySelectorAll("[data-color-target='accent']").forEach((button) => {
+    button.classList.toggle("is-active", normalizeHex(button.dataset.colorValue) === normalizeHex(state.accentColor));
+  });
+
+  document.querySelectorAll("[data-color-target='text']").forEach((button) => {
+    button.classList.toggle("is-active", normalizeHex(button.dataset.colorValue) === normalizeHex(state.textColor));
+  });
+}
+
+function handlePaletteClick(event) {
+  const button = event.target.closest("[data-color-target]");
+  if (!button) return;
+
+  const target = button.dataset.colorTarget;
+  if (button.dataset.customColor) {
+    showColorPopover(target);
+    return;
   }
 
-  els.logoVariantInput.value = state.logoVariant;
+  if (target === "accent") {
+    state.accentColor = button.dataset.colorValue;
+  }
+
+  if (target === "text") {
+    state.textColor = button.dataset.colorValue;
+  }
+
+  saveAndRender();
+}
+
+function showColorPopover(target) {
+  activeCustomColorTarget = target;
+  const current = target === "accent" ? state.accentColor : state.textColor;
+  setColorPopoverValue(current);
+  elements.colorPopover.hidden = false;
+}
+
+function hideColorPopover() {
+  elements.colorPopover.hidden = true;
+}
+
+function setColorPopoverValue(hex) {
+  const normalized = normalizeHex(hex);
+  const rgb = hexToRgb(normalized);
+
+  elements.customColorPreview.style.background = normalized;
+  elements.customHexInput.value = normalized;
+  elements.customRedInput.value = rgb.r;
+  elements.customGreenInput.value = rgb.g;
+  elements.customBlueInput.value = rgb.b;
+}
+
+function handleHexInput() {
+  const value = elements.customHexInput.value.trim();
+  if (!/^#[0-9a-fA-F]{6}$/.test(value)) return;
+  setColorPopoverValue(value);
+}
+
+function handleRgbInput() {
+  const rgb = {
+    r: Number(elements.customRedInput.value),
+    g: Number(elements.customGreenInput.value),
+    b: Number(elements.customBlueInput.value),
+  };
+  const hex = rgbToHex(rgb.r, rgb.g, rgb.b);
+  elements.customColorPreview.style.background = hex;
+  elements.customHexInput.value = hex;
+}
+
+function applyCustomColor() {
+  const hex = normalizeHex(elements.customHexInput.value);
+  if (activeCustomColorTarget === "accent") {
+    state.accentColor = hex;
+  } else {
+    state.textColor = hex;
+  }
+  hideColorPopover();
+  saveAndRender();
 }
 
 function renderAll() {
-  renderEmailPreview();
-  els.signaturePreview.innerHTML = renderSignatureHtml({ editable: true });
-  bindEditablePreviewFields();
-  syncRangeLabels();
-  saveState();
+  renderPreviewEmail();
+  renderSignature();
 }
 
-function syncRangeLabels() {
-  document.documentElement.style.setProperty("--accent", state.accentColor || "#B59A71");
-  document.documentElement.style.setProperty("--minimal", state.minimalColor || MINIMAL_COLOR);
-  els.logoSizeValue.textContent = `${state.logoSize}px`;
-  els.signatureWidthValue.textContent = `${state.signatureWidth}px`;
-  els.bannerSpacerValue.textContent = `${state.bannerSpacer}px`;
+function renderPreviewEmail() {
+  const emails = EMAIL_EXAMPLES[state.language];
+  const email = emails[state.activeEmailIndex % emails.length];
+
+  elements.emailSubject.textContent = email.subject;
+  elements.previewFrom.textContent = `<${email.email}>`;
+  elements.previewEmailBody.textContent = email.text;
 }
 
-function renderEmailPreview() {
-  const email = getCurrentEmail();
-  els.emailSubject.textContent = email.subject;
-  els.previewFrom.textContent = `${translate("fromLabel")}: ${email.email}`;
-  els.previewEmailBody.textContent = email.text;
-}
-
-function getCurrentEmail() {
-  const emails = EMAIL_EXAMPLES[state.language] || EMAIL_EXAMPLES.en;
-  const index = clamp(state.currentEmailIndex, 0, emails.length - 1);
-  return emails[index] || emails[0];
-}
-
-function randomEmailIndex(language, currentIndex = -1) {
-  const emails = EMAIL_EXAMPLES[language] || EMAIL_EXAMPLES.en;
-  if (emails.length < 2) return 0;
-
-  let nextIndex = currentIndex;
-  while (nextIndex === currentIndex) {
+function shuffleEmail() {
+  const emails = EMAIL_EXAMPLES[state.language];
+  if (emails.length < 2) return;
+  let nextIndex = state.activeEmailIndex;
+  while (nextIndex === state.activeEmailIndex) {
     nextIndex = Math.floor(Math.random() * emails.length);
   }
-
-  return nextIndex;
+  state.activeEmailIndex = nextIndex;
+  saveAndRender();
 }
 
-function renderSignatureHtml({ editable }) {
-  const accent = safeColor(state.accentColor, "#B59A71");
-  const textColor = safeColor(state.textColor, "#111111");
+function renderSignature() {
+  elements.signaturePreview.innerHTML = buildSignatureHtml({ editable: true });
+}
+
+function buildSignatureHtml(options = {}) {
+  const editable = Boolean(options.editable);
+  const accent = sanitizeColor(state.accentColor, DEFAULT_STATE.accentColor);
+  const text = sanitizeColor(state.textColor, DEFAULT_STATE.textColor);
   const width = clamp(Number(state.signatureWidth), 300, 620);
   const logoSize = clamp(Number(state.logoSize), 40, 160);
+  const logoCellWidth = logoSize + 20;
+  const borderRadius = state.signatureStyle === "modern" ? "0" : "0";
   const borderStyle =
     state.signatureStyle === "modern"
-      ? `border:1px solid #e6e6e6; border-top:5px solid ${accent};`
+      ? `border:1px solid #e8e8e8; border-top:5px solid ${accent};`
       : `border:1px solid #e6e6e6; border-left:6px solid ${accent};`;
-  const innerPadding = state.signatureStyle === "modern" ? "13px 15px 13px 15px" : "14px 14px 12px 14px";
 
   const rows = [];
-
-  if (shouldRenderBanner("top")) {
-    rows.push(renderBannerRow(width));
-  }
+  maybeAddBanner(rows, "top", width);
 
   rows.push(`
     <tr>
-      <td style="padding:${innerPadding}; font-family:Arial, Helvetica, sans-serif; color:${textColor};">
-        ${renderHeaderBlock({ logoSize, textColor, editable })}
+      <td style="padding:14px 14px 12px 14px; font-family:Arial, Helvetica, sans-serif; color:${text};">
+        ${renderHeaderTable({ editable, logoSize, logoCellWidth, text })}
       </td>
     </tr>
   `);
 
-  if (shouldRenderBanner("afterHeader")) {
-    rows.push(renderBannerSpacerRow());
-    rows.push(renderBannerRow(width));
-  }
+  maybeAddBanner(rows, "afterHeader", width);
 
-  const detailHtml = renderDetailBlock({ accent, textColor, editable });
-
-  if (detailHtml.trim()) {
+  const detailRows = renderDetailRows({ editable, accent, text });
+  if (detailRows) {
     rows.push(`
       <tr>
-        <td style="padding:0 ${state.signatureStyle === "modern" ? "15px 15px 15px" : "14px 12px 14px"}; font-family:Arial, Helvetica, sans-serif; color:${textColor};">
-          ${detailHtml}
+        <td style="padding:0 14px 12px 14px; font-family:Arial, Helvetica, sans-serif; color:${text};">
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%; border-collapse:collapse;">
+            <tr>
+              <td style="border-top:1px solid #efefef; padding-top:10px; font-size:13px; line-height:18px; color:${text};">
+                ${detailRows}
+              </td>
+            </tr>
+          </table>
         </td>
       </tr>
     `);
   }
 
-  if (shouldRenderBanner("beforeInfo")) {
-    rows.push(renderBannerSpacerRow());
-    rows.push(renderBannerRow(width));
-  }
+  maybeAddBanner(rows, "afterContact", width);
 
-  if (state.showInfo && state.infoText.trim()) {
+  if (state.rows.info && state.infoText.trim()) {
     rows.push(`
       <tr>
-        <td style="padding:${state.signatureStyle === "modern" ? "0 15px 14px 15px" : "0 14px 13px 14px"}; font-family:Arial, Helvetica, sans-serif;">
-          ${renderDivider()}
-          <div style="font-size:12px; line-height:16px; color:#444444;">
-            ${editableText("infoText", state.infoText, editable, true)}
-          </div>
+        <td style="padding:0 14px 14px 14px; font-family:Arial, Helvetica, sans-serif; color:${text};">
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%; border-collapse:collapse;">
+            <tr>
+              <td style="border-top:1px solid #efefef; padding-top:10px; font-size:12px; line-height:16px; color:#444444;">
+                <div${editableAttr(editable, "infoText")} style="font-size:12px; line-height:16px; color:#444444;">${escapeHtml(state.infoText).replace(/\n/g, "<br>")}</div>
+              </td>
+            </tr>
+          </table>
         </td>
       </tr>
     `);
   }
 
-  if (shouldRenderBanner("bottom")) {
-    rows.push(renderBannerSpacerRow());
-    rows.push(renderBannerRow(width));
-  }
-
-  return `<div dir="ltr" class="gmail_signature" data-smartmail="gmail_signature">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="${width}" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; width:${width}px; max-width:100%;">
-  <tbody>
-    <tr>
-      <td style="padding:0;">
-        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="${width}" style="border-collapse:collapse; width:${width}px; max-width:100%; ${borderStyle}">
-          <tbody>
-            ${rows.join("")}
-          </tbody>
-        </table>
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div>`;
-}
-
-function renderHeaderBlock({ logoSize, textColor, editable }) {
-  const showLogo = state.showLogo && state.logoUrl.trim();
-  const logoCell = showLogo
-    ? `<td valign="middle" align="right" style="padding:0 0 0 12px; width:${logoSize + 12}px; white-space:nowrap;">
-        <img src="${escapeAttr(state.logoUrl)}" alt="${escapeAttr(getActiveBrand().name)}" width="${logoSize}" style="display:block; width:${logoSize}px; max-width:${logoSize}px; height:auto; border:0; outline:none; text-decoration:none;" />
-      </td>`
-    : "";
+  maybeAddBanner(rows, "bottom", width);
 
   return `
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse; width:100%;">
-      <tbody>
-        <tr>
-          <td valign="top" style="padding:0; font-size:16px; line-height:20px; color:${textColor};">
-            <div style="font-weight:700;">${editableText("name", state.name, editable)}</div>
-            <div style="margin-top:2px; font-size:12px; line-height:16px; color:#222222;">${editableText("jobTitle", state.jobTitle, editable)}</div>
-          </td>
-          ${logoCell}
-        </tr>
-      </tbody>
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+      <tr>
+        <td style="padding:0;">
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse; width:100%; max-width:${width}px; ${borderStyle} border-radius:${borderRadius};">
+            ${rows.join("")}
+          </table>
+        </td>
+      </tr>
+    </table>
+  `.trim();
+}
+
+function renderHeaderTable({ editable, logoSize, logoCellWidth, text }) {
+  const logoHtml =
+    state.rows.logo && state.logoUrl.trim()
+      ? `
+        <td width="${logoCellWidth}" valign="top" align="right" style="padding:0 0 0 12px; width:${logoCellWidth}px; min-width:${logoCellWidth}px; text-align:right; vertical-align:top; white-space:nowrap;">
+          <img src="${escapeAttribute(state.logoUrl.trim())}" alt="${escapeAttribute(currentBrand().name)}" width="${logoSize}" style="display:block; width:${logoSize}px; max-width:${logoSize}px; height:auto; margin:0 0 0 auto; border:0; outline:none; text-decoration:none;" />
+        </td>
+      `
+      : "";
+
+  return `
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%; border-collapse:collapse; table-layout:fixed;">
+      <tr>
+        <td valign="top" style="padding:0; vertical-align:top; font-size:16px; line-height:20px; color:${text};">
+          <div${editableAttr(editable, "name")} style="font-weight:700; color:${text};">${escapeHtml(state.name)}</div>
+          <div${editableAttr(editable, "title")} style="margin-top:2px; font-size:12px; line-height:16px; color:#222222;">${escapeHtml(state.title)}</div>
+        </td>
+        ${logoHtml}
+      </tr>
     </table>
   `;
 }
 
-function renderDetailBlock({ accent, textColor, editable }) {
+function renderDetailRows({ editable, accent, text }) {
   const lines = [];
 
-  if (state.showAddress && (state.address1.trim() || state.address2.trim())) {
-    lines.push(`${editableText("address1", state.address1, editable)}${state.address1.trim() ? "<br>" : ""}${editableText("address2", state.address2, editable)}`);
+  if (state.rows.address) {
+    if (state.address1.trim()) {
+      lines.push(`<span${editableAttr(editable, "address1")}>${escapeHtml(state.address1)}</span>`);
+    }
+    if (state.address2.trim()) {
+      lines.push(`<span${editableAttr(editable, "address2")}>${escapeHtml(state.address2)}</span>`);
+    }
   }
 
-  const contactParts = [];
-
-  if (state.showContact && state.phone.trim()) {
-    contactParts.push(`<span style="color:#5f6368;">T</span>&nbsp;<a href="tel:${escapeAttr(state.phone.replace(/\s/g, ""))}" style="color:${textColor}; text-decoration:none;">${editableText("phone", state.phone, editable)}</a>`);
+  const contactPieces = [];
+  if (state.rows.contact && state.phone.trim()) {
+    contactPieces.push(`<span style="color:#5f6368;">T</span>&nbsp; <a href="tel:${escapeAttribute(phoneHref(state.phone))}" style="color:${text}; text-decoration:none;">${escapeHtml(state.phone)}</a>`);
   }
 
-  if (state.showEmail && state.email.trim()) {
-    contactParts.push(`<span style="color:#5f6368;">E</span>&nbsp;<a href="mailto:${escapeAttr(state.email)}" style="color:${textColor}; text-decoration:none;">${editableText("email", state.email, editable)}</a>`);
+  if (state.rows.contact && state.showEmail && state.email.trim()) {
+    contactPieces.push(`<a href="mailto:${escapeAttribute(state.email.trim())}" style="color:${text}; text-decoration:none;">${escapeHtml(state.email.trim())}</a>`);
   }
 
-  if (state.showWebsite && state.websiteLabel.trim()) {
-    contactParts.push(`<a href="${escapeAttr(normalizeUrl(state.websiteUrl))}" style="color:${accent}; text-decoration:underline;" target="_blank">${editableText("websiteLabel", state.websiteLabel, editable)}</a>`);
+  if (state.rows.website && state.websiteUrl.trim() && state.websiteLabel.trim()) {
+    contactPieces.push(`<a href="${escapeAttribute(normalizeUrl(state.websiteUrl))}" style="color:${accent}; text-decoration:underline;">${escapeHtml(state.websiteLabel)}</a>`);
   }
 
-  if (contactParts.length) {
-    lines.push(contactParts.join(`<span style="color:#c0c0c0;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>`));
+  if (contactPieces.length) {
+    lines.push(contactPieces.join(`<span style="color:#c0c0c0;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>`));
   }
 
-  if (!lines.length) return "";
-
-  return `
-    ${renderDivider()}
-    <div style="font-size:13px; line-height:18px; color:${textColor};">
-      ${lines.join("<br>")}
-    </div>
-  `;
+  return lines.join("<br>");
 }
 
-function renderDivider() {
-  return `
-    <div style="height:10px; line-height:10px; font-size:10px;">&nbsp;</div>
-    <div style="border-top:1px solid #efefef;"></div>
-    <div style="height:10px; line-height:10px; font-size:10px;">&nbsp;</div>
-  `;
-}
+function maybeAddBanner(rows, position, width) {
+  if (!state.rows.banner || state.bannerPosition !== position || !state.bannerUrl.trim()) return;
 
-function shouldRenderBanner(position) {
-  return state.showBanner && state.bannerUrl.trim() && state.bannerPosition === position;
-}
-
-function renderBannerRow(width) {
-  const image = `<img src="${escapeAttr(state.bannerUrl)}" alt="" width="${width}" style="display:block; width:${width}px; max-width:100%; height:auto; border:0; outline:none; text-decoration:none;" />`;
-  const content = state.bannerLink.trim()
-    ? `<a href="${escapeAttr(normalizeUrl(state.bannerLink))}" target="_blank" style="display:block; text-decoration:none;">${image}</a>`
+  const spacer = clamp(Number(state.bannerSpacer), 0, 32);
+  const image = `<img src="${escapeAttribute(state.bannerUrl.trim())}" alt="Banner" width="${width}" style="display:block; width:100%; max-width:${width}px; height:auto; border:0; outline:none; text-decoration:none;" />`;
+  const linked = state.bannerLink.trim()
+    ? `<a href="${escapeAttribute(normalizeUrl(state.bannerLink))}" style="display:block; border:0; text-decoration:none;">${image}</a>`
     : image;
 
-  return `<tr><td style="padding:0; line-height:0; font-size:0;">${content}</td></tr>`;
+  rows.push(`
+    <tr>
+      <td style="padding:${position === "top" ? "0" : `${spacer}px 0 0 0`}; font-family:Arial, Helvetica, sans-serif;">
+        ${linked}
+      </td>
+    </tr>
+  `);
 }
 
-function renderBannerSpacerRow() {
-  const spacer = clamp(Number(state.bannerSpacer), 0, 32);
-  if (spacer === 0) return "";
-  return `<tr><td style="padding:0; height:${spacer}px; line-height:${spacer}px; font-size:${spacer}px;">&nbsp;</td></tr>`;
-}
+function handleInlineEdit(event) {
+  const target = event.target.closest("[data-edit-field]");
+  if (!target) return;
 
-function editableText(field, value, editable, multiline = false) {
-  const escaped = multiline ? escapeHtml(value).replace(/\n/g, "<br>") : escapeHtml(value);
+  const field = target.dataset.editField;
+  const value = target.innerText.trim();
 
-  if (!editable) return escaped;
-
-  return `<span contenteditable="true" data-edit-field="${field}" style="display:inline; min-width:1em;">${escaped}</span>`;
-}
-
-function bindEditablePreviewFields() {
-  els.signaturePreview.querySelectorAll("[data-edit-field]").forEach((node) => {
-    node.addEventListener("blur", () => {
-      const field = node.dataset.editField;
-      state[field] = node.innerText.trim();
-      syncUiFromState();
-      renderAll();
-    });
-  });
-}
-
-function buildPlainTextSignature() {
-  const lines = [state.name, state.jobTitle];
-
-  if (state.showAddress) {
-    if (state.address1) lines.push(state.address1);
-    if (state.address2) lines.push(state.address2);
+  if (Object.prototype.hasOwnProperty.call(state, field)) {
+    state[field] = value;
+    saveAndRender();
   }
-
-  if (state.showContact && state.phone) lines.push(`T ${state.phone}`);
-  if (state.showEmail && state.email) lines.push(`E ${state.email}`);
-  if (state.showWebsite && state.websiteLabel) lines.push(state.websiteLabel);
-  if (state.showInfo && state.infoText) lines.push("", state.infoText);
-
-  return lines.filter(Boolean).join("\n");
 }
 
-async function copyRichHtml(html, plainText) {
-  if (navigator.clipboard && window.ClipboardItem) {
-    const item = new ClipboardItem({
-      "text/html": new Blob([html], { type: "text/html" }),
-      "text/plain": new Blob([plainText], { type: "text/plain" }),
-    });
-    await navigator.clipboard.write([item]);
-    return;
-  }
+async function copyRenderedSignature() {
+  const html = buildSignatureHtml({ editable: false });
 
+  try {
+    if (navigator.clipboard && window.ClipboardItem) {
+      const item = new ClipboardItem({
+        "text/html": new Blob([html], { type: "text/html" }),
+        "text/plain": new Blob([signaturePlainText()], { type: "text/plain" }),
+      });
+      await navigator.clipboard.write([item]);
+      setCopyStatus(t("copiedRendered"));
+      return;
+    }
+
+    await navigator.clipboard.writeText(html);
+    setCopyStatus(t("copiedFallback"));
+  } catch {
+    const copied = legacyCopyHtml(html);
+    setCopyStatus(copied ? t("copiedRendered") : t("copyFailed"));
+  }
+}
+
+async function copyHtmlSignature() {
+  try {
+    await navigator.clipboard.writeText(buildSignatureHtml({ editable: false }));
+    setCopyStatus(t("copiedHtml"));
+  } catch {
+    setCopyStatus(t("copyFailed"));
+  }
+}
+
+function legacyCopyHtml(html) {
   const container = document.createElement("div");
-  container.contentEditable = "true";
   container.style.position = "fixed";
   container.style.left = "-9999px";
   container.innerHTML = html;
@@ -1087,21 +1339,65 @@ async function copyRichHtml(html, plainText) {
   selection.removeAllRanges();
   selection.addRange(range);
 
-  const successful = document.execCommand("copy");
-  selection.removeAllRanges();
-  container.remove();
-
-  if (!successful) {
-    throw new Error("Copy command failed.");
+  let success = false;
+  try {
+    success = document.execCommand("copy");
+  } finally {
+    selection.removeAllRanges();
+    container.remove();
   }
+
+  return success;
 }
 
-function showCopyStatus(message) {
-  clearTimeout(copyStatusTimer);
-  els.copyStatus.textContent = message;
-  copyStatusTimer = setTimeout(() => {
-    els.copyStatus.textContent = "";
+function setCopyStatus(message) {
+  elements.copyStatus.textContent = message;
+  window.clearTimeout(setCopyStatus.timeoutId);
+  setCopyStatus.timeoutId = window.setTimeout(() => {
+    elements.copyStatus.textContent = "";
   }, 2600);
+}
+
+function signaturePlainText() {
+  const parts = [state.name, state.title];
+
+  if (state.rows.address) {
+    parts.push(state.address1, state.address2);
+  }
+
+  if (state.rows.contact) {
+    parts.push(state.phone);
+    if (state.showEmail) parts.push(state.email);
+  }
+
+  if (state.rows.website) {
+    parts.push(state.websiteLabel);
+  }
+
+  if (state.rows.info) {
+    parts.push(state.infoText);
+  }
+
+  return parts.filter(Boolean).join("\n");
+}
+
+function getCurrentBrandInfoText(variant) {
+  return getBrandInfoText(currentBrand(), state.language, variant);
+}
+
+function getBrandInfoText(brand, language, variant) {
+  return (
+    brand.infoText?.[language]?.[variant] ||
+    brand.infoText?.[language]?.full ||
+    brand.infoText?.en?.[variant] ||
+    brand.infoText?.en?.full ||
+    ""
+  );
+}
+
+function editableAttr(editable, field) {
+  if (!editable) return "";
+  return ` contenteditable="true" data-edit-field="${field}" spellcheck="false"`;
 }
 
 function escapeHtml(value) {
@@ -1111,26 +1407,59 @@ function escapeHtml(value) {
     .replace(/>/g, "&gt;");
 }
 
-function escapeAttr(value) {
+function escapeAttribute(value) {
   return escapeHtml(value).replace(/"/g, "&quot;");
 }
 
-function normalizeUrl(value) {
-  const trimmed = String(value || "").trim();
-  if (!trimmed) return "#";
-  if (/^(https?:|mailto:|tel:)/i.test(trimmed)) return trimmed;
-  return `https://${trimmed}`;
+function sanitizeColor(value, fallback) {
+  return /^#[0-9a-fA-F]{6}$/.test(value) ? value : fallback;
 }
 
-function safeColor(value, fallback) {
-  return /^#[0-9a-f]{6}$/i.test(value) ? value : fallback;
+function normalizeHex(value) {
+  const trimmed = String(value || "").trim();
+  if (/^#[0-9a-fA-F]{6}$/.test(trimmed)) {
+    return trimmed.toUpperCase();
+  }
+  return "#000000";
+}
+
+function isLightColor(hex) {
+  const rgb = hexToRgb(hex);
+  return (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000 > 205;
+}
+
+function hexToRgb(hex) {
+  const normalized = normalizeHex(hex).replace("#", "");
+  return {
+    r: parseInt(normalized.slice(0, 2), 16),
+    g: parseInt(normalized.slice(2, 4), 16),
+    b: parseInt(normalized.slice(4, 6), 16),
+  };
+}
+
+function rgbToHex(r, g, b) {
+  return `#${[r, g, b]
+    .map((value) => clamp(Number(value), 0, 255).toString(16).padStart(2, "0"))
+    .join("")}`.toUpperCase();
 }
 
 function clamp(value, min, max) {
-  const number = Number.isFinite(value) ? value : min;
-  return Math.min(Math.max(number, min), max);
+  return Math.min(Math.max(value, min), max);
+}
+
+function phoneHref(phone) {
+  return phone.replace(/[^\d+]/g, "");
+}
+
+function normalizeUrl(url) {
+  const trimmed = String(url || "").trim();
+  if (!trimmed) return "";
+  if (/^https?:\/\//i.test(trimmed) || /^mailto:/i.test(trimmed) || /^tel:/i.test(trimmed)) {
+    return trimmed;
+  }
+  return `https://${trimmed}`;
 }
 
 function capitalize(value) {
-  return value ? value[0].toUpperCase() + value.slice(1) : value;
+  return value.charAt(0).toUpperCase() + value.slice(1);
 }
