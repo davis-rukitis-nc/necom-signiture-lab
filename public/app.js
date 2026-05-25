@@ -222,8 +222,7 @@ Tāpēc ierosinu dienu sākt kulturāli. Ne obligāti ar bordo, lai gan ideju no
 
 Mazs solis cilvēcei. Liels solis inbox civilizācijai.
 
-Priekā,
-Aigars`,
+Priekā,`,
     },
     {
       email: "aigars@necom.lv",
@@ -233,8 +232,7 @@ Aigars`,
 
 Nākamreiz paņemam mazāk slaidu, vairāk domu un, ideālā pasaulē, arī kaut ko ēdamu. Tukšā dūšā stratēģija nerodas. Rodas tikai aizkaitinājums.
 
-Dzīve ir skaista,
-Aigars`,
+Dzīve ir skaista,`,
     },
     {
       email: "aigars@necom.lv",
@@ -245,8 +243,7 @@ atgādinu, ka pusdienas nav vājuma pazīme. Tā ir civilizācijas forma.
 Cilvēks, kurš starp 12:00 un 15:00 nav ēdis, nevar pieņemt stratēģiskus lēmumus. Viņš var tikai pārvietot kalendāra ielūgumus un skatīties uz kolēģiem ar burgundieša cienīgu skumju pilnu skatienu.
 
 Ejiet ēst. Pasaule pagaidīs.
-
-Aigars`,
+`,
     },
     {
       email: "aigars@necom.lv",
@@ -258,8 +255,7 @@ Bet pirms saucam to par krīzi, lūdzu, pārbaudām trīs lietas: vai ir siers, 
 
 Turpinām ar cieņu, mieru un nelielu devu teatrālas pašpārliecības.
 
-Priekā,
-Aigars`,
+Priekā,`,
     },
     {
       email: "maveriks@necom.lv",
