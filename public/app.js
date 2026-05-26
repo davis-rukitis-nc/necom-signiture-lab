@@ -1,4 +1,4 @@
-const STORAGE_KEY = "necom-email-signature-lab-v4";
+const STORAGE_KEY = "necom-email-signature-lab-v5";
 const MINIMAL_COLOR = "#d8dada";
 
 const BRAND_PRESETS = [
@@ -9,8 +9,8 @@ const BRAND_PRESETS = [
     websiteLabel: "www.necom.lv",
     websiteUrl: "https://www.necom.lv",
     accentColor: "#B59A71",
-    linkColor: "#B59A71",
     textColor: "#111111",
+    linkColor: "#B59A71",
     cardBg: "#111111",
     cardLogoVariant: "minimal",
     logoVariants: {
@@ -35,14 +35,13 @@ const BRAND_PRESETS = [
     websiteLabel: "rimirigamarathon.com",
     websiteUrl: "https://rimirigamarathon.com/",
     accentColor: "#cc2128",
-    linkColor: "#cc2128",
     textColor: "#111111",
+    linkColor: "#cc2128",
     cardBg: "#cc2128",
-    cardLogoVariant: "white",
+    cardLogoVariant: "minimal",
     logoVariants: {
       black: "https://rimirigamarathon.com/wp-content/uploads/2025/02/RRM-logo-black.png",
       minimal: "https://rimirigamarathon.com/wp-content/uploads/2026/05/rrm-logo-2.png",
-      white: "https://rimirigamarathon.com/wp-content/uploads/2026/05/RRM-logo.png",
     },
     infoText: {
       en: {
@@ -62,8 +61,8 @@ const BRAND_PRESETS = [
     websiteLabel: "pinknoiseriga.com",
     websiteUrl: "https://pinknoiseriga.com/",
     accentColor: "#fa4100",
-    linkColor: "#fa4100",
     textColor: "#111111",
+    linkColor: "#fa4100",
     cardBg: "#fa4100",
     cardLogoVariant: "black",
     logoVariants: {
@@ -89,8 +88,8 @@ const BRAND_PRESETS = [
     websiteLabel: "rigawinechampagne.lv",
     websiteUrl: "https://rigawinechampagne.lv/",
     accentColor: "#e40521",
-    linkColor: "#e40521",
     textColor: "#111111",
+    linkColor: "#e40521",
     cardBg: "#e40521",
     cardLogoVariant: "minimal",
     logoVariants: {
@@ -115,8 +114,8 @@ const BRAND_PRESETS = [
     websiteLabel: "rigawhiskyfriends.com",
     websiteUrl: "https://rigawhiskyfriends.com/",
     accentColor: "#023047",
-    linkColor: "#023047",
     textColor: "#111111",
+    linkColor: "#023047",
     cardBg: "#023047",
     cardLogoVariant: "minimal",
     logoVariants: {
@@ -141,15 +140,15 @@ const BRAND_PRESETS = [
     websiteLabel: "balticwinelists.com",
     websiteUrl: "https://www.balticwinelists.com/baltic-wine-drinks-awards/winners",
     accentColor: "#fad0c5",
-    linkColor: "#231F20",
     textColor: "#111111",
+    linkColor: "#231F20",
     cardBg: "#fad0c5",
     cardLogoVariant: "black",
     logoVariants: {
       black: "https://rimirigamarathon.com/wp-content/uploads/2026/05/bwda-dark.png",
       minimal: "https://rimirigamarathon.com/wp-content/uploads/2026/05/bwda-light.png",
-      starsBlack: "https://rimirigamarathon.com/wp-content/uploads/2026/05/bwda-dark-stars.png",
-      starsMinimal: "https://rimirigamarathon.com/wp-content/uploads/2026/05/bwda-light-stars.png",
+      darkStars: "https://rimirigamarathon.com/wp-content/uploads/2026/05/bwda-dark-stars.png",
+      lightStars: "https://rimirigamarathon.com/wp-content/uploads/2026/05/bwda-light-stars.png",
     },
     infoText: {
       en: {
@@ -169,8 +168,8 @@ const BRAND_PRESETS = [
     websiteLabel: "your-site.com",
     websiteUrl: "https://example.com",
     accentColor: "#B59A71",
-    linkColor: "#B59A71",
     textColor: "#111111",
+    linkColor: "#B59A71",
     cardBg: "#f1f1f1",
     cardLogoVariant: "custom",
     logoVariants: {
@@ -218,10 +217,9 @@ const LINK_COLORS = [
   { label: "PNR", value: "#fa4100" },
   { label: "PNR blue", value: "#73b6ff" },
   { label: "RWCH", value: "#e40521" },
-  { label: "RWF navy", value: "#023047" },
+  { label: "RWF", value: "#023047" },
   { label: "RWF orange", value: "#ff792c" },
-  { label: "BWDA accessible", value: "#231F20" },
-  { label: "Black", value: "#111111" },
+  { label: "BWDA dark", value: "#231F20" },
   { label: "Minimal", value: MINIMAL_COLOR },
 ];
 
@@ -392,7 +390,7 @@ const TRANSLATIONS = {
     signatureWidthLabel: "Signature width",
     accentColorLabel: "Accent color",
     textColorLabel: "Text color",
-    linkColorLabel: "Link color",
+    linkColorLabel: "Website link color",
     bannerUrlLabel: "Banner image URL",
     bannerLinkLabel: "Banner link URL",
     bannerPositionLabel: "Banner position",
@@ -410,8 +408,8 @@ const TRANSLATIONS = {
     copyHtml: "Copy HTML",
     desktopView: "Desktop",
     mobileView: "Mobile",
-    shuffleEmail: "Get another inbox masterpiece",
-    shuffleCta: "Bored? Shuffle inbox chaos",
+    shuffleEmail: "New preview email",
+    shuffleButton: "New email",
     customColorTitle: "Custom color",
     hexLabel: "Hex",
     applyColor: "Apply color",
@@ -421,7 +419,6 @@ const TRANSLATIONS = {
     copyFailed: "Copy failed. Select the preview and copy manually.",
     styleLeftBorder: "Left border",
     styleTopBorder: "Top border",
-    styleModern: "Modern",
     bannerTop: "Top",
     bannerAfterHeader: "After header",
     bannerAfterContact: "After contact",
@@ -430,10 +427,9 @@ const TRANSLATIONS = {
     infoFull: "Full",
     logoBlack: "Black",
     logoMinimal: "Minimal",
-    logoWhite: "White",
     logoOrange: "Orange",
-    logoStarsBlack: "Stars black",
-    logoStarsMinimal: "Stars minimal",
+    logoDarkStars: "Dark stars",
+    logoLightStars: "Light stars",
     logoCustom: "Custom",
   },
   lv: {
@@ -467,7 +463,7 @@ const TRANSLATIONS = {
     signatureWidthLabel: "Paraksta platums",
     accentColorLabel: "Akcenta krāsa",
     textColorLabel: "Teksta krāsa",
-    linkColorLabel: "Saišu krāsa",
+    linkColorLabel: "Mājaslapas saites krāsa",
     bannerUrlLabel: "Banera attēla URL",
     bannerLinkLabel: "Banera saite",
     bannerPositionLabel: "Banera pozīcija",
@@ -485,8 +481,8 @@ const TRANSLATIONS = {
     copyHtml: "Kopēt HTML",
     desktopView: "Dators",
     mobileView: "Mobilais",
-    shuffleEmail: "Ielikt citu inbox šedevru",
-    shuffleCta: "Garlaicīgi? Samaini inbox haosu",
+    shuffleEmail: "Jauns piemēra e-pasts",
+    shuffleButton: "Jauns epasts",
     customColorTitle: "Pielāgota krāsa",
     hexLabel: "Hex",
     applyColor: "Lietot krāsu",
@@ -494,9 +490,8 @@ const TRANSLATIONS = {
     copiedHtml: "Paraksta HTML nokopēts.",
     copiedFallback: "Nokopēts kā HTML teksts. Pārlūks bloķēja rich clipboard piekļuvi.",
     copyFailed: "Kopēšana neizdevās. Iezīmē priekšskatījumu un kopē manuāli.",
-    styleLeftBorder: "Kreisā mala",
-    styleTopBorder: "Augšējā mala",
-    styleModern: "Moderns",
+    styleLeftBorder: "Kreisā līnija",
+    styleTopBorder: "Augšējā līnija",
     bannerTop: "Augšā",
     bannerAfterHeader: "Pēc galvenes",
     bannerAfterContact: "Pēc kontaktiem",
@@ -505,10 +500,9 @@ const TRANSLATIONS = {
     infoFull: "Pilns",
     logoBlack: "Melns",
     logoMinimal: "Minimāls",
-    logoWhite: "Balts",
     logoOrange: "Oranžs",
-    logoStarsBlack: "Zvaigznes melnas",
-    logoStarsMinimal: "Zvaigznes minimālas",
+    logoDarkStars: "Tumšas zvaigznes",
+    logoLightStars: "Gaišas zvaigznes",
     logoCustom: "Pielāgots",
   },
 };
@@ -533,8 +527,8 @@ const DEFAULT_STATE = {
   logoSize: 72,
   signatureStyle: "leftBorder",
   accentColor: BRAND_PRESETS[0].accentColor,
-  linkColor: BRAND_PRESETS[0].linkColor,
   textColor: "#111111",
+  linkColor: BRAND_PRESETS[0].linkColor,
   signatureWidth: 560,
   bannerUrl: "",
   bannerLink: "",
@@ -555,7 +549,6 @@ const SELECT_DEFS = {
   signatureStyle: [
     { value: "leftBorder", labelKey: "styleLeftBorder" },
     { value: "topBorder", labelKey: "styleTopBorder" },
-    { value: "modern", labelKey: "styleModern" },
   ],
   bannerPosition: [
     { value: "top", labelKey: "bannerTop" },
@@ -631,7 +624,7 @@ function bindElements() {
     "emailSubject",
     "shuffleEmailButton",
     "previewAvatar",
-    "previewFromName",
+    "previewSenderName",
     "previewFrom",
     "previewEmailBody",
     "signaturePreview",
@@ -672,8 +665,8 @@ function loadState() {
       merged.signatureStyle = "leftBorder";
     }
 
-    if (!["leftBorder", "topBorder", "modern"].includes(merged.signatureStyle)) {
-      merged.signatureStyle = "leftBorder";
+    if (merged.signatureStyle === "modern") {
+      merged.signatureStyle = "topBorder";
     }
 
     if (!merged.linkColor) {
@@ -890,8 +883,8 @@ function applyBrand(brandId) {
   state.websiteLabel = brand.websiteLabel;
   state.websiteUrl = brand.websiteUrl;
   state.accentColor = brand.accentColor;
-  state.linkColor = brand.linkColor || brand.accentColor;
   state.textColor = brand.textColor;
+  state.linkColor = brand.linkColor || brand.accentColor;
   state.logoVariant = brand.cardLogoVariant;
   state.logoUrl = brand.logoVariants[brand.cardLogoVariant] || Object.values(brand.logoVariants)[0];
   state.infoText = getBrandInfoText(brand, state.language, state.infoVariant);
@@ -992,7 +985,6 @@ function applyStateToControls() {
   });
 
   elements.emailViewport.classList.toggle("is-mobile", state.previewViewport === "mobile");
-  elements.emailViewport.style.setProperty("--signature-preview-width", `${clamp(Number(state.signatureWidth), 300, 620)}px`);
 
   translateStaticText();
   renderSelects();
@@ -1179,26 +1171,14 @@ function renderAll() {
 function renderPreviewEmail() {
   const emails = EMAIL_EXAMPLES[state.language];
   const email = emails[state.activeEmailIndex % emails.length];
-  const name = senderDisplayName(email.email);
+  const localPart = email.email.split("@")[0] || "necom";
+  const senderName = `${capitalize(localPart)} NECom`;
 
   elements.emailSubject.textContent = email.subject;
-  elements.previewAvatar.textContent = senderAvatar(email.email);
-  elements.previewFromName.textContent = `${name} NECom`;
+  elements.previewAvatar.textContent = localPart.charAt(0).toUpperCase();
+  elements.previewSenderName.textContent = senderName;
   elements.previewFrom.textContent = `<${email.email}>`;
   elements.previewEmailBody.textContent = email.text;
-}
-
-function senderDisplayName(emailAddress) {
-  const localPart = String(emailAddress || "").split("@")[0] || "NECom";
-  return localPart
-    .split(/[._-]+/)
-    .filter(Boolean)
-    .map((piece) => piece.charAt(0).toUpperCase() + piece.slice(1).toLowerCase())
-    .join(" ");
-}
-
-function senderAvatar(emailAddress) {
-  return senderDisplayName(emailAddress).charAt(0).toUpperCase() || "N";
 }
 
 function shuffleEmail() {
@@ -1220,33 +1200,30 @@ function buildSignatureHtml(options = {}) {
   const editable = Boolean(options.editable);
   const accent = sanitizeColor(state.accentColor, DEFAULT_STATE.accentColor);
   const text = sanitizeColor(state.textColor, DEFAULT_STATE.textColor);
-  const link = sanitizeColor(state.linkColor, state.accentColor || DEFAULT_STATE.accentColor);
+  const link = sanitizeColor(state.linkColor, DEFAULT_STATE.linkColor);
   const width = clamp(Number(state.signatureWidth), 300, 620);
   const logoSize = clamp(Number(state.logoSize), 40, 160);
-  const logoCellWidth = logoSize + 24;
-  const isModern = state.signatureStyle === "modern";
+  const logoCellWidth = logoSize + 20;
   const borderRadius = "0";
-  const borderStyle = signatureBorderStyle(accent);
-  const headerPadding = isModern ? "16px 16px 13px 16px" : "14px 14px 12px 14px";
+  const borderStyle =
+    state.signatureStyle === "topBorder"
+      ? `border:1px solid #e8e8e8; border-top:5px solid ${accent};`
+      : `border:1px solid #e6e6e6; border-left:6px solid ${accent};`;
 
   const rows = [];
-  if (isModern) {
-    rows.push(`<tr><td height="4" style="height:4px; line-height:4px; font-size:0; background:${accent}; padding:0;">&nbsp;</td></tr>`);
-  }
-
   maybeAddBanner(rows, "top", width);
 
   rows.push(`
     <tr>
-      <td style="padding:${headerPadding}; font-family:Arial, Helvetica, sans-serif; color:${text};">
-        ${renderHeaderTable({ editable, logoSize, logoCellWidth, text, width })}
+      <td style="padding:14px 14px 12px 14px; font-family:Arial, Helvetica, sans-serif; color:${text};">
+        ${renderHeaderTable({ editable, logoSize, logoCellWidth, text })}
       </td>
     </tr>
   `);
 
   maybeAddBanner(rows, "afterHeader", width);
 
-  const detailRows = renderDetailRows({ editable, accent, link, text });
+  const detailRows = renderDetailRows({ editable, link, text });
   if (detailRows) {
     rows.push(`
       <tr>
@@ -1296,20 +1273,7 @@ function buildSignatureHtml(options = {}) {
   `.trim();
 }
 
-function signatureBorderStyle(accent) {
-  if (state.signatureStyle === "topBorder") {
-    return `border:1px solid #e6e6e6; border-top:6px solid ${accent};`;
-  }
-
-  if (state.signatureStyle === "modern") {
-    return "border:1px solid #e6e6e6;";
-  }
-
-  return `border:1px solid #e6e6e6; border-left:6px solid ${accent};`;
-}
-
-function renderHeaderTable({ editable, logoSize, logoCellWidth, text, width }) {
-  const textCellWidth = Math.max(160, width - logoCellWidth - 28);
+function renderHeaderTable({ editable, logoSize, logoCellWidth, text }) {
   const logoHtml =
     state.rows.logo && state.logoUrl.trim()
       ? `
@@ -1320,9 +1284,9 @@ function renderHeaderTable({ editable, logoSize, logoCellWidth, text, width }) {
       : "";
 
   return `
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%; border-collapse:collapse; table-layout:fixed; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%; border-collapse:collapse; table-layout:fixed;">
       <tr>
-        <td width="${textCellWidth}" valign="middle" style="padding:0; width:${textCellWidth}px; vertical-align:middle; font-size:16px; line-height:20px; color:${text};">
+        <td valign="middle" style="padding:0; vertical-align:middle; font-size:16px; line-height:20px; color:${text};">
           <div${editableAttr(editable, "name")} style="font-weight:700; color:${text};">${escapeHtml(state.name)}</div>
           <div${editableAttr(editable, "title")} style="margin-top:2px; font-size:12px; line-height:16px; color:#222222;">${escapeHtml(state.title)}</div>
         </td>
@@ -1332,7 +1296,7 @@ function renderHeaderTable({ editable, logoSize, logoCellWidth, text, width }) {
   `;
 }
 
-function renderDetailRows({ editable, accent, link, text }) {
+function renderDetailRows({ editable, link, text }) {
   const lines = [];
 
   if (state.rows.address) {
@@ -1346,11 +1310,11 @@ function renderDetailRows({ editable, accent, link, text }) {
 
   const contactPieces = [];
   if (state.rows.contact && state.phone.trim()) {
-    contactPieces.push(`<span style="color:#5f6368;">T</span>&nbsp; <a href="tel:${escapeAttribute(phoneHref(state.phone))}" style="color:${link}; text-decoration:none;">${escapeHtml(state.phone)}</a>`);
+    contactPieces.push(`<span style="color:#5f6368;">T</span>&nbsp; <a href="tel:${escapeAttribute(phoneHref(state.phone))}" style="color:${text}; text-decoration:none;">${escapeHtml(state.phone)}</a>`);
   }
 
   if (state.rows.contact && state.showEmail && state.email.trim()) {
-    contactPieces.push(`<a href="mailto:${escapeAttribute(state.email.trim())}" style="color:${link}; text-decoration:none;">${escapeHtml(state.email.trim())}</a>`);
+    contactPieces.push(`<a href="mailto:${escapeAttribute(state.email.trim())}" style="color:${text}; text-decoration:none;">${escapeHtml(state.email.trim())}</a>`);
   }
 
   if (state.rows.website && state.websiteUrl.trim() && state.websiteLabel.trim()) {

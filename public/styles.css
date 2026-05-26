@@ -102,7 +102,10 @@ textarea:focus-visible {
 
 .brand-lockup span {
   overflow: hidden;
-  font-size: clamp(1.16rem, 2vw, 1.55rem);
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(1.25rem, 2vw, 1.72rem);
+  font-style: italic;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -134,7 +137,8 @@ textarea:focus-visible {
 
 .workspace {
   display: grid;
-  grid-template-columns: minmax(365px, 0.78fr) minmax(460px, 1.22fr);
+  grid-template-columns: minmax(365px, 430px) minmax(520px, 860px);
+  justify-content: center;
   gap: 1rem;
   align-items: start;
 }
@@ -148,12 +152,18 @@ textarea:focus-visible {
 }
 
 .builder-panel {
+  justify-self: center;
+  width: 100%;
+  max-width: 430px;
   padding: 0.85rem;
 }
 
 .preview-panel {
   position: sticky;
   top: 1rem;
+  justify-self: center;
+  width: 100%;
+  max-width: 860px;
   overflow: hidden;
   padding: 0;
 }
@@ -563,7 +573,6 @@ input[type="range"] {
 }
 
 .gmail-shell {
-  min-height: calc(100vh - 6rem);
   background: #ffffff;
 }
 
@@ -620,15 +629,19 @@ input[type="range"] {
 }
 
 .shuffle-button {
-  display: grid;
-  place-items: center;
-  width: 2.2rem;
-  height: 2.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.38rem;
+  min-height: 2.2rem;
   border: 1px solid #dfe1e5;
   border-radius: 999px;
   background: #ffffff;
   color: #202124;
-  font-size: 1rem;
+  padding: 0.42rem 0.68rem;
+  font-size: 0.76rem;
+  font-weight: 760;
+  white-space: nowrap;
 }
 
 .gmail-meta {
@@ -671,7 +684,6 @@ input[type="range"] {
 
 .email-viewport.is-mobile {
   max-width: 390px;
-  min-height: 760px;
   margin: 1rem auto 1.4rem;
   border: 1px solid #dfe1e5;
   border-radius: 1.35rem;
@@ -765,15 +777,12 @@ input[type="range"] {
 
 @media (max-width: 1050px) {
   .workspace {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    justify-content: center;
   }
 
   .preview-panel {
     position: static;
-  }
-
-  .gmail-shell {
-    min-height: auto;
   }
 }
 
@@ -796,7 +805,7 @@ input[type="range"] {
   }
 
   .brand-lockup span {
-    font-size: 1.05rem;
+    font-size: 1.08rem;
   }
 
   .builder-panel {
@@ -840,213 +849,6 @@ input[type="range"] {
   }
 }
 
-
-/* v4 polish */
-.brand-lockup {
-  color: #ffffff;
-}
-
-.brand-lockup span {
-  color: #ffffff;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-style: italic;
-  font-weight: 400;
-  letter-spacing: 0;
-}
-
-.workspace {
-  grid-template-columns: minmax(350px, 480px) minmax(440px, 860px);
-  justify-content: center;
-  justify-items: center;
-}
-
-.builder-panel {
-  width: 100%;
-  max-width: 480px;
-  justify-self: center;
-  background:
-    linear-gradient(180deg, #fffefb 0%, #f8f7f2 100%);
-}
-
-.preview-panel {
-  width: 100%;
-  max-width: 860px;
-  justify-self: center;
-}
-
-.builder-toolbar {
-  margin-bottom: 0.9rem;
-}
-
-.editor-tabs {
-  background: #ece9df;
-}
-
-.editor-card {
-  background: rgba(255, 255, 255, 0.86);
-  box-shadow: 0 12px 28px rgba(20, 20, 20, 0.04);
-}
-
-.card-heading {
-  margin-bottom: 0.78rem;
-}
-
-.field input,
-.field textarea,
-.select-button {
-  border-color: #dedbd1;
-  background: #ffffff;
-}
-
-.field input:hover,
-.field textarea:hover,
-.select-button:hover {
-  border-color: #c8c3b6;
-}
-
-.info-variant-select {
+.custom-select.info-variant-select {
   margin-top: 0.72rem;
-}
-
-.palette-stack {
-  gap: 0.82rem;
-}
-
-.palette-grid {
-  grid-template-columns: repeat(auto-fit, minmax(2.15rem, 1fr));
-}
-
-.color-swatch {
-  height: 2.05rem;
-  border-radius: 0.68rem;
-}
-
-.gmail-shell {
-  display: grid;
-  min-height: calc(100vh - 6rem);
-  background: #ffffff;
-}
-
-.gmail-top {
-  position: sticky;
-  top: 0;
-  z-index: 2;
-}
-
-.gmail-actions {
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-
-.shuffle-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-  min-width: 2.2rem;
-  max-width: 17rem;
-  height: 2.2rem;
-  gap: 0.45rem;
-  padding: 0 0.52rem 0 0.72rem;
-  white-space: nowrap;
-}
-
-.shuffle-button span {
-  overflow: hidden;
-  max-width: 13rem;
-  text-overflow: ellipsis;
-  font-size: 0.73rem;
-  font-weight: 760;
-}
-
-.shuffle-button b {
-  display: grid;
-  place-items: center;
-  width: 1.28rem;
-  height: 1.28rem;
-  border-radius: 999px;
-  background: #202124;
-  color: #ffffff;
-  font-size: 0.83rem;
-  line-height: 1;
-}
-
-.gmail-meta {
-  max-width: min(100%, calc(var(--signature-preview-width, 560px) + 2.2rem));
-  width: 100%;
-  margin: 0 auto;
-}
-
-.gmail-meta strong {
-  display: block;
-  color: #202124;
-  font-size: 0.88rem;
-  line-height: 1.24;
-}
-
-.email-viewport {
-  width: 100%;
-  max-width: min(100%, calc(var(--signature-preview-width, 560px) + 2.2rem));
-  margin: 0 auto;
-}
-
-.email-viewport.is-mobile {
-  max-width: 390px;
-  width: min(390px, calc(100% - 1rem));
-}
-
-.signature-mount {
-  display: block;
-}
-
-.signature-mount > table {
-  margin-right: auto;
-  margin-left: 0;
-}
-
-@media (max-width: 1050px) {
-  .workspace {
-    grid-template-columns: minmax(0, 760px);
-  }
-
-  .builder-panel,
-  .preview-panel {
-    max-width: 760px;
-  }
-}
-
-@media (max-width: 640px) {
-  .topbar {
-    align-items: center;
-  }
-
-  .brand-lockup span {
-    max-width: 52vw;
-    font-size: 1.05rem;
-  }
-
-  .workspace {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .builder-panel,
-  .preview-panel {
-    max-width: 100%;
-  }
-
-  .gmail-actions {
-    align-items: stretch;
-  }
-
-  .shuffle-button {
-    max-width: 100%;
-  }
-
-  .shuffle-button span {
-    max-width: 100%;
-  }
-
-  .email-viewport {
-    max-width: 100%;
-  }
 }
