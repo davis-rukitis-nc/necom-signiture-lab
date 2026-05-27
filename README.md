@@ -36,6 +36,10 @@ README.md
 
 ## Features
 
+- v6 UI polish: pill title, vertically centered editor on desktop, wider editor panel, responsive centered preview.
+- Mobile-safe contact layout: phone, email, and website are stacked as T/E/W rows instead of one fragile wrapping line.
+- Presets default to minimal logo variants where available.
+
 - Clean NECom header using the light logo and remote PNG favicon.
 - English default with Latvian language switch.
 - Logo/color brand picker for NECom and event presets.

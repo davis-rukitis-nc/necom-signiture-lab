@@ -1,4 +1,4 @@
-const STORAGE_KEY = "necom-email-signature-lab-v5";
+const STORAGE_KEY = "necom-email-signature-lab-v6";
 const MINIMAL_COLOR = "#d8dada";
 
 const BRAND_PRESETS = [
@@ -64,7 +64,7 @@ const BRAND_PRESETS = [
     textColor: "#111111",
     linkColor: "#fa4100",
     cardBg: "#fa4100",
-    cardLogoVariant: "black",
+    cardLogoVariant: "minimal",
     logoVariants: {
       black: "https://rimirigamarathon.com/wp-content/uploads/2026/05/pnr-black.png",
       minimal: "https://rimirigamarathon.com/wp-content/uploads/2026/05/pnr-light.png",
@@ -142,8 +142,8 @@ const BRAND_PRESETS = [
     accentColor: "#fad0c5",
     textColor: "#111111",
     linkColor: "#231F20",
-    cardBg: "#fad0c5",
-    cardLogoVariant: "black",
+    cardBg: "#231F20",
+    cardLogoVariant: "minimal",
     logoVariants: {
       black: "https://rimirigamarathon.com/wp-content/uploads/2026/05/bwda-dark.png",
       minimal: "https://rimirigamarathon.com/wp-content/uploads/2026/05/bwda-light.png",
@@ -672,6 +672,10 @@ function loadState() {
     if (!merged.linkColor) {
       const mergedBrand = BRAND_PRESETS.find((brand) => brand.id === merged.brandId) || BRAND_PRESETS[0];
       merged.linkColor = mergedBrand.linkColor || merged.accentColor;
+    }
+
+    if (merged.logoVariant === "white") {
+      merged.logoVariant = "minimal";
     }
 
     return merged;
@@ -1297,35 +1301,60 @@ function renderHeaderTable({ editable, logoSize, logoCellWidth, text }) {
 }
 
 function renderDetailRows({ editable, link, text }) {
-  const lines = [];
+  const blocks = [];
 
   if (state.rows.address) {
     if (state.address1.trim()) {
-      lines.push(`<span${editableAttr(editable, "address1")}>${escapeHtml(state.address1)}</span>`);
+      blocks.push(`<div${editableAttr(editable, "address1")} style="color:${text};">${escapeHtml(state.address1)}</div>`);
     }
     if (state.address2.trim()) {
-      lines.push(`<span${editableAttr(editable, "address2")}>${escapeHtml(state.address2)}</span>`);
+      blocks.push(`<div${editableAttr(editable, "address2")} style="color:${text};">${escapeHtml(state.address2)}</div>`);
     }
   }
 
-  const contactPieces = [];
+  const contactRows = [];
   if (state.rows.contact && state.phone.trim()) {
-    contactPieces.push(`<span style="color:#5f6368;">T</span>&nbsp; <a href="tel:${escapeAttribute(phoneHref(state.phone))}" style="color:${text}; text-decoration:none;">${escapeHtml(state.phone)}</a>`);
+    contactRows.push(`
+      <tr>
+        <td width="18" valign="top" style="width:18px; padding:0 8px 2px 0; color:#5f6368; font-weight:700;">T</td>
+        <td valign="top" style="padding:0 0 2px 0;">
+          <a href="tel:${escapeAttribute(phoneHref(state.phone))}" style="color:${text}; text-decoration:none; white-space:nowrap;">${escapeHtml(state.phone)}</a>
+        </td>
+      </tr>
+    `);
   }
 
   if (state.rows.contact && state.showEmail && state.email.trim()) {
-    contactPieces.push(`<a href="mailto:${escapeAttribute(state.email.trim())}" style="color:${text}; text-decoration:none;">${escapeHtml(state.email.trim())}</a>`);
+    contactRows.push(`
+      <tr>
+        <td width="18" valign="top" style="width:18px; padding:0 8px 2px 0; color:#5f6368; font-weight:700;">E</td>
+        <td valign="top" style="padding:0 0 2px 0;">
+          <a href="mailto:${escapeAttribute(state.email.trim())}" style="color:${text}; text-decoration:none; word-break:break-word;">${escapeHtml(state.email.trim())}</a>
+        </td>
+      </tr>
+    `);
   }
 
   if (state.rows.website && state.websiteUrl.trim() && state.websiteLabel.trim()) {
-    contactPieces.push(`<a href="${escapeAttribute(normalizeUrl(state.websiteUrl))}" style="color:${link}; text-decoration:underline;">${escapeHtml(state.websiteLabel)}</a>`);
+    contactRows.push(`
+      <tr>
+        <td width="18" valign="top" style="width:18px; padding:0 8px 0 0; color:#5f6368; font-weight:700;">W</td>
+        <td valign="top" style="padding:0;">
+          <a href="${escapeAttribute(normalizeUrl(state.websiteUrl))}" style="color:${link}; text-decoration:underline; word-break:break-word;">${escapeHtml(state.websiteLabel)}</a>
+        </td>
+      </tr>
+    `);
   }
 
-  if (contactPieces.length) {
-    lines.push(contactPieces.join(`<span style="color:#c0c0c0;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>`));
+  if (contactRows.length) {
+    blocks.push(`
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; margin-top:${blocks.length ? "4px" : "0"};">
+        ${contactRows.join("")}
+      </table>
+    `);
   }
 
-  return lines.join("<br>");
+  return blocks.join("");
 }
 
 function maybeAddBanner(rows, position, width) {
